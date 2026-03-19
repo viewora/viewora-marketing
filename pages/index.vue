@@ -12,7 +12,7 @@
             Upload panoramas, connect rooms, and build trust before they visit. Perfect for real estate, hospitality, showrooms, and events.
           </p>
           <div class="hero-actions">
-            <NuxtLink to="/register" class="btn btn-primary btn-lg btn-float">Start Free — No Card Needed</NuxtLink>
+            <NuxtLink to="https://app.viewora.software/register" class="btn btn-primary btn-lg btn-float">Start Free — No Card Needed</NuxtLink>
             <NuxtLink to="/product" class="btn btn-outline btn-lg">See How It Works →</NuxtLink>
           </div>
           <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">✓ Free forever plan &nbsp;&nbsp; ✓ No credit card &nbsp;&nbsp; ✓ Publish in 5 minutes</p>
@@ -292,7 +292,7 @@
         <div class="mono" style="color: var(--accent); margin-bottom: 1.25rem;">↗ Start today</div>
         <h2 style="font-size: 3rem; font-weight: 900; color: var(--paper); margin-bottom: 1rem; letter-spacing: -0.04em; line-height: 1.0;">Ready to Showcase<br>Your Spaces?</h2>
         <p style="color: #6b7280; font-size: 1.05rem; margin-bottom: 3rem; line-height: 1.7;">Join the growing community of professionals closing more deals and driving traffic with Viewora. Your first tour is on us.</p>
-        <NuxtLink to="/register" class="btn btn-primary btn-lg btn-float">
+        <NuxtLink to="https://app.viewora.software/register" class="btn btn-primary btn-lg btn-float">
           Start Your Free Tour Now →
         </NuxtLink>
         <p style="color: #4b5563; font-size: 0.8rem; margin-top: 1.5rem; font-family: var(--font-mono); letter-spacing: 0.04em;">✓ No credit card required &nbsp; ✓ Free forever plan &nbsp; ✓ Live in 5 min</p>

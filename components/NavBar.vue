@@ -12,27 +12,10 @@
         <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
       </nav>
 
-      <ClientOnly>
         <div class="nav-actions">
-          <!-- Logged Out View -->
-          <template v-if="!user">
-            <NuxtLink to="/login" class="nav-link">Log in</NuxtLink>
-            <NuxtLink to="/register" class="btn btn-dark" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Start Free</NuxtLink>
-          </template>
-          <!-- Logged In View -->
-          <template v-else>
-            <NuxtLink to="/app/properties" class="nav-link">Dashboard</NuxtLink>
-            <button @click="signOut" class="btn btn-outline" style="padding: 0.5rem 1rem;">Log Out</button>
-          </template>
+          <NuxtLink to="https://app.viewora.software/login" class="nav-link">Log in</NuxtLink>
+          <NuxtLink to="https://app.viewora.software/register" class="btn btn-dark" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Start Free</NuxtLink>
         </div>
-        <template #fallback>
-          <!-- SSR placeholder — same size as the logged-out buttons to avoid layout shift -->
-          <div class="nav-actions" style="visibility: hidden;">
-            <span class="nav-link">Log in</span>
-            <span class="btn btn-dark" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Start Free</span>
-          </div>
-        </template>
-      </ClientOnly>
 
       <!-- Mobile Menu Button -->
       <button class="mobile-menu-btn" aria-label="Toggle menu" @click="isMobileMenuOpen = !isMobileMenuOpen">
@@ -50,34 +33,18 @@
           <NuxtLink to="/contact" class="nav-link" @click="isMobileMenuOpen = false">Contact</NuxtLink>
           <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0.5rem 0;" />
           
-          <ClientOnly>
-            <template v-if="!user">
-              <NuxtLink to="/login" class="nav-link" @click="isMobileMenuOpen = false">Log in</NuxtLink>
-              <NuxtLink to="/register" class="btn btn-dark btn-block" @click="isMobileMenuOpen = false">Start Free</NuxtLink>
-            </template>
-            <template v-else>
-              <NuxtLink to="/app/spaces" class="nav-link font-bold text-primary" @click="isMobileMenuOpen = false">Dashboard</NuxtLink>
-              <button @click="signOut(); isMobileMenuOpen = false" class="btn btn-outline btn-block text-center">Log Out</button>
-            </template>
-          </ClientOnly>
+          <NuxtLink to="https://app.viewora.software/login" class="nav-link" @click="isMobileMenuOpen = false">Log in</NuxtLink>
+          <NuxtLink to="https://app.viewora.software/register" class="btn btn-dark btn-block" @click="isMobileMenuOpen = false">Start Free</NuxtLink>
         </div>
       </div>
     </Transition>
   </header>
 </template>
 
-<script setup lang="ts">
 import { ref } from 'vue';
 
 const isMobileMenuOpen = ref(false);
-const supabase = useSupabaseClient()
-const user = useSupabaseUser()
-
-const signOut = async () => {
-  await supabase.auth.signOut()
-  const router = useRouter()
-  router.push('/')
-}
+const showDemo = ref(false);
 </script>
 
 <style scoped>
