@@ -12,7 +12,7 @@
     <section class="section">
       <div class="container">
         <!-- Step 1 -->
-        <div class="grid-2 mb-12" style="align-items: center;">
+        <div class="product-step grid-2 mb-12">
           <div class="product-text-col">
             <h2 class="mb-4" style="font-size: 2rem;">1. Upload 360° Panoramas</h2>
             <p class="text-muted text-lg">
@@ -22,20 +22,20 @@
             </p>
           </div>
           <div class="product-img-col">
-            <div style="background: var(--paper-dim); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; min-height: 250px;">
+            <div class="product-img-wrap">
               <img src="/images/home/hardware-setup.png" loading="lazy" alt="Upload Panoramas" style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 0.25rem; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.08));" />
             </div>
           </div>
         </div>
 
         <!-- Step 2 -->
-        <div class="grid-2 mb-12" style="align-items: center;">
-          <div style="order: 1;">
-            <div style="background: var(--paper-dim); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; min-height: 250px;">
+        <div class="product-step grid-2 mb-12">
+          <div class="product-img-col">
+            <div class="product-img-wrap">
               <img src="/images/home/white-label-editor.png" loading="lazy" alt="Visual Editor" style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 0.25rem; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.08));" />
             </div>
           </div>
-          <div style="order: 2;">
+          <div class="product-text-col">
             <h2 class="mb-4" style="font-size: 2rem;">2. Create Room Connections</h2>
             <p class="text-muted text-lg">
               Use our visual editor to link your rooms together. Simply point and click to add navigation hotspots ("arrows" or "targets"). 
@@ -45,7 +45,7 @@
         </div>
 
         <!-- Step 3 -->
-        <div class="grid-2 mb-12" style="align-items: center;">
+        <div class="product-step grid-2 mb-12">
           <div class="product-text-col">
             <h2 class="mb-4" style="font-size: 2rem;">3. Publish Virtual Tour</h2>
             <p class="text-muted text-lg">
@@ -54,20 +54,20 @@
             </p>
           </div>
           <div class="product-img-col">
-            <div style="background: var(--paper-dim); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; min-height: 250px;">
+            <div class="product-img-wrap">
               <img src="/images/home/tiny-planet-vr.png" loading="lazy" alt="Publish Virtual Tour" style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 0.25rem; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.08));" />
             </div>
           </div>
         </div>
 
         <!-- Step 4 -->
-        <div class="grid-2" style="align-items: center;">
-          <div style="order: 1;">
-            <div style="background: var(--paper-dim); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; min-height: 250px;">
+        <div class="product-step grid-2">
+          <div class="product-img-col">
+            <div class="product-img-wrap">
               <img src="/images/home/cross-platform-hero2.png" loading="lazy" alt="Share on any device" style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 0.25rem; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.08));" />
             </div>
           </div>
-          <div style="order: 2;">
+          <div class="product-text-col">
             <h2 class="mb-4" style="font-size: 2rem;">4. Share With Clients</h2>
             <p class="text-muted text-lg">
               You will receive a unique, unbranded public link that you can share with potential buyers, renters, or guests. 
@@ -82,7 +82,7 @@
     <section class="section section-bg text-center">
       <div class="container">
         <h2 class="mb-6" style="font-size: 2rem;">Ready to build your first tour?</h2>
-        <NuxtLink to="/register" class="btn btn-primary btn-lg">Start Free Trial</NuxtLink>
+        <NuxtLink to="https://app.viewora.software/register" class="btn btn-primary btn-lg">Get Started</NuxtLink>
       </div>
     </section>
   </div>
@@ -122,9 +122,27 @@ useHead({
 </script>
 
 <style scoped>
-/* On mobile, text should appear before image */
+.product-step {
+  align-items: center;
+}
+.product-img-wrap {
+  background: var(--paper-dim); 
+  padding: 1.5rem; 
+  border-radius: 0.5rem; 
+  border: 1px solid var(--border); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  min-height: 250px;
+}
+/* On mobile, text should always appear before image */
 @media (max-width: 767px) {
-  .product-text-col { order: 1 !important; }
-  .product-img-col  { order: 2 !important; }
+  .product-step {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .product-text-col { order: 1; }
+  .product-img-col  { order: 2; }
 }
 </style>
