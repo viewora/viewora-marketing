@@ -40,7 +40,7 @@
     </Transition>
   </header>
 </template>
-
+<script setup lang="ts">
 import { ref } from 'vue';
 
 const isMobileMenuOpen = ref(false);
