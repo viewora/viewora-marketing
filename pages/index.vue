@@ -40,13 +40,19 @@
             </div>
             <!-- Deferred iframe: only loads after user clicks -->
             <div style="flex: 1; width: 100%; height: 100%; position: relative; cursor: pointer;" @click="showDemo = true">
-              <iframe
-                v-if="showDemo"
-                src="https://www.marzipano.net/demos/sample-tour/"
-                style="width: 100%; height: 100%; border: none;"
-                allowfullscreen
-                title="Sample 360 Virtual Tour"
-              ></iframe>
+              <div v-if="showDemo" style="width: 100%; height: 100%; position: relative;">
+                <!-- Loading Spinner -->
+                <div v-if="demoLoading" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: var(--bg-surface); z-index: 5;">
+                  <div class="spinner"></div>
+                </div>
+                <iframe
+                  src="https://www.marzipano.net/demos/sample-tour/"
+                  style="width: 100%; height: 100%; border: none;"
+                  allowfullscreen
+                  title="Sample 360 Virtual Tour"
+                  @load="demoLoading = false"
+                ></iframe>
+              </div>
               <div v-else style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
                 <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.15); transition: transform 0.2s;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -62,7 +68,7 @@
     <!-- Stats Bar -->
     <section style="background: var(--ink); padding: 2.5rem 0; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark);">
       <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center;">
+        <div class="stats-grid">
           <div style="color: var(--paper);">
             <div style="font-size: 2.25rem; font-weight: 900; font-family: var(--font-display); letter-spacing: -0.04em;">500+</div>
             <div style="font-size: 0.7rem; opacity: 0.6; margin-top: 0.25rem; font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase;">Tours Published</div>
@@ -335,5 +341,6 @@ useHead({
 
 // Defer demo iframe load until user clicks — prevents iframe from blocking LCP
 const showDemo = ref(false)
+const demoLoading = ref(true)
 
 </script>
