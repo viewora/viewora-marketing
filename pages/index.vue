@@ -302,6 +302,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 useSeoMeta({
   title: 'Viewora | Create & Share Interactive 360° Virtual Tours',
   description: 'Create, host, and share interactive 360° virtual tours for real estate, hotels, car dealerships, and retail spaces in minutes.',
@@ -335,14 +336,4 @@ useHead({
 // Defer demo iframe load until user clicks — prevents iframe from blocking LCP
 const showDemo = ref(false)
 
-// useSupabaseUser must be called at setup level (not inside onMounted)
-const user = useSupabaseUser()
-
-// Auth redirect: runs client-side only, doesn't block SSR page paint
-onMounted(() => {
-  if (user.value) { navigateTo('/app/spaces'); return }
-  const unwatch = watch(user, (u) => {
-    if (u) { unwatch(); navigateTo('/app/spaces') }
-  })
-})
 </script>
