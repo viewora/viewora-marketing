@@ -41,10 +41,23 @@
   </header>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRoute } from '#imports';
 
 const isMobileMenuOpen = ref(false);
-const showDemo = ref(false);
+
+// Body scroll lock
+if (process.client) {
+  watch(isMobileMenuOpen, (val) => {
+    document.body.style.overflow = val ? 'hidden' : '';
+  });
+}
+
+// Close on route change
+const route = useRoute();
+watch(() => route.path, () => {
+  isMobileMenuOpen.value = false;
+});
 </script>
 
 <style scoped>

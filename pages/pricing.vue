@@ -16,7 +16,27 @@
           <span :class="{'font-bold': billingFreq === 'yearly', 'text-muted': billingFreq !== 'yearly'}">Yearly <span class="badge" style="margin-top: 0; margin-bottom: 0; margin-left: 0.5rem; font-size: 0.75rem;">Save 20%</span></span>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+          <!-- Free -->
+          <div class="card" style="display: flex; flex-direction: column; text-align: left; background: var(--paper-dim); border-style: dashed;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div style="width: 12px; height: 12px; border-radius: 50%; background-color: var(--slate-light);"></div>
+              <h3 style="margin: 0;">Free</h3>
+            </div>
+            <p class="text-muted mb-6" style="font-size: 0.9rem;">Perfect for trying out Viewora</p>
+            <div class="mb-6">
+              <span style="font-size: 2rem; font-weight: 800; font-family: var(--font-display);">KES 0</span>
+              <span class="text-muted text-sm">/forever</span>
+            </div>
+            <NuxtLink to="https://app.viewora.software/register" class="btn btn-outline btn-block mb-6">Start Free</NuxtLink>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; flex: 1; margin-bottom: 1.5rem; font-size: 0.9rem;">
+              <li style="display: flex; gap: 0.5rem; font-weight: bold;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> 2 Active 360 Tours</li>
+              <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Standard image quality</li>
+              <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Shareable link & QR</li>
+              <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic analytics</li>
+              <li style="display: flex; gap: 0.5rem; color: var(--text-muted);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> 500 MB storage</li>
+            </ul>
+          </div>
           <!-- Basic -->
           <div class="card" style="display: flex; flex-direction: column; text-align: left;">
             <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
@@ -55,7 +75,7 @@
               <span style="font-size: 2rem; font-weight: 800; font-family: var(--font-display);">KES {{ billingFreq === 'monthly' ? '4,000' : '40,000' }}</span>
               <span class="text-muted text-sm">/{{ billingFreq === 'monthly' ? 'mo' : 'yr' }}</span>
             </div>
-            <NuxtLink to="/register" class="btn btn-primary btn-block mb-6">Start Free Trial</NuxtLink>
+            <NuxtLink to="https://app.viewora.software/register" class="btn btn-primary btn-block mb-6">Get Started</NuxtLink>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; flex: 1; margin-bottom: 1.5rem; font-size: 0.9rem;">
               <li style="display: flex; gap: 0.5rem; font-weight: bold;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> 15 Active Tours</li>
               <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> HD panoramas</li>
