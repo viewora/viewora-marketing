@@ -4,7 +4,7 @@
       <div class="container">
         <h1 class="section-title">Viewora Blog & Resources</h1>
         <p class="section-subtitle mb-0" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-          Insights, guides, and property marketing strategies to help you close more deals.
+          Insights, guides, and space marketing strategies to help you close more deals.
         </p>
       </div>
     </section>
@@ -41,6 +41,6 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Blog & Resources',
-  description: 'Learn how to market properties better with virtual tours, 360° panoramas, and SaaS tools for real estate and Airbnb.'
+  description: 'Learn how to market spaces better with virtual tours, 360° panoramas, and SaaS tools for real estate and Airbnb.'
 })
 </script>

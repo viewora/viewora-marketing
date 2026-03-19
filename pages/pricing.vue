@@ -4,7 +4,7 @@
       <div class="container text-center">
         <h1 class="section-title">Simple, Transparent Pricing</h1>
         <p class="section-subtitle mb-12" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-          Choose the plan that fits your property portfolio. No hidden setup fees or surprise charges.
+          Choose the plan that fits your space portfolio. No hidden setup fees or surprise charges.
         </p>
 
         <!-- Toggle -->
@@ -33,7 +33,7 @@
               <li style="display: flex; gap: 0.5rem; font-weight: bold;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> 2 Active 360 Tours</li>
               <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Standard image quality</li>
               <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Shareable tour link & QR code</li>
-              <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Property info panel & map</li>
+              <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Space info panel & map</li>
               <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic analytics (views)</li>
               <li style="display: flex; gap: 0.5rem; color: var(--text-muted);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Viewora branding</li>
               <li style="display: flex; gap: 0.5rem; color: var(--text-muted);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> 2 GB storage</li>
@@ -87,7 +87,7 @@
               <li style="display: flex; gap: 0.5rem; font-weight: bold; color: var(--primary);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Includes {{ billingFreq === 'monthly' ? '1 photo shoot / mo' : '12 photo shoots / yr' }}</li>
               <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Branding control (your logo)</li>
               <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Google Street View publishing</li>
-              <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-property dashboard</li>
+              <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-space dashboard</li>
               <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Project / apartment mode</li>
               <li style="display: flex; gap: 0.5rem; color: var(--text-muted);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Priority hosting & 20 GB storage</li>
             </ul>
@@ -115,7 +115,7 @@
               <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> White-label viewer</li>
               <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Team accounts & Analytics suite</li>
               <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Nearby amenities map</li>
-              <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Featured property badges</li>
+              <li style="display: flex; gap: 0.5rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Featured space badges</li>
               <li style="display: flex; gap: 0.5rem; color: var(--text-muted);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Priority support & 50 GB storage</li>
             </ul>
           </div>
@@ -137,7 +137,7 @@ const billingFreq = ref('monthly');
 
 useSeoMeta({
   title: 'Pricing & Plans | Viewora Virtual Tour Software',
-  description: 'Transparent pricing for every property professional. Plans from KES 1,500/mo. Free trial available. No hidden fees.',
+  description: 'Transparent pricing for every space professional. Plans from KES 1,500/mo. Free trial available. No hidden fees.',
   ogTitle: 'Viewora Pricing — From KES 1,500/mo',
   ogDescription: 'Start free, scale as you grow. Viewora plans for solo agents, active sellers, agencies and large developers. Cancel anytime.',
   ogUrl: 'https://viewora.software/pricing',

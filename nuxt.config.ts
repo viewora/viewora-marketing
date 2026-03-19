@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://viewora.software',
     name: 'Viewora',
-    description: 'Create interactive 360° virtual tours for your properties. The subscription-based platform for real estate agents, Airbnb hosts, and property developers.',
+    description: 'Create interactive 360° virtual tours for your spaces. The subscription-based platform for real estate agents, Airbnb hosts, and space developers.',
     defaultLocale: 'en',
   },
 

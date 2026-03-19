@@ -15,13 +15,13 @@
           <h3 class="mb-3">Real Estate Agents</h3>
           <p class="text-muted">Pre-qualify buyers before the viewing. Let clients explore every room from their phone — saving you time and closing more deals.</p>
           <ul style="text-align: left; margin-top: 1.25rem; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem;">
-            <li style="display: flex; gap: 0.5rem; align-items: center; font-size: 0.9rem;"><span style="color: var(--primary);">✓</span> Unlimited property tours</li>
+            <li style="display: flex; gap: 0.5rem; align-items: center; font-size: 0.9rem;"><span style="color: var(--primary);">✓</span> Unlimited space tours</li>
             <li style="display: flex; gap: 0.5rem; align-items: center; font-size: 0.9rem;"><span style="color: var(--primary);">✓</span> Shareable link for listings</li>
             <li style="display: flex; gap: 0.5rem; align-items: center; font-size: 0.9rem;"><span style="color: var(--primary);">✓</span> Embed on your website</li>
           </ul>
         </div>
 
-        <!-- Airbnb & Short-Term Rentals -->
+        <!-- Space Developers -->
         <div class="card text-center" style="border: 2px solid var(--primary);">
           <div style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.75rem;">Most Popular</div>
           <div style="background: var(--paper-dim); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1.5rem; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; aspect-ratio: 4/3;">

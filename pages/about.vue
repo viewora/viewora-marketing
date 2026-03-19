@@ -4,7 +4,7 @@
       <div class="container" style="max-width: 800px;">
         <h1 class="section-title">Bridging the Gap Between Screen and Reality</h1>
         <p class="section-subtitle" style="margin-bottom: 3rem;">
-          We are Viewora. We believe that finding a home, booking a stay, choosing a venue, or investing in property should be a transparent and immersive experience.
+          We are Viewora. We believe that finding a home, booking a stay, choosing a venue, or investing in space should be a transparent and immersive experience.
         </p>
         
         <div style="background: var(--paper-dim); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; width: 100%;">
@@ -31,14 +31,14 @@
             Viewora was founded in Kenya to solve this problem globally. We recognized that while enterprise-grade virtual tour software existed, it was often prohibitively expensive, required specialized hardware, and involved steep learning curves.
           </p>
           <p class="text-muted text-lg">
-            We built Viewora to democratize spatial marketing. Our mission is to provide an accessible, powerful, and intuitive SaaS platform that empowers any business—from a single-property Airbnb host to a national dealership or university—to create and share immersive 360° virtual tours.
+            We built Viewora to democratize spatial marketing. Our mission is to provide an accessible, powerful, and intuitive SaaS platform that empowers any business—from a single-space Airbnb host to a national dealership or university—to create and share immersive 360° virtual tours.
           </p>
         </div>
 
         <div class="card bg-surface-alt">
           <h3 class="mb-2">Our Mission</h3>
           <p class="text-muted">
-            To make virtual walkthroughs the standard for property exploration worldwide, building trust through spatial transparency.
+            To make virtual walkthroughs the standard for space exploration worldwide, building trust through spatial transparency.
           </p>
         </div>
       </div>
