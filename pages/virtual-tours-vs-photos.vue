@@ -84,6 +84,30 @@
         The winning strategy is not photos <em>or</em> virtual tours—it is photos <em>and</em> virtual tours working together. Lead with great photography to attract the click, then convert with the virtual tour.
       </p>
 
+      <div class="gallery-wrapper mt-12 mb-16">
+        <h3 class="gallery-title text-center mb-8">Elevate Your Marketing with Professional 2D Photography</h3>
+        <p class="text-center text-muted mb-12" style="max-width: 700px; margin: 0 auto;">
+          While 360° tours provide context and trust, high-quality 2D "hero shots" capture emotion and detail. 
+          Viewora allows you to showcase both in one unified platform.
+        </p>
+        <div style="height: 600px; position: relative;">
+          <CircularGallery 
+            :items="[
+              { image: '/images/gallery/luxury-living-room.png', text: 'Luxury Living Room' },
+              { image: '/images/gallery/modern-kitchen.png', text: 'Modern Kitchen' },
+              { image: '/images/gallery/resort-pool.png', text: 'Infinity Pool' },
+              { image: '/images/gallery/coastal-bedroom.png', text: 'Coastal Bedroom' },
+              { image: '/images/gallery/office-showroom.png', text: 'Office Showroom' }
+            ]"
+            :bend="3" 
+            text-color="#ffffff" 
+            :border-radius="0.05" 
+            :scroll-ease="0.02"
+            :scroll-speed="2"
+          />
+        </div>
+      </div>
+
       <h2>The Verdict: Virtual Tours Win in 2026</h2>
       <p>
         For any business that sells, rents, or markets a physical space in Kenya, the data is clear: <strong>360° virtual tours deliver more enquiries, faster conversions, higher quality leads, and better ROI</strong> than photography alone. The question is not whether to invest in virtual tours—it is how quickly you can get yours live before your competitors do.
