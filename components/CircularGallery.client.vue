@@ -21,7 +21,7 @@ const containerRef = ref(null);
 let appInstance = null;
 
 // ==========================================
-// VANILLA JS WEBGL LOGIC (From original code)
+// VANILLA JS WEBGL LOGIC (Enhanced for Smoothness)
 // ==========================================
 
 function debounce(func, wait) {
@@ -45,28 +45,41 @@ function autoBind(instance) {
   });
 }
 
-function createTextTexture(gl, text, font = 'bold 30px monospace', color = 'black') {
+function createTextTexture(gl, text, font = 'bold 30px monospace', color = 'white') {
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d');
+  
+  // Set font for measurement
   context.font = font;
   const metrics = context.measureText(text);
   const textWidth = Math.ceil(metrics.width);
-  const textHeight = Math.ceil(parseInt(font, 10) * 1.2);
-  canvas.width = textWidth + 20;
-  canvas.height = textHeight + 20;
+  const textHeight = Math.ceil(parseInt(font, 10) * 1.5);
+  
+  // High-res canvas for crisp text
+  canvas.width = (textWidth + 40) * 2;
+  canvas.height = (textHeight + 40) * 2;
+  context.scale(2, 2);
+  
   context.font = font;
   context.fillStyle = color;
   context.textBaseline = 'middle';
   context.textAlign = 'center';
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  context.fillText(text, canvas.width / 2, canvas.height / 2);
-  const texture = new Texture(gl, { generateMipmaps: false });
+  
+  // Add subtle shadow for legibility
+  context.shadowColor = 'rgba(0,0,0,0.5)';
+  context.shadowBlur = 8;
+  context.shadowOffsetX = 0;
+  context.shadowOffsetY = 2;
+  
+  context.fillText(text, (canvas.width / 4), (canvas.height / 4));
+  
+  const texture = new Texture(gl, { generateMipmaps: true, minFilter: gl.LINEAR_MIPMAP_LINEAR });
   texture.image = canvas;
-  return { texture, width: canvas.width, height: canvas.height };
+  return { texture, width: canvas.width / 2, height: canvas.height / 2 };
 }
 
 class Title {
-  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif' }) {
+  constructor({ gl, plane, renderer, text, textColor = '#ffffff', font = 'bold 30px Figtree' }) {
     autoBind(this);
     this.gl = gl;
     this.plane = plane;
@@ -85,6 +98,7 @@ class Title {
         attribute vec2 uv;
         uniform mat4 modelViewMatrix;
         uniform mat4 projectionMatrix;
+        uniform float uAlpha;
         varying vec2 vUv;
         void main() {
           vUv = uv;
@@ -94,23 +108,30 @@ class Title {
       fragment: `
         precision highp float;
         uniform sampler2D tMap;
+        uniform float uAlpha;
         varying vec2 vUv;
         void main() {
           vec4 color = texture2D(tMap, vUv);
           if (color.a < 0.1) discard;
-          gl_FragColor = color;
+          gl_FragColor = vec4(color.rgb, color.a * uAlpha);
         }
       `,
-      uniforms: { tMap: { value: texture } },
+      uniforms: { 
+        tMap: { value: texture },
+        uAlpha: { value: 0 }
+      },
       transparent: true
     });
     this.mesh = new Mesh(this.gl, { geometry, program });
     const aspect = width / height;
-    const textHeight = this.plane.scale.y * 0.15;
+    const textHeight = this.plane.scale.y * 0.12;
     const textWidth = textHeight * aspect;
     this.mesh.scale.set(textWidth, textHeight, 1);
-    this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.5 - 0.05;
+    this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.8;
     this.mesh.setParent(this.plane);
+  }
+  update(opacity) {
+    this.mesh.program.uniforms.uAlpha.value = opacity;
   }
 }
 
@@ -137,7 +158,7 @@ class Media {
     this.onResize();
   }
   createShader() {
-    const texture = new Texture(this.gl, { generateMipmaps: true });
+    const texture = new Texture(this.gl, { generateMipmaps: true, minFilter: this.gl.LINEAR_MIPMAP_LINEAR });
     this.program = new Program(this.gl, {
       depthTest: false,
       depthWrite: false,
@@ -153,7 +174,8 @@ class Media {
         void main() {
           vUv = uv;
           vec3 p = position;
-          p.z = (sin(p.x * 4.0 + uTime) * 1.5 + cos(p.y * 2.0 + uTime) * 1.5) * (0.1 + uSpeed * 0.5);
+          // Subtly warp based on drag speed
+          p.z = (sin(p.x * 3.0 + uTime) * 0.5 + cos(p.y * 1.5 + uTime) * 0.5) * (0.05 + abs(uSpeed) * 0.3);
           gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
         }
       `,
@@ -163,6 +185,7 @@ class Media {
         uniform vec2 uPlaneSizes;
         uniform sampler2D tMap;
         uniform float uBorderRadius;
+        uniform float uOpacity;
         varying vec2 vUv;
         
         float roundedBoxSDF(vec2 p, vec2 b, float r) {
@@ -182,11 +205,9 @@ class Media {
           vec4 color = texture2D(tMap, uv);
           
           float d = roundedBoxSDF(vUv - 0.5, vec2(0.5 - uBorderRadius), uBorderRadius);
+          float alpha = 1.0 - smoothstep(-0.005, 0.005, d);
           
-          float edgeSmooth = 0.002;
-          float alpha = 1.0 - smoothstep(-edgeSmooth, edgeSmooth, d);
-          
-          gl_FragColor = vec4(color.rgb, alpha);
+          gl_FragColor = vec4(color.rgb, alpha * uOpacity);
         }
       `,
       uniforms: {
@@ -194,8 +215,9 @@ class Media {
         uPlaneSizes: { value: [0, 0] },
         uImageSizes: { value: [0, 0] },
         uSpeed: { value: 0 },
-        uTime: { value: 100 * Math.random() },
-        uBorderRadius: { value: this.borderRadius }
+        uTime: { value: Math.random() * 100 },
+        uBorderRadius: { value: this.borderRadius },
+        uOpacity: { value: 0 }
       },
       transparent: true
     });
@@ -205,6 +227,14 @@ class Media {
     img.onload = () => {
       texture.image = img;
       this.program.uniforms.uImageSizes.value = [img.naturalWidth, img.naturalHeight];
+      // Fade in once loaded
+      let val = 0;
+      const fadeIn = () => {
+        val += 0.05;
+        this.program.uniforms.uOpacity.value = val;
+        if (val < 1) requestAnimationFrame(fadeIn);
+      };
+      fadeIn();
     };
   }
   createMesh() {
@@ -213,7 +243,7 @@ class Media {
   }
   createTitle() {
     this.title = new Title({
-      gl: this.gl, plane: this.plane, renderer: this.renderer, text: this.text, textColor: this.textColor, fontFamily: this.font
+      gl: this.gl, plane: this.plane, renderer: this.renderer, text: this.text, textColor: this.textColor, font: this.font
     });
   }
   update(scroll, direction) {
@@ -222,9 +252,12 @@ class Media {
     const x = this.plane.position.x;
     const H = this.viewport.width / 2;
 
+    // Apply circular bend
     if (this.bend === 0) {
       this.plane.position.y = 0;
+      this.plane.position.z = 0;
       this.plane.rotation.z = 0;
+      this.plane.rotation.y = 0;
     } else {
       const B_abs = Math.abs(this.bend);
       const R = (H * H + B_abs * B_abs) / (2 * B_abs);
@@ -233,21 +266,28 @@ class Media {
       const arc = R - Math.sqrt(R * R - effectiveX * effectiveX);
       if (this.bend > 0) {
         this.plane.position.y = -arc;
+        this.plane.position.z = -arc * 0.5; // Add depth
         this.plane.rotation.z = -Math.sign(x) * Math.asin(effectiveX / R);
       } else {
         this.plane.position.y = arc;
+        this.plane.position.z = -arc * 0.5;
         this.plane.rotation.z = Math.sign(x) * Math.asin(effectiveX / R);
       }
     }
 
     this.speed = scroll.current - scroll.last;
-    this.program.uniforms.uTime.value += 0.04;
+    this.program.uniforms.uTime.value += 0.02;
     this.program.uniforms.uSpeed.value = this.speed;
+
+    // Fade titles based on center proximity
+    const opacity = 1.0 - Math.min(1.0, Math.abs(x) / (H * 0.8));
+    this.title.update(Math.pow(opacity, 2));
 
     const planeOffset = this.plane.scale.x / 2;
     const viewportOffset = this.viewport.width / 2;
-    this.isBefore = this.plane.position.x + planeOffset < -viewportOffset;
-    this.isAfter = this.plane.position.x - planeOffset > viewportOffset;
+    this.isBefore = this.plane.position.x + planeOffset < -viewportOffset * 1.5;
+    this.isAfter = this.plane.position.x - planeOffset > viewportOffset * 1.5;
+    
     if (direction === 'right' && this.isBefore) {
       this.extra -= this.widthTotal;
       this.isBefore = this.isAfter = false;
@@ -265,11 +305,20 @@ class Media {
         this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
       }
     }
-    this.scale = this.screen.height / 1500;
-    this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
-    this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width;
+    
+    // Adjusted scaling for immersive feel
+    this.scale = this.screen.height / 1200;
+    this.plane.scale.y = (this.viewport.height * (700 * this.scale)) / this.screen.height;
+    this.plane.scale.x = (this.viewport.width * (500 * this.scale)) / this.screen.width;
+    
+    // Ensure minimum scale on very small screens
+    if (this.screen.width < 500) {
+       this.plane.scale.x = this.viewport.width * 0.6;
+       this.plane.scale.y = this.plane.scale.x * 1.25;
+    }
+
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
-    this.padding = 2;
+    this.padding = 1.2;
     this.width = this.plane.scale.x + this.padding;
     this.widthTotal = this.width * this.length;
     this.x = this.width * this.index;
@@ -278,11 +327,10 @@ class Media {
 
 class App {
   constructor(container, { items, bend, textColor = '#ffffff', borderRadius = 0, font = 'bold 30px Figtree', scrollSpeed = 2, scrollEase = 0.05 } = {}) {
-    document.documentElement.classList.remove('no-js');
     this.container = container;
     this.scrollSpeed = scrollSpeed;
-    this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 };
-    this.onCheckDebounce = debounce(this.onCheck.bind(this), 200);
+    this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0, position: 0 };
+    this.onCheckDebounce = debounce(this.onCheck.bind(this), 300);
     this.createRenderer();
     this.createCamera();
     this.createScene();
@@ -307,19 +355,12 @@ class App {
     this.scene = new Transform();
   }
   createGeometry() {
-    this.planeGeometry = new Plane(this.gl, { heightSegments: 50, widthSegments: 100 });
+    this.planeGeometry = new Plane(this.gl, { heightSegments: 40, widthSegments: 60 });
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
-    const defaultItems = [
-      { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'Bridge' },
-      { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'Desk Setup' },
-      { image: `https://picsum.photos/seed/3/800/600?grayscale`, text: 'Waterfall' },
-      { image: `https://picsum.photos/seed/4/800/600?grayscale`, text: 'Strawberries' },
-      { image: `https://picsum.photos/seed/5/800/600?grayscale`, text: 'Deep Diving' },
-      { image: `https://picsum.photos/seed/16/800/600?grayscale`, text: 'Train Track' },
-    ];
-    const galleryItems = items && items.length ? items : defaultItems;
-    this.mediasImages = galleryItems.concat(galleryItems);
+    const galleryItems = items && items.length ? items : [];
+    // Triple the items for safer infinite loop
+    this.mediasImages = [...galleryItems, ...galleryItems, ...galleryItems];
     this.medias = this.mediasImages.map((data, index) => {
       return new Media({
         geometry: this.planeGeometry, gl: this.gl, image: data.image, index, length: this.mediasImages.length,
@@ -330,13 +371,21 @@ class App {
   }
   onTouchDown(e) {
     this.isDown = true;
-    this.scroll.position = this.scroll.current;
+    this.scroll.position = this.scroll.target;
     this.start = e.touches ? e.touches[0].clientX : e.clientX;
+    this.startY = e.touches ? e.touches[0].clientY : e.clientY;
   }
   onTouchMove(e) {
     if (!this.isDown) return;
     const x = e.touches ? e.touches[0].clientX : e.clientX;
-    const distance = (this.start - x) * (this.scrollSpeed * 0.025);
+    const y = e.touches ? e.touches[0].clientY : e.clientY;
+    
+    // Prevent default only if moving horizontally more than vertically
+    if (Math.abs(x - this.start) > Math.abs(y - this.startY)) {
+       if (e.cancelable) e.preventDefault();
+    }
+
+    const distance = (this.start - x) * (this.scrollSpeed * 0.05);
     this.scroll.target = this.scroll.position + distance;
   }
   onTouchUp() {
@@ -344,16 +393,15 @@ class App {
     this.onCheck();
   }
   onWheel(e) {
-    const delta = e.deltaY || e.wheelDelta || e.detail;
-    this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
+    const delta = e.deltaY;
+    this.scroll.target += delta * 0.02 * this.scrollSpeed;
     this.onCheckDebounce();
   }
   onCheck() {
     if (!this.medias || !this.medias[0]) return;
     const width = this.medias[0].width;
-    const itemIndex = Math.round(Math.abs(this.scroll.target) / width);
-    const item = width * itemIndex;
-    this.scroll.target = this.scroll.target < 0 ? -item : item;
+    const itemIndex = Math.round(this.scroll.target / width);
+    this.scroll.target = itemIndex * width;
   }
   onResize() {
     this.screen = { width: this.container.clientWidth, height: this.container.clientHeight };
@@ -384,19 +432,17 @@ class App {
     this.boundOnTouchMove = this.onTouchMove.bind(this);
     this.boundOnTouchUp = this.onTouchUp.bind(this);
     window.addEventListener('resize', this.boundOnResize);
-    window.addEventListener('mousewheel', this.boundOnWheel);
-    window.addEventListener('wheel', this.boundOnWheel);
+    window.addEventListener('wheel', this.boundOnWheel, { passive: false });
     window.addEventListener('mousedown', this.boundOnTouchDown);
     window.addEventListener('mousemove', this.boundOnTouchMove);
     window.addEventListener('mouseup', this.boundOnTouchUp);
-    window.addEventListener('touchstart', this.boundOnTouchDown);
-    window.addEventListener('touchmove', this.boundOnTouchMove);
+    window.addEventListener('touchstart', this.boundOnTouchDown, { passive: true });
+    window.addEventListener('touchmove', this.boundOnTouchMove, { passive: false });
     window.addEventListener('touchend', this.boundOnTouchUp);
   }
   destroy() {
     window.cancelAnimationFrame(this.raf);
     window.removeEventListener('resize', this.boundOnResize);
-    window.removeEventListener('mousewheel', this.boundOnWheel);
     window.removeEventListener('wheel', this.boundOnWheel);
     window.removeEventListener('mousedown', this.boundOnTouchDown);
     window.removeEventListener('mousemove', this.boundOnTouchMove);
