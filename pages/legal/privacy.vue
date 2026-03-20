@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero 
       title="Privacy Policy | Viewora Africa"
       subtitle="Your trust is our foundation. Learn how we protect your data and the information of your property viewers across the continent."
@@ -50,10 +50,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Privacy Policy | Viewora #1 PropTech Africa',
   description: 'Learn how Viewora protects your data and property information. Our high standards for privacy and security in the African real estate tech market.',

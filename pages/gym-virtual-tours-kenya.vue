@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="Gym Virtual Tours Kenya | Get More Members Online"
       subtitle="Showcase your equipment, classes, and facilities with a 360° virtual gym tour. The most powerful membership marketing tool for fitness studios in Kenya."
@@ -62,10 +62,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Gym Virtual Tours Kenya | Get More Fitness Members Online',
   description: 'Grow your gym membership in Kenya with Viewora 360° virtual fitness studio tours. Remove objections, showcase your equipment, and convert online browsers into paying members.',

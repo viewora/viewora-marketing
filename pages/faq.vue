@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="Virtual Tour FAQ | All Your Questions Answered"
       subtitle="Everything you need to know about 360° virtual tours, Viewora's platform, pricing in Kenya, and how to get started. Answered clearly and completely."
@@ -78,10 +78,14 @@
     </div>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Virtual Tour FAQ Kenya | All Questions Answered | Viewora',
   description: 'Complete FAQ for Viewora\'s 360° virtual tour platform in Kenya. Answers on pricing in KES, how it works, mobile support, industries, and getting started. Built for Kenya and Africa.',

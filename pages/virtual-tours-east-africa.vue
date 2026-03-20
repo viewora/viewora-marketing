@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="Virtual Tours East Africa | Kenya, Uganda, Tanzania & Beyond"
       subtitle="The leading 360° virtual tour platform built for East Africa. From Nairobi to Kampala, Dar es Salaam to Kigali—immersive property and business marketing for the entire region."
@@ -62,10 +62,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Virtual Tours East Africa | Kenya, Uganda, Tanzania & Rwanda',
   description: 'The leading 360° virtual tour platform for East Africa. Market your property, hotel, or business to buyers across Kenya, Uganda, Tanzania, Rwanda, and Ethiopia with immersive technology.',

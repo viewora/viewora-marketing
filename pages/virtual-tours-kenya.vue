@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero 
       title="The #1 Virtual Tour Software in Kenya"
       subtitle="Transform your properties with immersive 360° virtual tours. Built for Kenyan real estate agents, Airbnb hosts, and property developers to close more deals faster."
@@ -54,10 +54,14 @@
     />
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 const faqs = [
   {
     q: 'What is a virtual tour and how does it work in Kenya?',
@@ -115,3 +119,4 @@ useHead({
   ]
 })
 </script>
+

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero 
       title="360 Virtual Tour Software Africa | Leading Property Tech"
       subtitle="Empowering property professionals across the continent with world-class immersive technology. The #1 virtual tour platform for the African market."
@@ -43,10 +43,13 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
 useSeoMeta({
   title: '360 Virtual Tour Software Africa | #1 Property Tech Platform',
   description: 'The leading virtual tour software across Africa. Showcase Kenyan, Nigerian, and South African properties with professional 360° tours on Viewora.',

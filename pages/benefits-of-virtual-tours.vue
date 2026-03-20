@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="Benefits of Virtual Tours | Why Every Business Needs One"
       subtitle="Discover the proven business benefits of 360° virtual tours—from increased sales and more bookings to reduced costs and global reach. Why Kenya's leading businesses choose immersive technology."
@@ -94,10 +94,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Benefits of Virtual Tours | Why Every Kenyan Business Needs One in 2026',
   description: 'Discover the proven benefits of 360° virtual tours for Kenyan businesses. Attract serious buyers, sell faster, reach the diaspora, and build trust. Why virtual tours deliver the highest marketing ROI.',

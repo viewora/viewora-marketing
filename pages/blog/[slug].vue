@@ -47,6 +47,10 @@
 </style>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 const route = useRoute()
 
 // Fetch doc for SEO meta

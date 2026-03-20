@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero 
       title="Real Estate Virtual Tours Kenya | Sell Properties Faster"
       subtitle="The ultimate tool for property marketing in East Africa. Capture, create, and share professional 360° virtual tours for every property in your portfolio."
@@ -48,10 +48,13 @@
     />
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
 const faqs = [
   { q: 'How do virtual tours help sell property faster in Kenya?', a: 'Virtual tours pre-qualify buyers by letting them inspect every room remotely. Only serious, interested buyers request physical viewings—reducing wasted site visits by up to 60% and compressing the time-to-sale by 30–50%.' },
   { q: 'Can I use Viewora to market off-plan properties in Kenya?', a: 'Yes. Many Kenyan developers use Viewora to create virtual show units for off-plan developments, allowing diaspora and out-of-town investors to visualize and purchase units before construction is complete.' },

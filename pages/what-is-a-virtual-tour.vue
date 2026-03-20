@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="What Is a Virtual Tour? The Complete Guide (2026)"
       subtitle="Everything you need to know about 360° virtual tours, immersive walkthroughs, and how they are transforming property marketing, tourism, and business in Kenya and across Africa."
@@ -76,10 +76,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'What Is a Virtual Tour? Complete Guide 2026 | Viewora Kenya',
   description: 'Learn everything about virtual tours: what they are, how they work, and how they are used in real estate, hospitality, education, and tourism across Kenya and Africa. Complete 2026 guide.',

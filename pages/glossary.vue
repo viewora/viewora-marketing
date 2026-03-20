@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="Virtual Tour Glossary | Key Terms Explained"
       subtitle="The complete reference guide for virtual tour, 360° photography, and property marketing terminology. Everything from panoramas to hotspots, defined clearly for Kenya's property and business professionals."
@@ -45,10 +45,14 @@
     </div>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Virtual Tour Glossary | Key Terms & Definitions | Viewora Kenya',
   description: 'Complete virtual tour glossary: 360° photography, panoramas, hotspots, equirectangular, VR, immersive tours, and 30+ key terms explained for Kenyan property and business professionals.',

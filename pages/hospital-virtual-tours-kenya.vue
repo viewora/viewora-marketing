@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="Hospital Virtual Tours Kenya | Build Patient Trust Online"
       subtitle="Give patients and their families confidence with immersive 360° walkthroughs of your wards, theatres, and facilities. The leading healthcare virtual tour platform in Africa."
@@ -62,10 +62,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Hospital Virtual Tours Kenya | Build Patient Trust & Attract Medical Tourism',
   description: 'Give patients confidence with immersive 360° virtual tours of your Kenyan hospital, clinic, or medical center. Build trust, reduce anxiety, and attract medical tourism from East Africa.',

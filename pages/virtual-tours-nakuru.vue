@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="Virtual Tours Nakuru | 360° Property & Business Marketing"
       subtitle="The premium virtual tour platform for real estate agents, hotels, and businesses in Nakuru, Kenya. Showcase your property or space to buyers and visitors across East Africa."
@@ -60,10 +60,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Virtual Tours Nakuru | #1 360° Property & Business Marketing Kenya',
   description: 'Dominate the Nakuru property and tourism market with Viewora. Immersive 360° virtual tours for real estate, hotels, and businesses in Nakuru, Kenya.',

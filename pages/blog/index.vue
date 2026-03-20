@@ -39,8 +39,12 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
-  title: 'Blog & Resources',
-  description: 'Learn how to market spaces better with virtual tours, 360° panoramas, and SaaS tools for real estate and Airbnb.'
+  title: 'Viewora Blog & Resources | #1 Property Marketing Guide Africa',
+  description: 'Learn how to market spaces better with virtual tours, 360° panoramas, and SaaS tools for real estate and Airbnb. Expert insights for the Kenyan market.'
 })
 </script>

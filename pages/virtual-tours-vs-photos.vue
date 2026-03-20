@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="Virtual Tours vs Photos | Which Converts More in Kenya?"
       subtitle="The definitive comparison: professional 360° virtual tours versus traditional photography for property, hospitality, and business marketing. Which delivers more sales and bookings in 2026?"
@@ -94,10 +94,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Virtual Tours vs Photos Kenya | Which Gets More Sales in 2026?',
   description: 'Virtual tours vs professional photos for property marketing in Kenya: engagement, trust, conversion, and ROI comparison. Why 360° virtual tours outperform photography for Kenyan businesses.',

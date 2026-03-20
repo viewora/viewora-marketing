@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="School Virtual Tours Kenya | Attract More Students & Parents"
       subtitle="Give prospective students and parents an immersive 360° walkthrough of your campus, classrooms, labs, and facilities. The #1 education virtual tour platform in Africa."
@@ -62,10 +62,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'School Virtual Tours Kenya | Attract More Students & Parents',
   description: 'Boost school admissions in Kenya with immersive 360° virtual campus tours from Viewora. Reach families anywhere in East Africa and convert enquiries to enrollments.',

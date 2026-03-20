@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero 
       title="Terms of Service | Viewora Africa"
       subtitle="The agreement for professional property marketing. Understand the standards and responsibilities of the Viewora community."
@@ -50,10 +50,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Terms of Service | Viewora #1 PropTech Africa',
   description: 'The official terms of service for the Viewora platform. Professional standards for real estate agents and hosts using virtual tours in Kenya and Africa.',

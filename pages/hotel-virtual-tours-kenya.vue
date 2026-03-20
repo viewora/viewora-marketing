@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero 
       title="Hotel Virtual Tours Kenya | Increase Direct Bookings"
       subtitle="Immerse your guests in your luxury hospitality experience before they arrive. The #1 360° virtual tour software for hotels, lodges, and resorts in Africa."
@@ -48,10 +48,13 @@
     />
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
 const faqs = [
   { q: 'How do virtual tours increase direct hotel bookings in Kenya?', a: 'When guests explore your hotel through a virtual tour on your own website, they build an emotional connection with your property before booking. This significantly increases direct booking conversion and reduces dependence on OTAs like Booking.com, saving 15–25% in commission fees.' },
   { q: 'Can virtual tours help with MICE bookings for Kenyan hotels?', a: 'Yes. Event planners and corporate clients evaluating conference venues in Nairobi and Mombasa can conduct a full virtual inspection of your meeting rooms, ballrooms, and event spaces without a site visit—dramatically accelerating the MICE sales cycle.' },

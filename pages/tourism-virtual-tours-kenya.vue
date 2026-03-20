@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="Tourism Virtual Tours Kenya | Attract More Visitors Online"
       subtitle="Bring Kenya's iconic national parks, beaches, lodges, and attractions to life with immersive 360° virtual tours. The #1 digital marketing tool for Kenya's tourism industry."
@@ -63,10 +63,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Tourism Virtual Tours Kenya | Attract More Visitors & Bookings',
   description: 'Boost Kenya tourism bookings with immersive 360° virtual tours from Viewora. Showcase safari lodges, beach resorts, and national parks to global travelers. Convert browsers into confirmed bookings.',

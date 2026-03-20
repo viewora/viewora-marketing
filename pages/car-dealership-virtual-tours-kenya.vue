@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="seo-dark">
+  <div>
     <SeoHero
       title="Car Dealership Virtual Tours Kenya | Sell More Cars Online"
       subtitle="Let serious buyers walk through your showroom, inspect every vehicle in 360°, and arrive ready to buy. The #1 virtual tour solution for car dealerships in Kenya."
@@ -62,10 +62,14 @@
     </SeoContent>
 
     <SeoCTA />
-  </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'seo-dark'
+})
+
 useSeoMeta({
   title: 'Car Dealership Virtual Tours Kenya | Sell More Cars Online',
   description: 'Boost car sales at your Kenyan dealership with Viewora 360° virtual showroom tours. Let buyers inspect every vehicle online and arrive ready to buy. Nairobi, Mombasa, Eldoret.',
