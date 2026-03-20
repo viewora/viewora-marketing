@@ -1,0 +1,94 @@
+<template>
+  <NuxtLayout name="seo-dark">
+    <SeoHero
+      title="Virtual Tours Nakuru | 360° Property & Business Marketing"
+      subtitle="The premium virtual tour platform for real estate agents, hotels, and businesses in Nakuru, Kenya. Showcase your property or space to buyers and visitors across East Africa."
+      badge="Nakuru Specialization"
+    />
+
+    <SeoContent>
+      <h2>The #1 Virtual Tour Solution in Nakuru, Kenya</h2>
+      <p>
+        Nakuru is one of Kenya's fastest-growing cities, and its property, hospitality, and tourism markets are expanding at pace. From lakefront developments near Lake Nakuru to new residential estates in Milimani, <strong>Viewora</strong> is the <span class="highlight">#1 virtual tour platform in Nakuru</span>, helping local businesses attract more customers online and close deals faster.
+      </p>
+      <p>
+        With Nakuru's elevation to city status and its growing role as a commercial hub connecting Nairobi to western Kenya, the business community here deserves world-class digital marketing tools. Viewora delivers exactly that.
+      </p>
+
+      <h3>Nakuru's Key Markets That Benefit From Virtual Tours</h3>
+      <ul>
+        <li><strong>Real Estate in Nakuru:</strong> From affordable apartments in Flamingo and Westside to luxury homes in Milimani and Lake View Estate, showcase your properties to buyers in Nairobi, the diaspora, and across East Africa.</li>
+        <li><strong>Hotels and Lodges Near Lake Nakuru:</strong> Attract wildlife tourists and business travelers by giving them a virtual preview of your facilities—rooms, conference halls, and game-viewing areas.</li>
+        <li><strong>Tourism Around Lake Nakuru National Park:</strong> Market your safari experience to international travelers searching online for Kenya's flamingo lake destination.</li>
+        <li><strong>Commercial Property in Nakuru CBD:</strong> Help tenants and investors visualize office blocks, retail spaces, and warehouses before committing to leases.</li>
+      </ul>
+
+      <blockquote>
+        "Nakuru buyers are sophisticated. They research online first, then call. With Viewora, I present my properties professionally to clients in Nairobi who invest remotely in Nakuru without the drive." <br>— Property Agent, Nakuru Town
+      </blockquote>
+
+      <h2>Showcasing Nakuru's Growth Story Digitally</h2>
+      <p>
+        Nakuru's transformation into Kenya's fourth city is driving unprecedented investment in infrastructure, real estate, and hospitality. The city's strategic position on the highway between Nairobi and Kisumu, combined with its proximity to world-famous national parks and Lake Elementaita, makes it a compelling destination for investors, tourists, and residents.
+      </p>
+      <p>
+        A <span class="highlight">360° virtual tour in Nakuru</span> lets you tell that story powerfully to buyers and visitors who have never been to the city, or who want to evaluate multiple properties without the travel time.
+      </p>
+
+      <h3>Nakuru Districts Served by Viewora</h3>
+      <ul>
+        <li><strong>Milimani and Lake View:</strong> Premium residential real estate marketing for Nakuru's upmarket neighborhoods.</li>
+        <li><strong>Nakuru CBD and Westside:</strong> Commercial property, retail spaces, and office marketing in Nakuru's business core.</li>
+        <li><strong>Flamingo and Free Area:</strong> Affordable residential and rental property marketing for Nakuru's growing middle-class market.</li>
+        <li><strong>Lake Nakuru and Elementaita Area:</strong> Safari lodge and wildlife tourism marketing for Nakuru's world-famous national parks.</li>
+      </ul>
+
+      <h2>Connect With Buyers and Visitors Across Kenya</h2>
+      <p>
+        Most decisions about Nakuru property and tourism are made by people in Nairobi or abroad. With a <NuxtLink to="/virtual-tours-kenya" class="highlight">professional virtual tour in Kenya</NuxtLink>, you reach those buyers where they are—on their phones, browsing at lunch, or researching from London and Riyadh at midnight. Your listing works around the clock to generate serious enquiries.
+      </p>
+
+      <h3>Fast, Mobile-Optimized for Every Network</h3>
+      <p>
+        Viewora's 360° tours load instantly on Safaricom and Airtel connections throughout Nakuru county. Whether your buyer is in the CBD or on a farm in Subukia, they get a premium, smooth virtual tour experience that makes your property or business impossible to ignore.
+      </p>
+
+      <h2>Lead Nakuru's Digital Transformation</h2>
+      <p>
+        As Nakuru grows into a major Kenyan city, the businesses that invest in digital marketing today will dominate their markets tomorrow. Start your free Viewora virtual tour today and join the forward-thinking property developers, hotel operators, and business owners who are building Nakuru's digital future.
+      </p>
+    </SeoContent>
+
+    <SeoCTA />
+  </NuxtLayout>
+</template>
+
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Virtual Tours Nakuru | #1 360° Property & Business Marketing Kenya',
+  description: 'Dominate the Nakuru property and tourism market with Viewora. Immersive 360° virtual tours for real estate, hotels, and businesses in Nakuru, Kenya.',
+  ogTitle: 'Virtual Tours Nakuru | 360° Property & Tourism Marketing',
+  ogDescription: 'The premium virtual tour platform for Nakuru\'s growing market. Real estate, hotels, and attractions—all in stunning 360°.',
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Viewora Nakuru",
+        "applicationCategory": "PropertyMarketingApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "KES"
+        },
+        "description": "Premium 360° virtual tour software for the Nakuru real estate, hospitality, and tourism market."
+      })
+    }
+  ]
+})
+</script>

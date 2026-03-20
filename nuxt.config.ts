@@ -10,14 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     ['@nuxtjs/sitemap', {
       hostname: 'https://viewora.software',
-      urls: [
-        { loc: '/', priority: 1.0, changefreq: 'weekly' },
-        { loc: '/product', priority: 0.9, changefreq: 'monthly' },
-        { loc: '/pricing', priority: 0.9, changefreq: 'monthly' },
-        { loc: '/about', priority: 0.7, changefreq: 'monthly' },
-        { loc: '/contact', priority: 0.7, changefreq: 'monthly' },
-        { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
-      ],
+      exclude: ['/login', '/register', '/reset-password'],
+      autoLastmod: true,
     }],
   ],
 
@@ -68,6 +62,17 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'Create, host, and share interactive 360° virtual tours in minutes. The professional platform for real estate, hospitality, automotive, and retail spaces.',
         },
+        // Default Open Graph — individual pages override with useSeoMeta
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'Viewora' },
+        { property: 'og:image', content: 'https://viewora.software/og-image.jpg' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { property: 'og:locale', content: 'en_KE' },
+        // Default Twitter Card
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@viewora' },
+        { name: 'twitter:image', content: 'https://viewora.software/og-image.jpg' },
       ],
       link: [
         { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },

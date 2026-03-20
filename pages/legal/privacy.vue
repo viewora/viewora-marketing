@@ -1,51 +1,63 @@
 <template>
-  <div class="section">
-    <div class="container" style="max-width: 800px;">
-      <h1 class="mb-8 text-center">Privacy Policy</h1>
-      
-      <div class="card bg-surface-alt">
-        <p class="text-muted mb-6 text-sm">Last Updated: October 2023</p>
-        
-        <h3 class="mb-4">1. Information We Collect</h3>
-        <p class="mb-6">
-          We collect information you provide directly to us when you create an account, subscribe to our service, or contact support. This includes your name, email address, phone number, and billing address. We also collect the content (images, panoramas) you upload to create virtual tours.
-        </p>
+  <NuxtLayout name="seo-dark">
+    <SeoHero 
+      title="Privacy Policy | Viewora Africa"
+      subtitle="Your trust is our foundation. Learn how we protect your data and the information of your property viewers across the continent."
+      badge="Data Protection"
+    />
 
-        <h3 class="mb-4">2. How We Store and Protect Your Data</h3>
-        <p class="mb-6">
-          We implement commercially reasonable technical and organizational measures to protect your data. Your data is stored securely on industry-standard cloud infrastructure. We limit access to your personal information to authorized employees and contractors who need it to provide our services.
-        </p>
+    <SeoContent>
+      <h2>Our Commitment to Your Privacy</h2>
+      <p>
+        At <strong>Viewora</strong>, we understand that privacy is paramount in the <strong>real estate market in Kenya</strong> and across Africa. This Privacy Policy outlines how we collect, use, and safeguard the information you provide when using the <NuxtLink to="/virtual-tours-kenya" class="highlight">#1 virtual tour software in Kenya</NuxtLink>.
+      </p>
 
-        <h3 class="mb-4">3. Use of Cookies</h3>
-        <p class="mb-6">
-          We use cookies and similar tracking technologies to track activity on our platform and hold certain information. Cookies are used to maintain your session (keep you logged in) and to analyze how our website is used. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
-        </p>
+      <h2>1. Information We Collect</h2>
+      <p>
+        To provide you with the best <span class="highlight">360 property marketing</span> experience, we collect basic registration data and information related to the property tours you create. This allows us to offer tailored insights and support for your <strong>property marketing in Africa</strong>.
+      </p>
 
-        <h3 class="mb-4">4. Third-Party Services</h3>
-        <p class="mb-6">
-          We employ third-party companies and individuals to facilitate our service, provide the service on our behalf, perform service-related services, or assist us in analyzing how our service is used. These third parties have access to your Personal Data only to perform these tasks on our behalf:<br><br>
-          <strong>• Supabase:</strong> Used for secure database storage and authentication.<br>
-          <strong>• Cloudflare:</strong> Used for global content delivery, ensuring your virtual tours load quickly worldwide.<br>
-          <strong>• Paystack:</strong> Used for payment processing.
-        </p>
+      <h2>2. How We Use Your Data</h2>
+      <p>
+        We use your information to operate and improve the Viewora platform, provide customer support, and ensure a smooth experience for your property viewers. We do not sell your personal data to third parties. Our focus is purely on helping you grow with <NuxtLink to="/virtual-tours-kenya" class="highlight">virtual tours in Kenya</NuxtLink>.
+      </p>
 
-        <h3 class="mb-4">5. Payment Data</h3>
-        <p class="mb-6">
-          <strong>Crucially, Viewora does not store or process your sensitive payment information (such as credit card numbers).</strong> All payment processing is handled securely by our payment gateway provider, Paystack. Their privacy policy and terms govern the collection and use of your payment details.
-        </p>
+      <h3>Key Privacy Protections:</h3>
+      <ul>
+        <li><strong>Secure Storage:</strong> Your property data is stored on encrypted, high-performance servers.</li>
+        <li><strong>User Control:</strong> You have full control over the visibility and access of your 360° tours.</li>
+        <li><strong>Compliance:</strong> We strive to comply with relevant data protection regulations across the African markets we serve.</li>
+      </ul>
 
-        <h3 class="mb-4">6. Your Rights Regarding Your Data</h3>
-        <p class="mb-6">
-          You have the right to access, update, or delete the personal information we have on you. If you wish to permanently delete your account and all associated data, you may do so from your account settings or by contacting our support team at support@viewora.software.
-        </p>
-      </div>
-    </div>
-  </div>
+      <blockquote>
+        "We believe privacy is a fundamental right. Building trust in Africa's PropTech sector starts with how we handle your information."
+      </blockquote>
+
+      <h2>3. Third-Party Integrations</h2>
+      <p>
+        Viewora may integrate with trusted third-party services to enhance your marketing (e.g., analytics or social sharing). We ensure these partners adhere to high standards of <strong>data privacy in Africa</strong>.
+      </p>
+
+      <h2>4. Updates to This Policy</h2>
+      <p>
+        As we continue to lead the way in <strong>property technology in Africa</strong>, we may update this policy. We will notify you of any significant changes via the platform or email.
+      </p>
+
+      <h2>Contact Our Privacy Team</h2>
+      <p>
+        If you have any questions about our privacy practices, please contact us at privacy@viewora.software. We are committed to maintaining your trust as the leading provider of <NuxtLink to="/virtual-tours-kenya" class="highlight">360 virtual tours Kenya</NuxtLink>.
+      </p>
+    </SeoContent>
+
+    <SeoCTA />
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Privacy Policy',
-  description: 'Viewora Privacy Policy.'
+  title: 'Privacy Policy | Viewora #1 PropTech Africa',
+  description: 'Learn how Viewora protects your data and property information. Our high standards for privacy and security in the African real estate tech market.',
+  ogTitle: 'Privacy Policy | Viewora Africa Data Protection',
+  ogDescription: 'Your trust and privacy are our top priorities. Professional PropTech standards.',
 })
 </script>

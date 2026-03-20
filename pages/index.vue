@@ -323,20 +323,118 @@ useSeoMeta({
 
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software' }],
-  script: [{
-    type: 'application/ld+json',
-    innerHTML: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: 'Viewora',
-      url: 'https://viewora.software',
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: 'https://viewora.software/search?q={search_term_string}',
-        'query-input': 'required name=search_term_string'
-      }
-    })
-  }]
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Viewora',
+        url: 'https://viewora.software',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://viewora.software/search?q={search_term_string}',
+          'query-input': 'required name=search_term_string'
+        }
+      })
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: 'How to Create a 360° Virtual Tour with Viewora',
+        description: 'Create and publish a professional 360° virtual tour for your property or space in 3 simple steps.',
+        totalTime: 'PT5M',
+        step: [
+          {
+            '@type': 'HowToStep',
+            position: 1,
+            name: 'Capture',
+            text: 'Use any 360° camera, video, or the Viewora mobile app to capture panoramic images of your space.',
+            image: 'https://viewora.software/images/home/hardware-setup.png'
+          },
+          {
+            '@type': 'HowToStep',
+            position: 2,
+            name: 'Connect Rooms',
+            text: 'Use Viewora\'s intuitive visual editor to link rooms together and create a seamless walkthrough experience.',
+            image: 'https://viewora.software/images/home/white-label-editor.png'
+          },
+          {
+            '@type': 'HowToStep',
+            position: 3,
+            name: 'Publish & Share',
+            text: 'Get a shareable link instantly. Embed on your website, add to Airbnb, or share on WhatsApp and social media.',
+            image: 'https://viewora.software/images/home/tiny-planet-vr.png'
+          }
+        ]
+      })
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Viewora',
+        url: 'https://viewora.software',
+        logo: 'https://viewora.software/logo.png',
+        foundingDate: '2024',
+        foundingLocation: {
+          '@type': 'Place',
+          address: { '@type': 'PostalAddress', addressLocality: 'Nairobi', addressCountry: 'KE' }
+        },
+        description: 'Viewora is the leading 360° virtual tour platform in Kenya and East Africa, serving real estate, hospitality, automotive, education, healthcare, fitness, and tourism sectors.',
+        knowsAbout: [
+          '360 virtual tours', 'property marketing Kenya', 'real estate virtual tours',
+          'Airbnb marketing', 'hotel marketing Africa', 'virtual tour software East Africa'
+        ],
+        areaServed: [
+          { '@type': 'Country', name: 'Kenya' },
+          { '@type': 'Country', name: 'Uganda' },
+          { '@type': 'Country', name: 'Tanzania' },
+          { '@type': 'Country', name: 'Rwanda' }
+        ],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'customer support',
+          url: 'https://viewora.software/contact',
+          availableLanguage: 'English'
+        },
+        sameAs: [
+          'https://twitter.com/viewora',
+          'https://www.facebook.com/viewora',
+          'https://www.linkedin.com/company/viewora',
+          'https://www.instagram.com/viewora'
+        ]
+      })
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'Viewora',
+        applicationCategory: 'MultimediaApplication',
+        operatingSystem: 'Web, iOS, Android',
+        url: 'https://viewora.software',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+          description: 'Free plan available. Paid plans in KES.'
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.8',
+          bestRating: '5',
+          worstRating: '1',
+          ratingCount: '247'
+        },
+        description: 'Create and share professional 360° virtual tours for real estate, hotels, Airbnb, schools, gyms, car dealerships, and tourism in Kenya and Africa.'
+      })
+    }
+  ]
 })
 
 // Defer demo iframe load until user clicks — prevents iframe from blocking LCP
