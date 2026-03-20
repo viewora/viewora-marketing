@@ -101,7 +101,7 @@
               <span style="font-size: 2rem; font-weight: 800; font-family: var(--font-display);">KES {{ billingFreq === 'monthly' ? '8,500' : '85,000' }}</span>
               <span class="text-muted text-sm">/{{ billingFreq === 'monthly' ? 'mo' : 'yr' }}</span>
             </div>
-            <NuxtLink to="/register" class="btn btn-secondary btn-block mb-6">Start Free Trial</NuxtLink>
+            <NuxtLink to="https://app.viewora.software/register" class="btn btn-secondary btn-block mb-6">Start Free Trial</NuxtLink>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; flex: 1; margin-bottom: 1.5rem; font-size: 0.9rem;">
               <li style="display: flex; gap: 0.5rem; font-weight: bold;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> 40 Active Tours</li>
               <li style="display: flex; gap: 0.5rem; font-weight: bold; color: var(--primary);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Includes {{ billingFreq === 'monthly' ? '1 photo shoot / mo' : '12 photo shoots / yr' }}</li>
