@@ -78,6 +78,22 @@
       </div>
     </section>
 
+    <!-- Live Demo Section -->
+    <section class="section text-center" style="background-color: var(--paper-dim);">
+      <div class="container">
+        <h2 class="section-title mb-4">Experience it Live</h2>
+        <p class="section-subtitle mb-12" style="max-width: 700px; margin: 0 auto;">
+          Interact with a real virtual tour created using the Viewora platform. This is the quality and fluidity your customers will experience.
+        </p>
+        
+        <div class="card" style="padding: 0; overflow: hidden; max-width: 1000px; margin: 0 auto; border: 1px solid var(--border); box-shadow: var(--shadow-lg);">
+          <div id="MMqLrAhy2oN" style="width: 100%; height: 500px; background: #000;">
+            <!-- CloudPano Embed -->
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="section section-bg text-center">
       <div class="container">
@@ -89,6 +105,25 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const script = document.createElement('script')
+  script.src = 'https://app.cloudpano.com/public/shareScript.js'
+  script.async = true
+  script.type = 'text/javascript'
+  script.dataset.short = 'MMqLrAhy2oN'
+  script.dataset.path = 'tours'
+  script.dataset.isSelfHosted = 'false'
+  script.setAttribute('width', '100%')
+  script.setAttribute('height', '500px')
+  
+  const container = document.getElementById('MMqLrAhy2oN')
+  if (container) {
+    container.appendChild(script)
+  }
+})
+
 useSeoMeta({
   title: 'How Viewora Works | Immersive 360° Space Showcase Software',
   description: 'See how easy it is to upload panoramas, connect rooms, and publish stunning interactive 360° tours for any space without any coding skills.',

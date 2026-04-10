@@ -53,7 +53,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'seo-dark'
+  layout: 'default'
 })
 const faqs = [
   { q: 'How do virtual tours help sell property faster in Kenya?', a: 'Virtual tours pre-qualify buyers by letting them inspect every room remotely. Only serious, interested buyers request physical viewings—reducing wasted site visits by up to 60% and compressing the time-to-sale by 30–50%.' },

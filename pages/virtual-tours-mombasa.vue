@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'seo-dark'
+  layout: 'default'
 })
 useSeoMeta({
   title: 'Virtual Tours Mombasa | Coastal Property Marketing Kenya',

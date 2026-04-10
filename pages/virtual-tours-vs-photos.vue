@@ -123,7 +123,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'seo-dark'
+  layout: 'default'
 })
 
 useSeoMeta({

@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'seo-dark'
+  layout: 'default'
 })
 useSeoMeta({
   title: 'Airbnb Virtual Tours Kenya | #1 Marketing Strategy for Hosts',

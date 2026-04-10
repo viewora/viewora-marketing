@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="hero section-bg">
+    <section class="hero section-bg has-plus-markers">
       <div class="container grid-2" style="align-items: center;">
         <div>
           <div class="badge">↗ The #1 Immersive Showcase Platform</div>

@@ -47,9 +47,6 @@
 </style>
 
 <script setup lang="ts">
-definePageMeta({
-  layout: 'seo-dark'
-})
 
 const route = useRoute()
 

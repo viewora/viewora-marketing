@@ -53,7 +53,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'seo-dark'
+  layout: 'default'
 })
 const faqs = [
   { q: 'How do virtual tours increase direct hotel bookings in Kenya?', a: 'When guests explore your hotel through a virtual tour on your own website, they build an emotional connection with your property before booking. This significantly increases direct booking conversion and reduces dependence on OTAs like Booking.com, saving 15–25% in commission fees.' },

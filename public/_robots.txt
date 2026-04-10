@@ -13,4 +13,47 @@ Disallow: /register
 Disallow: /reset-password
 Disallow: /update-password
 
+# ── AI Crawlers ─────────────────────────────────────────────────────────────
+# Explicitly allow all AI crawlers to read public content and llms.txt
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+Disallow: /app/
+Disallow: /api/
+
+# Google Gemini / Google-Extended
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Common AI / research crawlers
+User-agent: CCBot
+Allow: /
+User-agent: Diffbot
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: ia_archiver
+Allow: /
+
+# Sitemap and LLMs guide
 Sitemap: https://viewora.software/sitemap.xml
+LLMs: https://viewora.software/llms.txt

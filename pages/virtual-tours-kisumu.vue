@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'seo-dark'
+  layout: 'default'
 })
 useSeoMeta({
   title: 'Virtual Tours Kisumu | Western Kenya Property Marketing',

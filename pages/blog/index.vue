@@ -39,9 +39,6 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-  layout: 'seo-dark'
-})
 
 useSeoMeta({
   title: 'Viewora Blog & Resources | #1 Property Marketing Guide Africa',

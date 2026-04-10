@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'seo-dark'
+  layout: 'default'
 })
 useSeoMeta({
   title: '360 Virtual Tour Software Kenya | Create Professional Tours Fast',

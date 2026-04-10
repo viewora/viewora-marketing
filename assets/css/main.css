@@ -434,7 +434,7 @@ header.nav {
 }
 
 /* Intersection plus markers */
-.hero::before {
+.hero.has-plus-markers::before {
   content: '+';
   position: absolute;
   top: 40px;
@@ -447,7 +447,7 @@ header.nav {
   user-select: none;
 }
 
-.hero::after {
+.hero.has-plus-markers::after {
   content: '+';
   position: absolute;
   top: 40px;

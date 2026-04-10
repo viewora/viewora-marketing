@@ -1,148 +1,82 @@
 <template>
   <div>
-    <SeoHero 
-      title="About Viewora: Leading the African PropTech Revolution"
-      subtitle="Discover the mission, vision, and people behind the #1 immersive property marketing platform in Kenya and across Africa."
-      badge="Our Story"
-    />
+    <section class="section section-bg text-center">
+      <div class="container" style="max-width: 800px;">
+        <h1 class="section-title">Bridging the Gap Between Screen and Reality</h1>
+        <p class="section-subtitle" style="margin-bottom: 3rem;">
+          We are Viewora. We believe that finding a home, booking a stay, choosing a venue, or investing in space should be a transparent and immersive experience.
+        </p>
+        
+        <div style="background: var(--paper-dim); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; width: 100%;">
+          <img src="/images/home/dollhouse-commercial.png" loading="lazy" alt="Viewora 3D Virtual Tour" style="max-width: 100%; object-fit: contain; border-radius: 0.375rem; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.08));" />
+        </div>
+      </div>
+    </section>
 
-    <SeoContent>
-      <h2>Our Mission: Empowering Africa’s Property Professionals</h2>
-      <p>
-        At <strong>Viewora</strong>, we believe that world-class technology should be accessible to every entrepreneur on the African continent. Our journey started with a simple observation: the real estate and hospitality markets in Africa were being held back by a lack of trust and transparency. We set out to bridge that gap with the <NuxtLink to="/virtual-tours-kenya" class="highlight">best virtual tour software in Africa</NuxtLink>.
-      </p>
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <div class="mb-12">
+          <h2 class="mb-4">The Market Problem</h2>
+          <p class="text-muted mb-4 text-lg">
+            For decades, the real estate and hospitality industries have relied on static images to sell physical spaces. But photos are fundamentally limited. They can be manipulated with clever angles, wide lenses, and heavy editing—creating a mismatch between expectation and reality.
+          </p>
+          <p class="text-muted text-lg">
+            This lack of transparency leads to wasted physical viewings for real estate agents, disappointed guests for Airbnb hosts, and longer sales cycles for businesses. Buyers, renters, and customers want to know <em>exactly</em> what a space feels like before committing their time or money.
+          </p>
+        </div>
 
-      <h2>1. Born in Kenya, Built for Africa</h2>
-      <p>
-        Viewora was born out of the vibrant tech ecosystem in Nairobi. We've designed our platform from the ground up to solve the specific challenges of the African property market—from high-performance mobile data optimization to intuitive, easy-to-use interfaces that work for every real estate professional.
-      </p>
+        <div class="mb-12">
+          <h2 class="mb-4">Why Viewora Exists</h2>
+          <p class="text-muted mb-4 text-lg">
+            Viewora was founded in Kenya to solve this problem globally. We recognized that while enterprise-grade virtual tour software existed, it was often prohibitively expensive, required specialized hardware, and involved steep learning curves.
+          </p>
+          <p class="text-muted text-lg">
+            We built Viewora to democratize spatial marketing. Our mission is to provide an accessible, powerful, and intuitive SaaS platform that empowers any business—from a single-space Airbnb host to a national dealership or university—to create and share immersive 360° virtual tours.
+          </p>
+        </div>
 
-      <h2>2. Why Trust and Transparency Matter</h2>
-      <p>
-        Trust is the most valuable currency in property. Whether it's an Airbnb host in Mombasa or a developer with a new project in Westlands, our 360° tours provide an unedited, honest view that builds immediate credibility. We are committed to fostering a more transparent and efficient <strong>real estate market in Kenya</strong>. 
-      </p>
-
-      <h3>What We Stand For:</h3>
-      <ul>
-        <li><strong>Innovation with Purpose:</strong> We don't just build features; we build solutions that help African businesses grow.</li>
-        <li><strong>Accessible Professionalism:</strong> World-class immersive tools should be available to everyone, from solo agents to large firms.</li>
-        <li><strong>Local Focus, Global Standards:</strong> We've built an <span class="highlight">#1 virtual tour software in Kenya</span> that meets and exceeds international property tech standards.</li>
-      </ul>
-
-      <blockquote>
-        "Viewora isn't just a tool; it's a movement to bring African property to the world stage. We want every investor in the diaspora to feel as close to their Kenyan home as if they were standing right there."
-      </blockquote>
-
-      <h2>3. Scaling the Future of PropTech in Africa</h2>
-      <p>
-        Our vision is to be the foundation for <strong>property marketing across the African continent</strong>. We are constantly innovating, bringing new features like advanced analytics, lead generation, and interactive floor plans to our community of thousands of agents and hosts. 
-      </p>
-
-      <h2>4. Join Our Growing Community</h2>
-      <p>
-        Join the most innovative property professionals in Kenya who are using Viewora to dominate search results and win more deals. Get started today and see why we are the trusted partner for <NuxtLink to="/virtual-tours-kenya" class="highlight">360 property marketing</NuxtLink> across East Africa.
-      </p>
-    </SeoContent>
-
-    <SeoCTA />
+        <div class="card bg-surface-alt">
+          <h3 class="mb-2">Our Mission</h3>
+          <p class="text-muted">
+            To make virtual walkthroughs the standard for space exploration worldwide, building trust through spatial transparency.
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-  layout: 'seo-dark'
-})
-
 useSeoMeta({
-  title: 'About Viewora | #1 360° Virtual Tour Software for Africa',
-  description: 'Learn about the mission and vision of Viewora, the leading PropTech platform in Kenya. Discover how we are transforming real estate and Airbnb marketing across Africa.',
-  ogTitle: 'About Viewora | Leading the African PropTech Revolution',
-  ogDescription: 'Experience the mission behind the #1 virtual tour software in Africa.',
+  title: 'About Us | Viewora',
+  description: 'Viewora is a Kenyan SaaS company making immersive virtual tours accessible for any business that needs to visually present spaces or environments.',
+  ogTitle: 'About Viewora | Our Story & Mission',
+  ogDescription: 'Founded in Kenya to democratize spatial marketing. Viewora empowers agents, hosts and developers to create immersive 360° virtual tours in minutes.',
+  ogUrl: 'https://viewora.software/about',
+  ogImage: '/og-image.jpg',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'About Viewora',
+  twitterDescription: 'The story behind the #1 immersive space showcase platform built in Kenya for the world.',
 })
 
 useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Viewora",
-        "url": "https://viewora.software",
-        "logo": "https://viewora.software/logo.png",
-        "foundingDate": "2024",
-        "foundingLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Nairobi",
-            "addressCountry": "KE"
-          }
-        },
-        "description": "Viewora is the leading 360° virtual tour platform in Kenya and East Africa. We empower real estate agents, Airbnb hosts, hotels, schools, gyms, hospitals, car dealerships, and tourism operators to market their spaces with immersive technology.",
-        "knowsAbout": [
-          "360 virtual tours", "property marketing Kenya", "real estate virtual tours Africa",
-          "Airbnb virtual tour marketing", "hotel virtual tours Kenya",
-          "virtual tour software East Africa", "PropTech Africa"
-        ],
-        "areaServed": [
-          { "@type": "Country", "name": "Kenya" },
-          { "@type": "Country", "name": "Uganda" },
-          { "@type": "Country", "name": "Tanzania" },
-          { "@type": "Country", "name": "Rwanda" },
-          { "@type": "Country", "name": "Nigeria" },
-          { "@type": "Country", "name": "South Africa" }
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer support",
-          "url": "https://viewora.software/contact",
-          "availableLanguage": "English"
-        },
-        "sameAs": [
-          "https://twitter.com/viewora",
-          "https://www.facebook.com/viewora",
-          "https://www.linkedin.com/company/viewora",
-          "https://www.instagram.com/viewora"
-        ]
-      })
-    },
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Viewora",
-        "description": "Kenya's leading 360° virtual tour platform for real estate, hospitality, automotive, education, healthcare, and tourism.",
-        "url": "https://viewora.software",
-        "logo": "https://viewora.software/logo.png",
-        "image": "https://viewora.software/og-image.jpg",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Nairobi",
-          "addressCountry": "KE"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "-1.2921",
-          "longitude": "36.8219"
-        },
-        "priceRange": "KES 0 - KES 18,000/month",
-        "currenciesAccepted": "KES",
-        "paymentAccepted": "M-Pesa, Visa, Mastercard",
-        "openingHours": "Mo-Fr 08:00-18:00",
-        "serviceArea": {
-          "@type": "GeoCircle",
-          "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "-1.2921", "longitude": "36.8219" },
-          "geoRadius": "5000000"
-        },
-        "sameAs": [
-          "https://twitter.com/viewora",
-          "https://www.facebook.com/viewora",
-          "https://www.linkedin.com/company/viewora"
-        ]
-      })
-    }
-  ]
+  link: [{ rel: 'canonical', href: 'https://viewora.software/about' }],
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'About Viewora',
+      url: 'https://viewora.software/about',
+      description: 'Viewora is a SaaS platform for creating interactive 360° virtual tours for real estate, hospitality, automotive, and retail spaces.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Viewora',
+        url: 'https://viewora.software',
+        foundingLocation: 'Nairobi, Kenya',
+        foundingDate: '2024',
+      }
+    })
+  }]
 })
 </script>
