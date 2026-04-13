@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  compatibilityDate: '2026-04-13',
   css: ['@/assets/css/main.css'],
 
   modules: [

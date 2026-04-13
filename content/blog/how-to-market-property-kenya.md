@@ -1,5 +1,5 @@
 ---
-title: How to Market Property in Kenya: The Definitive Guide
+title: How to Market Property in Kenya- The Definitive Guide
 description: From digital listings to immersive 360° tours, learn how to reach more buyers and sell properties faster in the competitive Kenyan real estate market.
 category: Real Estate
 author: The Viewora Team

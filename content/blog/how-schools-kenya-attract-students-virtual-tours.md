@@ -4,7 +4,7 @@ description: The complete admissions marketing guide for Kenyan schools. How 360
 category: Education
 author: The Viewora Team
 date: '2026-03-20'
-image: https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80
+image: https://upload.wikimedia.org/wikipedia/commons/9/9a/JKUAT-Main-Campus-Gate-A.jpg
 ---
 
 Kenya's education sector is more competitive than ever. Schools that are winning enrollment battles in 2026 are those that have created a permanent, immersive digital open day.

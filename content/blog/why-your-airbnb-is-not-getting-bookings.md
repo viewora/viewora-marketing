@@ -4,7 +4,7 @@ description: Troubleshooting the most common mistakes Kenyan hosts make and how 
 category: Airbnb
 author: The Viewora Team
 date: '2026-03-20'
-image: https://images.unsplash.com/photo-1549443545-ad42f45cc182?w=1200&q=80
+image: https://helios-i.mashable.com/imagery/articles/01ZHF8z5AUOw4IyIziaeGo6/hero-image.fill.size_1248x702.v1625518031.png
 ---
 
 Is your Nairobi apartment sitting empty? Are you getting lots of "likes" but no serious enquiries for your Mombasa villa? In the current market, just being on the platform is not enough. To dominate [Airbnb marketing in Kenya](https://viewora.software/virtual-tours-kenya), you need to identify and fix the critical leaks in your booking funnel.
