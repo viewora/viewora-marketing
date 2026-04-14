@@ -4,7 +4,7 @@ description: Discover how to leverage immersive 360° technology to sell your Ke
 category: Global Investment
 author: The Viewora Team
 date: '2026-03-20'
-image: https://images.unsplash.com/photo-1541462608141-ad4d719cf68e?w=1200&q=80
+image: https://www.wka.co.ke/wp-content/uploads/2024/11/Due-Diligence-When-Buying-Property-in-Kenya.png
 ---
 
 The Kenyan real estate market is no longer limited by geographic borders. With the rise of digital technology, a property in Nairobi or Diani is now accessible to an investor in New York, London, or Dubai. To successfully reach these high-value buyers, you need a [360 property marketing](https://viewora.software/virtual-tours-kenya) strategy that provides absolute trust.
