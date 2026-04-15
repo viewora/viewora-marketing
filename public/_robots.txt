@@ -56,4 +56,4 @@ Allow: /
 
 # Sitemap and LLMs guide
 Sitemap: https://viewora.software/sitemap.xml
-LLMs: https://viewora.software/llms.txt
+

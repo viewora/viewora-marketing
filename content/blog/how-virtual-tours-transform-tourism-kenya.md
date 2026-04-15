@@ -4,7 +4,7 @@ description: Kenya's tourism industry is being revolutionized by 360° immersive
 category: Tourism
 author: The Viewora Team
 date: '2026-03-20'
-image: https://images.unsplash.com/photo-1516422213484-26da23ec04ae?w=1200&q=80
+image: https://media.licdn.com/dms/image/v2/D5612AQFBgylC48eaHQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1708446045749?e=2147483647&v=beta&t=ZdNI9lWRAAXN1BARbhYxDUwAwxo14edUaJox02U6v8E
 ---
 
 Kenya's tourism industry is one of the country's most important economic pillars. After the disruption of recent years, the sector is recovering and growing—but the competitive landscape for attracting international visitors has never been tougher.
