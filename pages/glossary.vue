@@ -6,43 +6,39 @@
       badge="Reference Guide"
     />
 
-    <div class="py-16 bg-neutral-950">
-      <div class="container">
-        <div class="max-w-4xl mx-auto">
+    <section class="section">
+      <div class="container" style="max-width: 860px;">
 
-          <!-- Alphabet quick nav -->
-          <div class="flex flex-wrap gap-2 mb-12">
+        <!-- Alphabet quick nav -->
+        <div class="card" style="padding: 1.25rem 1.75rem; margin-bottom: 3rem;">
+          <div class="alpha-nav">
             <a
               v-for="letter in alphabet"
               :key="letter"
               :href="`#${letter}`"
-              class="w-9 h-9 flex items-center justify-center rounded-lg border border-white/10 text-neutral-400 hover:border-emerald-500/50 hover:text-emerald-400 text-sm font-mono font-bold transition-colors"
+              class="alpha-link"
             >{{ letter }}</a>
           </div>
-
-          <!-- Terms by letter -->
-          <div class="space-y-12">
-            <section v-for="group in termGroups" :key="group.letter" :id="group.letter">
-              <h2 class="text-3xl font-bold text-emerald-500 mb-6 font-mono">{{ group.letter }}</h2>
-              <div class="space-y-6">
-                <div v-for="term in group.terms" :key="term.term" class="border-l-2 border-white/10 pl-6">
-                  <h3 class="text-white font-semibold text-lg mb-1">{{ term.term }}</h3>
-                  <p class="text-neutral-400 leading-relaxed">{{ term.def }}</p>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          <!-- CTA -->
-          <div class="mt-16 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-8 text-center">
-            <h3 class="text-xl font-bold text-white mb-2">Ready to create your first virtual tour?</h3>
-            <p class="text-neutral-400 mb-6">Now that you know the terms, experience the technology. Free to start—no credit card required.</p>
-            <NuxtLink to="https://app.viewora.software/register" class="btn btn-primary">Start Free →</NuxtLink>
-          </div>
-
         </div>
+
+        <!-- Terms by letter -->
+        <div v-for="group in termGroups" :key="group.letter" :id="group.letter" style="margin-bottom: 3rem;">
+          <h2 class="glossary-letter">{{ group.letter }}</h2>
+          <div class="card" style="padding: 0;">
+            <div
+              v-for="(term, i) in group.terms"
+              :key="term.term"
+              class="glossary-term"
+              :style="i < group.terms.length - 1 ? 'border-bottom: 1px solid var(--border-color);' : ''"
+            >
+              <h3 class="glossary-term-title">{{ term.term }}</h3>
+              <p class="glossary-term-def">{{ term.def }}</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
 
     <SeoCTA />
   </div>
@@ -201,3 +197,61 @@ const termGroups = [
   },
 ]
 </script>
+
+<style scoped>
+.alpha-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.alpha-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.alpha-link:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--accent-dim);
+}
+
+.glossary-letter {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.glossary-term {
+  padding: 1.5rem 1.75rem;
+}
+
+.glossary-term-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.375rem;
+}
+
+.glossary-term-def {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--slate);
+  margin: 0;
+}
+</style>
