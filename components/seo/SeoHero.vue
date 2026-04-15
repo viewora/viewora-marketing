@@ -47,15 +47,13 @@ defineProps<{
   line-height: 1.1;
   letter-spacing: -0.04em;
   margin-bottom: 1.5rem;
-  background: linear-gradient(to bottom right, #ffffff 50%, #9ca3af);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-primary);
   animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: #9ca3af;
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 3rem;
   max-width: 600px;
