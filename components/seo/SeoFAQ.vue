@@ -1,34 +1,14 @@
 <template>
-  <section class="seo-faq py-20 bg-neutral-950 border-t border-white/5">
-    <div class="container">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold tracking-tight text-white mb-3">
-          {{ heading }}
-        </h2>
-        <p v-if="subheading" class="text-neutral-400 mb-10 text-lg">{{ subheading }}</p>
+  <section class="seo-faq-section">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="seo-faq-heading">{{ heading }}</h2>
+      <p v-if="subheading" class="seo-faq-subheading">{{ subheading }}</p>
 
-        <div class="space-y-3">
-          <details
-            v-for="(item, i) in faqs"
-            :key="i"
-            class="group rounded-xl border border-white/8 bg-neutral-900/50 open:border-emerald-500/30 transition-all"
-          >
-            <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none select-none">
-              <span class="text-white font-medium text-base leading-snug">{{ item.q }}</span>
-              <svg
-                class="shrink-0 w-5 h-5 text-neutral-400 group-open:rotate-45 transition-transform duration-200"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2"
-              >
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <line x1="5" y1="12" x2="19" y2="12" />
-              </svg>
-            </summary>
-            <div class="px-6 pb-5 text-neutral-400 text-base leading-relaxed border-t border-white/5 pt-4">
-              {{ item.a }}
-            </div>
-          </details>
-        </div>
+      <div class="seo-faq-list">
+        <details v-for="(item, i) in faqs" :key="i" class="faq-item">
+          <summary class="faq-summary">{{ item.q }}</summary>
+          <div class="faq-answer" v-html="item.a" />
+        </details>
       </div>
     </div>
   </section>
@@ -55,7 +35,7 @@ useHead({
           name: f.q,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: f.a
+            text: f.a.replace(/<[^>]+>/g, '')
           }
         }))
       })
@@ -65,5 +45,83 @@ useHead({
 </script>
 
 <style scoped>
-details summary::-webkit-details-marker { display: none; }
+.seo-faq-section {
+  padding: 4rem 0;
+}
+
+.seo-faq-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.seo-faq-subheading {
+  font-size: 0.9375rem;
+  color: var(--slate);
+  margin-bottom: 1.5rem;
+}
+
+.seo-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--paper);
+  box-shadow: var(--shadow-float);
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.faq-item:hover {
+  box-shadow: var(--shadow-lift);
+  border-color: var(--border-sharp);
+  transform: translateY(-2px);
+}
+
+.faq-item[open] {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lift);
+}
+
+.faq-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--ink);
+  list-style: none;
+  user-select: none;
+}
+
+.faq-summary::-webkit-details-marker { display: none; }
+
+.faq-summary::after {
+  content: '+';
+  font-size: 1.25rem;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-left: 1rem;
+  transition: transform 0.2s;
+}
+
+.faq-item[open] .faq-summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 1rem 1.5rem 1.25rem;
+  color: var(--slate);
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+}
 </style>

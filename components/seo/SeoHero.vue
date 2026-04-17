@@ -76,8 +76,8 @@ defineProps<{
   display: inline-flex;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
-  background: rgba(0, 220, 130, 0.1);
-  border: 1px solid rgba(0, 220, 130, 0.2);
+  background: rgba(0, 220, 130, 0.18);
+  border: 1px solid rgba(0, 220, 130, 0.4);
   color: #00dc82;
   font-size: 0.75rem;
   font-weight: 600;

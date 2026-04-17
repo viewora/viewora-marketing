@@ -78,13 +78,12 @@ const general = [
 ]
 
 const pricing = [
-  { q: 'How much does Viewora cost in Kenya?', a: 'Viewora has a free plan that allows you to create and publish tours at no cost. Paid plans start at KES 1,500/month and go up to KES 18,000/month for enterprise. All plans are billed in Kenyan Shillings via Paystack. Visit our <a href="/pricing" style="color:#00dc82">pricing page</a> for current rates.' },
-  { q: 'Is there a free trial?', a: 'Viewora offers a permanent free plan — not just a trial. You can create tours, publish them, and share them at no cost. The free plan has a limit on the number of active spaces. Upgrade when you need more capacity.' },
+  { q: 'How much does Viewora cost in Kenya?', a: 'Plans start at KES 1,500/month and go up to KES 18,000/month for enterprise. All plans are billed in Kenyan Shillings via Paystack. Visit our <a href="/pricing" style="color:#00dc82">pricing page</a> for current rates.' },
   { q: 'Can I pay monthly or yearly?', a: 'Yes. Viewora offers both monthly and yearly billing. Yearly plans include approximately 20% savings compared to monthly billing. Payments are processed securely by Paystack in KES.' },
   { q: 'What payment methods are accepted?', a: 'Viewora accepts M-Pesa, Visa, Mastercard, and other cards through Paystack. M-Pesa support makes it easy for Kenyan businesses to subscribe and pay locally without the need for a credit card.' },
   { q: 'Can I cancel my subscription anytime?', a: 'Yes. Viewora subscriptions can be cancelled at any time from your billing settings. You will retain access to your plan features until the end of your current billing period. No long-term contracts or cancellation fees.' },
-  { q: 'How many active tours can I have per plan?', a: 'The number of active tours depends on your plan: Free and Basic allow 2 active tours, Plus allows 15, Pro allows 40, and Elite allows 120. You can also purchase additional tour slots as an add-on on any paid plan.' },
-  { q: 'How much storage does each plan include?', a: 'Storage per plan: Free includes 500 MB, Basic includes 2 GB, Plus includes 8 GB, Pro includes 20 GB with priority hosting, and Elite includes 50 GB. Storage covers all your uploaded panoramic images across active and archived tours.' },
+  { q: 'How many active tours can I have per plan?', a: 'The number of active tours depends on your plan: Basic allows 2 active tours, Plus allows 15, Pro allows 40, and Elite allows 120. You can also purchase additional tour slots as an add-on on any paid plan.' },
+  { q: 'How much storage does each plan include?', a: 'Storage per plan: Basic includes 2 GB, Plus includes 8 GB, Pro includes 20 GB with priority hosting, and Elite includes 50 GB. Storage covers all your uploaded panoramic images across active and archived tours.' },
 ]
 
 const technical = [

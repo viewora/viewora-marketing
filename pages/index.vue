@@ -81,10 +81,6 @@
             <div style="font-size: 2.25rem; font-weight: 900; font-family: var(--font-display); letter-spacing: -0.04em;">4.8/5</div>
             <div style="font-size: 0.7rem; opacity: 0.6; margin-top: 0.25rem; font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase;">Rating</div>
           </div>
-          <div style="color: var(--paper);">
-            <div style="font-size: 2.25rem; font-weight: 900; font-family: var(--font-display); letter-spacing: -0.04em;">Free</div>
-            <div style="font-size: 0.7rem; opacity: 0.6; margin-top: 0.25rem; font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase;">To Start</div>
-          </div>
         </div>
       </div>
     </section>
