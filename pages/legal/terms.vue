@@ -64,4 +64,18 @@ useSeoMeta({
   ogTitle: 'Terms of Service | Viewora Africa Service Agreement',
   ogDescription: 'Upholding the highest standards in African property technology.',
 })
+
+useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/legal/terms' }],
+  script: [{
+    type: 'application/ld+json',
+    children: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Terms of Service',
+      url: 'https://viewora.software/legal/terms',
+      publisher: { '@type': 'Organization', name: 'Viewora', url: 'https://viewora.software' }
+    })
+  }]
+})
 </script>

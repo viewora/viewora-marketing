@@ -47,15 +47,13 @@ defineProps<{
   line-height: 1.1;
   letter-spacing: -0.04em;
   margin-bottom: 1.5rem;
-  background: linear-gradient(to bottom right, #ffffff 50%, #9ca3af);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-primary);
   animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: #9ca3af;
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 3rem;
   max-width: 600px;
@@ -78,8 +76,8 @@ defineProps<{
   display: inline-flex;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
-  background: rgba(0, 220, 130, 0.1);
-  border: 1px solid rgba(0, 220, 130, 0.2);
+  background: rgba(0, 220, 130, 0.18);
+  border: 1px solid rgba(0, 220, 130, 0.4);
   color: #00dc82;
   font-size: 0.75rem;
   font-weight: 600;

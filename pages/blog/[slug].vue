@@ -1,7 +1,7 @@
 <template>
   <div>
     <main class="section">
-      <div class="container" style="max-width: 800px; margin: 0 auto;">
+      <div class="container card" style="max-width: 800px; margin: 0 auto; padding: 2.5rem;">
         <ContentDoc v-slot="{ doc }">
           <article>
             <div class="mb-8 text-center">

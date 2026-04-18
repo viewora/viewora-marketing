@@ -64,4 +64,18 @@ useSeoMeta({
   ogTitle: 'Privacy Policy | Viewora Africa Data Protection',
   ogDescription: 'Your trust and privacy are our top priorities. Professional PropTech standards.',
 })
+
+useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/legal/privacy' }],
+  script: [{
+    type: 'application/ld+json',
+    children: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Privacy Policy',
+      url: 'https://viewora.software/legal/privacy',
+      publisher: { '@type': 'Organization', name: 'Viewora', url: 'https://viewora.software' }
+    })
+  }]
+})
 </script>

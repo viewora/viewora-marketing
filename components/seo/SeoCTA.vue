@@ -1,20 +1,19 @@
 <template>
-  <section class="seo-cta py-24 bg-neutral-950 border-y border-white/10 relative overflow-hidden">
-    <div class="container relative z-10">
-      <div class="cta-card p-12 md:p-20 rounded-3xl bg-gradient-to-br from-neutral-900 to-black border border-white/5 text-center shadow-2xl">
-        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-          Ready to dominate the <span class="text-emerald-500">Kenyan</span> market?
+  <section class="seo-cta">
+    <div class="container">
+      <div class="cta-inner text-center">
+        <span class="badge" style="margin-bottom: 1.5rem;">Built for Africa</span>
+        <h2 class="cta-title">
+          Ready to dominate the <span style="color: var(--primary);">Kenyan</span> market?
         </h2>
-        <p class="text-xl text-neutral-400 mb-10 max-w-2xl mx-auto">
+        <p class="cta-subtitle">
           Join the elite Airbnb hosts and real estate agencies in Africa using Viewora to close more deals with immersive 360° technology.
         </p>
-        <div class="flex flex-col md:flex-row gap-4 justify-center">
-          <NuxtLink to="/register" class="btn btn-primary btn-lg px-12">Start Your Free Tour</NuxtLink>
-          <NuxtLink to="/contact" class="btn btn-outline btn-lg px-12">Book a Demo</NuxtLink>
+        <div class="cta-actions">
+          <NuxtLink to="/register" class="btn btn-primary btn-lg">Start Your Free Tour</NuxtLink>
+          <NuxtLink to="/contact" class="btn btn-outline-light btn-lg">Book a Demo</NuxtLink>
         </div>
-        <p class="mt-8 text-sm text-neutral-500 font-mono tracking-widest uppercase">
-          Built for Africa • Used by Leaders • Instant Results
-        </p>
+        <p class="cta-footnote">Instant Results • No credit card required</p>
       </div>
     </div>
     <div class="glow-sphere"></div>
@@ -23,12 +22,73 @@
 
 <style scoped>
 .seo-cta {
-  background: #000000;
+  position: relative;
+  background: var(--ink);
+  padding: 6rem 0;
+  overflow: hidden;
 }
 
-.cta-card {
+.cta-inner {
   position: relative;
-  overflow: hidden;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--paper);
+  margin-bottom: 1.25rem;
+}
+
+.cta-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--slate-light);
+  margin-bottom: 2.5rem;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--paper);
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cta-footnote {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin: 0;
 }
 
 .glow-sphere {
@@ -40,5 +100,6 @@
   height: 600px;
   background: radial-gradient(circle, rgba(0, 220, 130, 0.08) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 1;
 }
 </style>

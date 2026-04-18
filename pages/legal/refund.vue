@@ -37,7 +37,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Refund Policy',
-  description: 'Viewora Refund and Cancellation Policy.'
+  title: 'Refund & Cancellation Policy',
+  description: 'Viewora\'s refund and cancellation policy. Subscriptions can be cancelled anytime. Learn how billing works and what to expect when you cancel or request a refund.'
 })
 </script>

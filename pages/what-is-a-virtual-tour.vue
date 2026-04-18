@@ -86,7 +86,7 @@ definePageMeta({
 
 useSeoMeta({
   title: 'What Is a Virtual Tour? Complete Guide 2026 | Viewora Kenya',
-  description: 'Learn everything about virtual tours: what they are, how they work, and how they are used in real estate, hospitality, education, and tourism across Kenya and Africa. Complete 2026 guide.',
+  description: 'Learn everything about virtual tours: what they are, how they work, and how businesses across Kenya and Africa use them in real estate, hospitality, and tourism.',
   ogTitle: 'What Is a Virtual Tour? Complete Guide 2026',
   ogDescription: 'The definitive guide to 360° virtual tours — how they work, what they cost, and how to use them in Kenya.',
 })

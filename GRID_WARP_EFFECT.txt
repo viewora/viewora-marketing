@@ -1,0 +1,419 @@
+GRID WARP EFFECT — Full Implementation Documentation
+=====================================================
+Feature: Interactive gravity-well warp on the homepage background grid
+Status:  Documented but NOT active (reverted — ready to re-implement)
+Files:   components/GridWarp.client.vue  (create)
+         pages/index.vue                 (two edits)
+         assets/css/main.css             (one edit)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHAT IT DOES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+When the user moves their mouse over the homepage, the background grid
+(the 40×40px square pattern that covers the whole site) appears to warp
+toward the cursor — like a rubber sheet being pressed from behind. Grid
+cells near the cursor shrink inward; cells far away stay static. The
+effect fades cleanly at a configurable radius. When the mouse leaves the
+window, the grid snaps back to normal.
+
+The effect is implemented as a full-viewport HTML5 Canvas element that
+REPLACES the CSS background grid on the homepage only. The canvas draws
+an identical grid on every animation frame, but with each grid
+intersection point mathematically displaced toward the cursor before
+drawing. Lines between intersection points are straight segments (not
+smooth curves), giving a clean geometric "mesh deformation" look rather
+than wavy arcs.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHY CANVAS INSTEAD OF PURE CSS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The site's background grid is a CSS `background-image` made of two
+`linear-gradient` layers. CSS gradients cannot be warped/distorted
+dynamically — they are static. To achieve a real-time deformation we
+need to draw the grid ourselves using the Canvas 2D API, which allows
+us to recompute and redraw each line on every mouse-move frame.
+
+Since the CSS grid and canvas grid would overlap (double grid), the CSS
+grid must be hidden on the homepage while the canvas is active. This is
+done with a body class `no-css-grid` that nulls the background-image.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILE 1 — components/GridWarp.client.vue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The `.client.vue` suffix is a Nuxt convention — it tells Nuxt to skip
+server-side rendering for this component entirely. This is required
+because Canvas and window/mouse APIs don't exist on the server.
+
+── CONSTANTS ──────────────────────────────────────────────────────────
+
+  const GRID     = 40    // Cell size in px. Must match body background-size (40px).
+  const RADIUS   = 240   // How far from the cursor the warp effect reaches, in px.
+                         // Beyond this distance, grid points don't move at all.
+  const STRENGTH = 70    // Maximum pixel displacement at the cursor's exact centre.
+                         // Higher = more dramatic pull. Try 40–100.
+
+── STATE ──────────────────────────────────────────────────────────────
+
+  let mouseX = -9999     // Current cursor X in viewport px (clientX).
+  let mouseY = -9999     // Current cursor Y in viewport px (clientY).
+                         // Initialised to -9999 so the warp function sees them
+                         // as "off screen" and applies zero displacement on load.
+
+  let needsRedraw = false  // rAF guard — prevents scheduling multiple animation
+                            // frames for a single mouse-move burst.
+
+── WARP FUNCTION ──────────────────────────────────────────────────────
+
+  function warp(gx, gy) → { x, y }
+
+  Takes the ORIGINAL coordinates of a grid intersection point (gx, gy)
+  and returns the DISPLACED coordinates after applying the warp.
+
+  Step-by-step:
+    1. dx = mouseX - gx          // vector from grid point to cursor
+       dy = mouseY - gy
+    2. dist = √(dx²+dy²)         // Euclidean distance from cursor to grid point
+    3. if dist >= RADIUS → return { x: gx, y: gy }
+          // Point is outside influence radius → no displacement
+    4. t = 1 - dist / RADIUS
+          // Normalised proximity: 0 at the radius edge, 1 at the cursor
+    5. mag = STRENGTH × t³       // Cubic falloff
+          // t³ (not t or t²) gives:
+          //   — Very small effect far from cursor (t near 0 → t³ near 0)
+          //   — Very strong effect close to cursor (t near 1 → t³ near 1)
+          //   — A clean, smooth transition with no visible "ring" at the edge
+    6. return {
+         x: gx + (dx/dist) × mag,   // move point toward cursor by mag pixels
+         y: gy + (dy/dist) × mag
+       }
+          // (dx/dist, dy/dist) is the unit vector pointing from grid point
+          // toward the cursor. Multiplying by mag gives the displacement vector.
+
+── DRAW FUNCTION ──────────────────────────────────────────────────────
+
+  function draw()
+
+  Called once per requestAnimationFrame. Redraws the entire canvas.
+
+  1. ctx.fillRect(0,0,w,h) with white (#ffffff)
+        Paints the canvas white first — this is the page background.
+        Since the canvas sits above the body background (which now has
+        no CSS grid), this white fill IS the page background.
+
+  2. ctx.strokeStyle = '#e2e2e2'  (same as CSS variable --border)
+        Sets the grid line colour to match the original CSS grid.
+
+  3. Compute cols = ceil(w/GRID)+1, rows = ceil(h/GRID)+1
+        How many grid lines we need to cover the full viewport.
+        The +1 ensures lines extend beyond the right/bottom edge.
+
+  4. VERTICAL LINES — outer loop over columns (c = 0..cols):
+        gx = c × GRID  (the original x position of this vertical line)
+        Inner loop over rows (r = 0..rows):
+          p = warp(gx, r × GRID)  (warp the intersection point)
+          Draw a line segment: moveTo on r=0, lineTo for subsequent r.
+        One ctx.stroke() per vertical line.
+
+  5. HORIZONTAL LINES — same logic transposed:
+        gy = r × GRID, inner loop over cols.
+        warp(c × GRID, gy) for each intersection.
+
+  KEY INSIGHT — why straight segments, not curves:
+    Each line is drawn as a POLYLINE through the warped intersection
+    points with STRAIGHT line segments between them. This means:
+    — Each segment is geometrically straight
+    — But the direction changes at each intersection (kink/facet)
+    — Result: clean geometric mesh deformation, no smooth arcs
+    The earlier version (v1) sampled 4px intervals along each line and
+    used lineTo for every sample — this created smooth curves which
+    produced the "bending circle" / "spider web" visual artifact.
+    The polyline-through-intersections approach eliminates this.
+
+── SCHEDULING (rAF GUARD) ─────────────────────────────────────────────
+
+  function schedule()
+    if (needsRedraw) return          // already a frame queued — skip
+    needsRedraw = true
+    raf = requestAnimationFrame(draw)
+
+  Mouse events fire at 60–120Hz on modern devices. Without the guard,
+  each mousemove would queue a new animation frame, causing unnecessary
+  work. The guard ensures at most one pending frame at a time.
+
+── EVENT LISTENERS ────────────────────────────────────────────────────
+
+  onMouseMove   Updates mouseX/mouseY from e.clientX/clientY (viewport
+                coordinates, not page coordinates — correct because the
+                canvas is position:fixed and matches the viewport).
+                Calls schedule() to queue a redraw.
+
+  onMouseLeave  Resets mouseX/mouseY to -9999, queues redraw.
+                The warp() function returns unmodified coordinates for
+                any point when mouseX=-9999, so grid snaps back to normal.
+
+  resize        On window resize, updates canvas.width/height to match
+                the new viewport and immediately redraws.
+                Note: setting canvas.width clears the canvas context state,
+                which is why draw() must be called again after resize.
+
+  { passive: true } on mousemove and resize tells the browser these
+  listeners never call preventDefault(), allowing the browser to
+  optimise scroll and input handling.
+
+── CLEANUP ────────────────────────────────────────────────────────────
+
+  onUnmounted removes all event listeners and cancels any pending rAF.
+  This prevents memory leaks when navigating away from the homepage.
+
+── CSS ────────────────────────────────────────────────────────────────
+
+  .grid-warp-canvas:
+    position: fixed        — stays in place during scroll, matching the
+                             CSS background-attachment:fixed behaviour
+    top/left: 0            — anchored to viewport corner
+    width/height: 100vw/vh — visual size (actual pixel size set via JS)
+    pointer-events: none   — all mouse clicks, scrolls, hovers pass
+                             through to the page content below
+    z-index: 0             — above body background, below page content
+                             (content has its own white backgrounds)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILE 2 — pages/index.vue  (two edits)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EDIT 1 — Template: add <GridWarp /> as first child of the root <div>
+
+  <template>
+    <div>
+      <GridWarp />          ← ADD THIS LINE
+      <!-- Hero Section -->
+      ...
+
+  Nuxt auto-imports components — no import statement needed.
+  The .client.vue suffix ensures it is never rendered on the server.
+
+EDIT 2 — Script: add bodyAttrs to useHead()
+
+  useHead({
+    bodyAttrs: { class: 'no-css-grid' },   ← ADD THIS LINE
+    link: [{ rel: 'canonical', ... }],
+    ...
+  })
+
+  bodyAttrs adds a class to the <body> tag only while the homepage is
+  the active route. When the user navigates to /blog, /pricing, etc.,
+  Nuxt automatically removes the class — the CSS grid reappears on
+  other pages. No cleanup code needed.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILE 3 — assets/css/main.css  (one edit)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Add immediately after the body { ... } block:
+
+  body.no-css-grid {
+    background-image: none;
+  }
+
+  This overrides the two-gradient background-image that creates the
+  CSS grid. When the canvas is active (homepage), this class is present
+  and the CSS grid disappears. The canvas draws an identical grid in its
+  place. On all other pages, the class is absent and the CSS grid shows
+  normally — no change to the rest of the site.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HOW TO RE-ENABLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Create components/GridWarp.client.vue with the full code below.
+2. In pages/index.vue template, add <GridWarp /> as first child of root div.
+3. In pages/index.vue script, add bodyAttrs: { class: 'no-css-grid' }
+   inside the existing useHead({ ... }) call.
+4. In assets/css/main.css, add body.no-css-grid { background-image: none; }
+   immediately after the body { ... } block.
+
+To extend the effect to other pages: repeat steps 2–3 in those page files.
+The GridWarp component itself needs no changes.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TUNING GUIDE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STRENGTH (default 70)
+  Controls how far grid intersection points are pulled toward the cursor
+  at the point of maximum effect (directly under the cursor).
+  Lower (30–50): subtle, gentle compression
+  Higher (80–120): dramatic, obvious deformation
+  Very high (150+): intersections converge and lines overlap — too much
+
+RADIUS (default 240)
+  The pixel radius of the warp influence zone.
+  Lower (120–160): tight, concentrated effect
+  Higher (300–400): wide, gentle spread
+  Affects perceived "size" of the warp area.
+
+FALLOFF EXPONENT (currently t³)
+  Changing t*t*t to t*t (quadratic) makes the edge softer and the
+  centre less extreme. Using t (linear) makes the effect more uniform
+  across the zone — less "sink", more "tilt". Cubic (t³) gives the
+  cleanest sharp-centre / clean-edge balance.
+
+GRID (default 40)
+  Must always match the CSS variable body background-size (40px 40px).
+  Changing one without the other causes misalignment between the
+  canvas grid and the CSS grid on other pages.
+
+LINE COLOUR (#e2e2e2)
+  Matches --border CSS variable. If the design system colour changes,
+  update ctx.strokeStyle in the draw() function to match.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPLETE COMPONENT CODE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+─── components/GridWarp.client.vue ───────────────────────────────────
+
+<template>
+  <canvas ref="canvas" class="grid-warp-canvas" />
+</template>
+
+<script setup lang="ts">
+const canvas = ref<HTMLCanvasElement | null>(null)
+let ctx: CanvasRenderingContext2D | null = null
+let raf: number | null = null
+let needsRedraw = false
+
+const GRID     = 40
+const RADIUS   = 240
+const STRENGTH = 70
+
+let mouseX = -9999
+let mouseY = -9999
+
+function warp(gx: number, gy: number): { x: number; y: number } {
+  const dx = mouseX - gx
+  const dy = mouseY - gy
+  const dist = Math.sqrt(dx * dx + dy * dy)
+  if (dist >= RADIUS || dist < 0.5) return { x: gx, y: gy }
+  const t = 1 - dist / RADIUS
+  const mag = STRENGTH * t * t * t
+  return {
+    x: gx + (dx / dist) * mag,
+    y: gy + (dy / dist) * mag,
+  }
+}
+
+function draw() {
+  needsRedraw = false
+  if (!ctx || !canvas.value) return
+  const w = canvas.value.width
+  const h = canvas.value.height
+
+  ctx.fillStyle = '#ffffff'
+  ctx.fillRect(0, 0, w, h)
+  ctx.strokeStyle = '#e2e2e2'
+  ctx.lineWidth = 1
+
+  const cols = Math.ceil(w / GRID) + 1
+  const rows = Math.ceil(h / GRID) + 1
+
+  for (let c = 0; c <= cols; c++) {
+    const gx = c * GRID
+    ctx.beginPath()
+    for (let r = 0; r <= rows; r++) {
+      const p = warp(gx, r * GRID)
+      r === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)
+    }
+    ctx.stroke()
+  }
+
+  for (let r = 0; r <= rows; r++) {
+    const gy = r * GRID
+    ctx.beginPath()
+    for (let c = 0; c <= cols; c++) {
+      const p = warp(c * GRID, gy)
+      c === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)
+    }
+    ctx.stroke()
+  }
+}
+
+function schedule() {
+  if (needsRedraw) return
+  needsRedraw = true
+  raf = requestAnimationFrame(draw)
+}
+
+function onMouseMove(e: MouseEvent) {
+  mouseX = e.clientX
+  mouseY = e.clientY
+  schedule()
+}
+
+function onMouseLeave() {
+  mouseX = -9999
+  mouseY = -9999
+  schedule()
+}
+
+function resize() {
+  if (!canvas.value) return
+  canvas.value.width  = window.innerWidth
+  canvas.value.height = window.innerHeight
+  draw()
+}
+
+onMounted(() => {
+  if (!canvas.value) return
+  ctx = canvas.value.getContext('2d')
+  resize()
+  window.addEventListener('mousemove', onMouseMove, { passive: true })
+  window.addEventListener('mouseleave', onMouseLeave)
+  window.addEventListener('resize', resize, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('mousemove', onMouseMove)
+  window.removeEventListener('mouseleave', onMouseLeave)
+  window.removeEventListener('resize', resize)
+  if (raf) cancelAnimationFrame(raf)
+})
+</script>
+
+<style scoped>
+.grid-warp-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+</style>
+
+─── pages/index.vue additions ────────────────────────────────────────
+
+In <template>, first line inside root <div>:
+  <GridWarp />
+
+In <script setup>, inside useHead({ ... }):
+  bodyAttrs: { class: 'no-css-grid' },
+
+─── assets/css/main.css addition ─────────────────────────────────────
+
+After the body { ... } block:
+  body.no-css-grid {
+    background-image: none;
+  }

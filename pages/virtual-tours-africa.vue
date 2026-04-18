@@ -76,8 +76,8 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Virtual Tours Africa | Pan-African 360° Marketing Platform | Viewora',
-  description: 'Viewora is Africa\'s leading 360° virtual tour platform. From Kenya to Nigeria, South Africa to Morocco—immersive property, tourism, and business marketing built for the entire African continent.',
+  title: 'Virtual Tours Africa | Pan-African 360° Marketing | Viewora',
+  description: 'Africa\'s leading 360° virtual tour platform. Immersive property, tourism, and business marketing for Kenya, Nigeria, South Africa, and beyond.',
   ogTitle: 'Virtual Tours Africa | Pan-African 360° Marketing by Viewora',
   ogDescription: 'The leading virtual tour platform for African businesses. Real estate, tourism, hospitality across Kenya, Nigeria, South Africa, Ghana, Egypt and beyond.',
 })

@@ -1,0 +1,412 @@
+VIEWORA MARKETING — CSS DESIGN SYSTEM REFERENCE
+================================================
+Source: assets/css/main.css
+Last updated: 2026-04-14
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. COLOR TOKENS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Monochromatic
+  --ink             #0a0a0a       Primary text (Inky Black)
+  --ink-soft        #1a1a1a       Dark surface
+  --slate           #6b7280       Secondary text
+  --slate-light     #9ca3af       Muted text
+  --paper           #ffffff       Background (White)
+  --paper-dim       #fafafa       Off-white surface
+  --paper-alt       #f5f5f5       Section backgrounds
+
+Accent (Electric Green)
+  --accent          #00dc82       Primary brand color
+  --accent-dim      rgba(0,220,130,0.12)   Tinted backgrounds
+  --accent-glow     rgba(0,220,130,0.25)   Glow / hover ring
+
+Borders
+  --border          #e2e2e2       Standard border
+  --border-sharp    #c8c8c8       Hover/focus border
+  --border-dark     #2a2a2a       Dark mode border
+
+Status
+  Error/Danger      #ef4444       Red
+  Success/Live      #00dc82       Green (same as accent)
+  Info              #3b82f6       Blue
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. SEMANTIC ALIASES (use these in code)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  --primary           → --accent  (#00dc82)
+  --primary-hover     → #00c972
+  --text-primary      → --ink     (#0a0a0a)
+  --text-secondary    → --slate   (#6b7280)
+  --text-muted        → --slate-light (#9ca3af)
+  --text-inverse      → --paper   (#ffffff)
+  --bg-base           → --paper
+  --bg-surface        → --paper-alt (#f5f5f5)
+  --bg-surface-alt    → #efefef
+  --border-color      → --border  (#e2e2e2)
+  --shadow-md         → --shadow-float
+  --shadow-lg         → --shadow-lift
+  --shadow-xl         → --shadow-lift
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. SHADOWS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  --shadow-sm       0 1px 3px rgba(0,0,0,0.06)
+                    Minimal — borders, inputs
+
+  --shadow-float    0 4px 6px -1px rgba(0,0,0,0.04),
+                    0 12px 40px -8px rgba(0,0,0,0.08)
+                    Default card shadow (gentle lift)
+
+  --shadow-lift     0 8px 16px -4px rgba(0,0,0,0.06),
+                    0 24px 60px -12px rgba(0,0,0,0.12)
+                    Hover state shadow (stronger depth)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. TYPOGRAPHY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Font Families
+  --font-sans       'Inter', system-ui, -apple-system, sans-serif
+  --font-display    'Inter', system-ui, sans-serif
+  --font-mono       'JetBrains Mono', 'Fira Code', monospace
+
+Body Text
+  Font:             --font-sans
+  Line height:      1.6
+  Color:            --ink
+  Font smoothing:   antialiased
+
+Headings (h1–h6)
+  Font:             --font-display
+  Weight:           800
+  Line height:      1.1
+  Letter spacing:   -0.02em
+  Color:            --ink
+
+Specific Heading Sizes
+  Hero title        4rem, weight 900, letter-spacing -0.04em
+  Section title     2.75rem, weight 800, letter-spacing -0.03em
+  Section subtitle  1.1rem, color --slate, line-height 1.7
+
+Mono Label (.mono)
+  Font:             --font-mono
+  Size:             0.75rem
+  Weight:           500
+  Letter spacing:   0.04em
+  Transform:        uppercase
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. LAYOUT CLASSES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+.container
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 1.5rem
+
+.section
+  padding: 6rem 0
+  position: relative
+  Mobile (≤768px): padding: 3.5rem 0
+
+.section-bg
+  background: --paper-alt (#f5f5f5)
+  border-top + border-bottom: 1px solid --border
+
+.section-header
+  text-align: center
+  max-width: 720px
+  margin: 0 auto 4rem
+
+.section-title
+  font-size: 2.75rem, weight 800
+  Mobile: 2rem
+
+.section-subtitle
+  font-size: 1.1rem, color --slate
+
+.grid-2
+  display: grid
+  gap: 2rem
+  Mobile:  1 column
+  ≥768px:  repeat(2, 1fr)
+
+.grid-3
+  display: grid
+  gap: 1.5rem
+  Mobile:   1 column
+  ≥1024px:  repeat(3, 1fr)
+
+.stats-grid
+  display: grid
+  gap: 2rem, text-align: center
+  Mobile:  repeat(2, 1fr)
+  ≥768px:  repeat(4, 1fr)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. COMPONENT CLASSES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+.card
+  background:     --paper (#ffffff)
+  border-radius:  0.75rem
+  border:         1px solid --border
+  padding:        1.75rem
+  box-shadow:     --shadow-float
+  Hover:          translateY(-6px), shadow → --shadow-lift,
+                  border → --border-sharp
+
+.badge
+  display:        inline-flex
+  padding:        0.25rem 0.75rem
+  border-radius:  9999px
+  font-size:      0.75rem, weight 600
+  font-family:    --font-mono
+  background:     --accent-dim
+  color:          #00a060
+  border:         1px solid rgba(0,220,130,0.25)
+  text-transform: uppercase
+  letter-spacing: 0.05em
+
+.btn  (base)
+  display:        inline-flex, align-items center
+  padding:        0.625rem 1.25rem
+  border-radius:  0.5rem
+  font-weight:    600, font-size 0.9rem
+  font-family:    --font-sans
+  transition:     all 0.3s cubic-bezier(0.25, 1, 0.5, 1)
+  Active:         scale(0.96)
+
+.btn-primary
+  background:     --accent (#00dc82)
+  color:          --ink (dark text on green)
+  font-weight:    700
+  Hover:          bg → #00c972, translateY(-2px),
+                  ring → 0 0 0 6px --accent-glow
+
+.btn-outline
+  background:     transparent
+  color:          --ink
+  border:         1px solid --border
+  Hover:          border → --border-sharp, bg → --paper-dim
+
+.btn-dark
+  background:     --ink (#0a0a0a)
+  color:          --paper (#ffffff)
+  Hover:          bg → --ink-soft, translateY(-2px), shadow added
+
+.btn-lg
+  padding:        0.875rem 2rem
+  font-size:      1rem
+  border-radius:  0.625rem
+
+.btn-block
+  width: 100%
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. UTILITY CLASSES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Text Color
+  .text-primary     color: --accent (#00dc82)
+  .text-muted       color: --slate  (#6b7280)
+
+Font Size
+  .text-xs          0.75rem
+  .text-sm          0.875rem
+  .text-lg          1.125rem
+  .text-xl          1.25rem
+
+Font Weight
+  .font-bold        700
+  .font-semibold    600
+  .font-medium      500
+
+Margin Bottom
+  .mb-1   0.25rem
+  .mb-2   0.5rem
+  .mb-3   0.75rem
+  .mb-4   1rem
+  .mb-6   1.5rem
+  .mb-8   2rem
+  .mb-12  3rem
+
+Margin Top
+  .mt-4   1rem
+  .mt-8   2rem
+  .mt-16  4rem
+
+Padding Top
+  .pt-8   2rem
+
+Alignment
+  .text-center    text-align: center
+  .inline-block   display: inline-block
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. BORDER RADIUS CONVENTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  0.25rem  (4px)   Small elements
+  0.5rem   (8px)   Buttons, inputs, small cards
+  0.625rem (10px)  Large buttons (.btn-lg)
+  0.75rem  (12px)  Cards (standard — .card)
+  0.875rem (14px)  Modal/large cards
+  9999px           Pills, badges (fully rounded)
+  50%              Circles (avatars, status dots)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. RESPONSIVE BREAKPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ≤768px   Mobile
+             .section padding → 3.5rem 0
+             .section-title → 2rem
+             .hero-title → 2.5rem
+             .grid-2 / .grid-3 → single column
+             Nav links hidden, mobile menu shown
+
+  ≥768px   Tablet
+             .grid-2 → 2 columns
+             .stats-grid → 4 columns
+             Footer → 4-column layout
+
+  ≥1024px  Desktop
+             .grid-3 → 3 columns
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. PAGE BACKGROUND (Grid Pattern)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Applied to body:
+  background-color: --paper (#ffffff)
+  background-image:
+    linear-gradient(--border 1px, transparent 1px),
+    linear-gradient(90deg, --border 1px, transparent 1px)
+  background-size: 40px 40px
+  background-attachment: fixed   ← stays in place on scroll
+  Grid line color: --border (#e2e2e2)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11. ANIMATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  fade-up           opacity 0→1, translateY 16px→0
+                    Used on cards, hero elements
+
+  float             translateY 0 → -6px → 0, 4s loop
+                    Used on floating CTAs (.btn-float)
+
+  grid-trace        clip-path reveal + opacity fade
+                    Used in hero section animations
+
+  spin              360deg rotation (spinners)
+
+  skeleton-shimmer  Background-position animation
+                    Used on loading skeleton cards
+
+  toast-slide-in    Slide from bottom + scale 0.96→1
+
+Transition Standards
+  Fast:     0.15s ease          (hover colors, borders)
+  Medium:   0.2–0.25s ease      (card transforms)
+  Smooth:   0.3s cubic-bezier(0.25, 1, 0.5, 1)   (buttons)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+12. FORM COMPONENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+.form-input / .form-select
+  padding:        0.65rem 0.875rem
+  border:         1px solid --border
+  border-radius:  0.5rem
+  background:     --paper
+  color:          --ink
+  Focus:          border → --accent,
+                  box-shadow: 0 0 0 3px --accent-dim
+
+.form-label
+  font-weight:    600, font-size 0.875rem
+  color:          --ink
+  margin-bottom:  0.5rem
+
+.form-hint
+  font-size:      0.78rem
+  color:          --text-muted
+  margin-top:     0.375rem
+
+.required
+  color: #ef4444 (red)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+13. DARK / EDITOR THEME (dashboard only)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Backgrounds:  #0a0a0a, #111, #141414, #1a1a1a
+  Borders:      #1f1f1f, #18181b, #252525
+  Text:         #f8fafc, #f3f4f6, #e2e8f0, #d1d5db
+  Accent:       --accent (#00dc82) — same as light theme
+  Hover bg:     rgba(255,255,255,0.04–0.06)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+QUICK REFERENCE — COMMON PATTERNS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Standard page section:
+  <section class="section">
+    <div class="container">...</div>
+  </section>
+
+Section with alt background:
+  <section class="section section-bg">
+    <div class="container">...</div>
+  </section>
+
+Centered section with heading:
+  <div class="section-header">
+    <h2 class="section-title">...</h2>
+    <p class="section-subtitle">...</p>
+  </div>
+
+3-column card grid:
+  <div class="grid-3">
+    <div class="card">...</div>
+    <div class="card">...</div>
+    <div class="card">...</div>
+  </div>
+
+Primary CTA button:
+  <a class="btn btn-primary">Get Started Free</a>
+
+Outline button:
+  <a class="btn btn-outline">Learn More</a>
+
+Large dark button:
+  <a class="btn btn-dark btn-lg">...</a>
+
+Badge / label:
+  <span class="badge">Featured</span>
+
+Muted helper text:
+  <p class="text-muted text-sm">...</p>
+
+Green accent text:
+  <span class="text-primary font-bold">...</span>

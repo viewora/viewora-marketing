@@ -71,8 +71,8 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Hospital Virtual Tours Kenya | Build Patient Trust & Attract Medical Tourism',
-  description: 'Give patients confidence with immersive 360° virtual tours of your Kenyan hospital, clinic, or medical center. Build trust, reduce anxiety, and attract medical tourism from East Africa.',
+  title: 'Hospital Virtual Tours Kenya | Build Patient Trust Online',
+  description: 'Give patients confidence with immersive 360° virtual tours of your Kenyan hospital or clinic. Build trust, reduce anxiety, and attract medical tourism.',
   ogTitle: 'Hospital Virtual Tours Kenya | Healthcare Marketing',
   ogDescription: 'The trusted virtual tour platform for hospitals and clinics in Kenya. Transparent, immersive, patient-focused.',
 })
