@@ -51,7 +51,7 @@ definePageMeta({
 
 useSeoMeta({
   title: 'Virtual Tour Glossary | Key Terms & Definitions | Viewora Kenya',
-  description: 'Complete virtual tour glossary: 360° photography, panoramas, hotspots, equirectangular, VR, immersive tours, and 30+ key terms explained for Kenyan property and business professionals.',
+  description: 'Complete virtual tour glossary: 360° photography, panoramas, hotspots, VR, image formats, and 30+ key terms explained in plain English for Kenyan property and business professionals.',
   ogTitle: 'Virtual Tour Glossary | All Key Terms Defined',
   ogDescription: 'The complete reference for virtual tour terminology. 30+ key terms explained clearly for Kenya\'s property and business community.',
 })

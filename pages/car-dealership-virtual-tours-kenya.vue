@@ -72,7 +72,7 @@ definePageMeta({
 
 useSeoMeta({
   title: 'Car Dealership Virtual Tours Kenya | Sell More Cars Online',
-  description: 'Boost car sales at your Kenyan dealership with Viewora 360° virtual showroom tours. Let buyers inspect every vehicle online and arrive ready to buy. Nairobi, Mombasa, Eldoret.',
+  description: 'Boost car sales at your Kenyan dealership with 360° virtual showroom tours. Let buyers inspect every vehicle online and arrive ready to buy.',
   ogTitle: 'Car Dealership Virtual Tours Kenya | 24/7 Online Showroom',
   ogDescription: 'The #1 virtual tour solution for car dealerships in Kenya. Immersive 360° tours that convert online browsers into serious buyers.',
 })

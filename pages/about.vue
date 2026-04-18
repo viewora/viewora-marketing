@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'About Us | Viewora',
+  title: 'About Viewora | Kenya's #1 Virtual Tour Platform',
   description: 'Viewora is a Kenyan SaaS company making immersive virtual tours accessible for any business that needs to visually present spaces or environments.',
   ogTitle: 'About Viewora | Our Story & Mission',
   ogDescription: 'Founded in Kenya to democratize spatial marketing. Viewora empowers agents, hosts and developers to create immersive 360° virtual tours in minutes.',

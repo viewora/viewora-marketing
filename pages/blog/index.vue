@@ -44,4 +44,19 @@ useSeoMeta({
   title: 'Viewora Blog & Resources | #1 Property Marketing Guide Africa',
   description: 'Learn how to market spaces better with virtual tours, 360° panoramas, and SaaS tools for real estate and Airbnb. Expert insights for the Kenyan market.'
 })
+
+useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/blog' }],
+  script: [{
+    type: 'application/ld+json',
+    children: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: 'Viewora Blog & Resources',
+      url: 'https://viewora.software/blog',
+      description: 'Virtual tour guides, property marketing insights, and 360° photography tips for Kenya and Africa.',
+      publisher: { '@type': 'Organization', name: 'Viewora', url: 'https://viewora.software' }
+    })
+  }]
+})
 </script>

@@ -72,7 +72,7 @@ definePageMeta({
 
 useSeoMeta({
   title: 'School Virtual Tours Kenya | Attract More Students & Parents',
-  description: 'Boost school admissions in Kenya with immersive 360° virtual campus tours from Viewora. Reach families anywhere in East Africa and convert enquiries to enrollments.',
+  description: 'Boost school admissions in Kenya with immersive 360° virtual campus tours. Reach families anywhere in East Africa and convert enquiries into enrollments.',
   ogTitle: 'School Virtual Tours Kenya | Immersive Campus Experience',
   ogDescription: 'Let parents explore your Kenyan school campus virtually. Increase admissions and build trust with 360° technology.',
 })

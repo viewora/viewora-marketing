@@ -137,7 +137,7 @@ const billingFreq = ref('monthly');
 
 useSeoMeta({
   title: 'Pricing & Plans | Viewora Virtual Tour Software',
-  description: 'Transparent pricing for every space professional. Plans from KES 1,500/mo. Free trial available. No hidden fees.',
+  description: 'Transparent pricing for every space professional. Plans from KES 1,500/mo. No hidden fees. Cancel anytime.',
   ogTitle: 'Viewora Pricing — From KES 1,500/mo',
   ogDescription: 'Start free, scale as you grow. Viewora plans for solo agents, active sellers, agencies and large developers. Cancel anytime.',
   ogUrl: 'https://viewora.software/pricing',

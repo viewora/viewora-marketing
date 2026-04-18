@@ -9,5 +9,68 @@
 </template>
 
 <script setup lang="ts">
-// Default Layout
+const route = useRoute()
+const baseUrl = 'https://viewora.software'
+
+// Auto-generate canonical for every page unless the page sets its own
+useHead({
+  link: [
+    { rel: 'canonical', href: `${baseUrl}${route.path}` }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Viewora',
+        url: baseUrl,
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: `${baseUrl}/blog?q={search_term_string}`,
+          'query-input': 'required name=search_term_string'
+        }
+      })
+    },
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Viewora',
+        url: baseUrl,
+        logo: `${baseUrl}/images/logo.png`,
+        sameAs: [],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+254-117-537-025',
+          contactType: 'customer service',
+          areaServed: 'KE',
+          availableLanguage: 'English'
+        }
+      })
+    },
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SiteNavigationElement',
+        name: [
+          'Product', 'Pricing', 'Blog', 'About', 'Contact',
+          'Virtual Tours Kenya', 'Real Estate Virtual Tours', 'FAQ'
+        ],
+        url: [
+          `${baseUrl}/product`,
+          `${baseUrl}/pricing`,
+          `${baseUrl}/blog`,
+          `${baseUrl}/about`,
+          `${baseUrl}/contact`,
+          `${baseUrl}/virtual-tours-kenya`,
+          `${baseUrl}/real-estate-virtual-tours-kenya`,
+          `${baseUrl}/faq`
+        ]
+      })
+    }
+  ]
+})
 </script>
