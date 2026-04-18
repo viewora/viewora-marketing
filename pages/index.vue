@@ -1,5 +1,6 @@
 <template>
   <div>
+    <GridWarp />
     <!-- Hero Section -->
     <section class="hero section-bg has-plus-markers">
       <div class="container grid-2" style="align-items: center;">
@@ -318,6 +319,7 @@ useSeoMeta({
 })
 
 useHead({
+  bodyAttrs: { class: 'no-css-grid' },
   link: [{ rel: 'canonical', href: 'https://viewora.software' }],
   script: [
     {

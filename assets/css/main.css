@@ -82,6 +82,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body.no-css-grid {
+  background-image: none;
+}
+
 /* ── Typography ── */
 h1,
 h2,
