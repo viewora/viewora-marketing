@@ -25,7 +25,7 @@
             
             <div class="mt-16 pt-8 text-center" style="border-top: 1px solid var(--border-color);">
               <h3 class="mb-4">Ready to create your own virtual tour?</h3>
-              <NuxtLink to="/register" class="btn btn-primary">Start Free Trial</NuxtLink>
+              <a href="https://app.viewora.software/register" class="btn btn-primary">Start Free Trial</a>
             </div>
           </article>
         </ContentDoc>

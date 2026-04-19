@@ -10,7 +10,7 @@
           <slot name="subtitle">{{ subtitle }}</slot>
         </p>
         <div class="hero-actions">
-          <NuxtLink to="/register" class="btn btn-primary btn-lg">Get Started Free</NuxtLink>
+          <a href="https://app.viewora.software/register" class="btn btn-primary btn-lg">Get Started Free</a>
           <NuxtLink to="/product" class="btn btn-outline btn-lg">View Features</NuxtLink>
         </div>
       </div>
