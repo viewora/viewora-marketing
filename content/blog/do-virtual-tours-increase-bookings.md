@@ -3,7 +3,7 @@ title: Do Virtual Tours Increase Property Bookings and Sales?
 description: Discover the data-driven evidence behind why 360° tours are the most effective tool in modern real estate and hospitality marketing.
 category: Data
 author: The Viewora Team
-date: '2026-03-20'
+date: '2026-01-20'
 image: https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80
 ---
 
@@ -22,7 +22,6 @@ Websites with virtual tours see users staying on the page for 5 to 10 times long
 - **Increased Booking Conversion:** Hotels and Airbnb hosts see up to a 14% increase in direct bookings.
 - **Faster Sales Cycle:** Properties with virtual tours sell 20% to 30% faster on average.
 
-> [!IMPORTANT]
 > "We compared two identical apartment blocks in Kilimani. The one with a Viewora virtual tour was fully let 3 weeks before the one without. That's real ROI." — Leading Property Management Firm
 
 ## 3. The Diaspora Advantage in Africa

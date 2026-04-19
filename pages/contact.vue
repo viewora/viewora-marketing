@@ -33,7 +33,7 @@
               </div>
               <div>
                 <h4 class="font-bold mb-1">Email</h4>
-                <p class="text-muted"><a href="mailto:peterbjorogeirungu76@gmail.com" style="color: inherit; text-decoration: none;">peterbjorogeirungu76@gmail.com</a></p>
+                <p class="text-muted"><a href="mailto:hello@viewora.software" style="color: inherit; text-decoration: none;">hello@viewora.software</a></p>
                 <p class="text-sm text-muted mt-1">We usually respond within 24 hours.</p>
               </div>
             </div>

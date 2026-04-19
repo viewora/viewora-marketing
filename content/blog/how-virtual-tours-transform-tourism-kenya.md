@@ -3,7 +3,7 @@ title: How Virtual Tours Are Transforming Tourism in Kenya
 description: Kenya's tourism industry is being revolutionized by 360° immersive technology. Learn how safari lodges and resorts are inspiring more visitors.
 category: Tourism
 author: The Viewora Team
-date: '2026-03-20'
+date: '2026-03-17'
 image: https://media.licdn.com/dms/image/v2/D5612AQFBgylC48eaHQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1708446045749?e=2147483647&v=beta&t=ZdNI9lWRAAXN1BARbhYxDUwAwxo14edUaJox02U6v8E
 ---
 
@@ -18,7 +18,6 @@ Today, the traveler journey is entirely digital. A traveler planning a Kenya saf
 - **The stakes are high:** A Kenya safari is a significant investment; buyers need absolute confidence.
 - **Geography is extreme:** Virtual tours do the selling that distance makes impossible.
 
-> [!TIP]
 > "We had a goal of increasing our direct booking rate from 30% to 50%. Within 8 months of launching our Viewora virtual tour, we hit 62% direct." — Director, Premium Maasai Mara Safari Camp
 
 ## Transforming the Safari Industry

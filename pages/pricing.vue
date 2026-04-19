@@ -159,10 +159,10 @@ useHead({
       operatingSystem: 'All',
       url: 'https://viewora.software',
       offers: [
-        { '@type': 'Offer', name: 'Basic', price: '1500', priceCurrency: 'KES', billingIncrement: 'monthly' },
-        { '@type': 'Offer', name: 'Plus', price: '4000', priceCurrency: 'KES', billingIncrement: 'monthly' },
-        { '@type': 'Offer', name: 'Pro', price: '8500', priceCurrency: 'KES', billingIncrement: 'monthly' },
-        { '@type': 'Offer', name: 'Elite', price: '18000', priceCurrency: 'KES', billingIncrement: 'monthly' },
+        { '@type': 'Offer', name: 'Basic', price: '1500', priceCurrency: 'KES', description: '2 active tours, 2 GB storage, shareable link and QR code' },
+        { '@type': 'Offer', name: 'Plus', price: '4000', priceCurrency: 'KES', description: '15 active tours, HD panoramas, lead capture, hotspot navigation' },
+        { '@type': 'Offer', name: 'Pro', price: '8500', priceCurrency: 'KES', description: '40 active tours, white-label branding, Google Street View publishing' },
+        { '@type': 'Offer', name: 'Elite', price: '18000', priceCurrency: 'KES', description: '120 active tours, custom domain, team accounts, 50 GB storage' },
       ]
     })
   }]

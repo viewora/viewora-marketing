@@ -49,8 +49,8 @@
 <script setup lang="ts">
 
 const route = useRoute()
+const baseUrl = 'https://viewora.software'
 
-// Fetch doc for SEO meta
 const { data: doc } = await useAsyncData(`blog-${route.params.slug}`, () =>
   queryContent('/blog', route.params.slug as string).findOne()
 )
@@ -63,6 +63,50 @@ if (doc.value) {
     ogDescription: doc.value.description,
     ogImage: doc.value.image,
     twitterCard: 'summary_large_image',
+  })
+
+  const postUrl = `${baseUrl}/blog/${route.params.slug}`
+
+  useHead({
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: doc.value.title,
+          description: doc.value.description,
+          image: doc.value.image,
+          datePublished: doc.value.date,
+          dateModified: doc.value.date,
+          author: {
+            '@type': 'Organization',
+            name: doc.value.author || 'The Viewora Team',
+            url: baseUrl
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Viewora',
+            url: baseUrl,
+            logo: { '@type': 'ImageObject', url: `${baseUrl}/logo.png` }
+          },
+          url: postUrl,
+          mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl }
+        })
+      },
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: baseUrl },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: `${baseUrl}/blog` },
+            { '@type': 'ListItem', position: 3, name: doc.value.title, item: postUrl }
+          ]
+        })
+      }
+    ]
   })
 }
 </script>

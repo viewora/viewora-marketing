@@ -12,7 +12,6 @@
 const route = useRoute()
 const baseUrl = 'https://viewora.software'
 
-// Auto-generate canonical for every page unless the page sets its own
 useHead({
   link: [
     { rel: 'canonical', href: `${baseUrl}${route.path}` }
@@ -29,24 +28,6 @@ useHead({
           '@type': 'SearchAction',
           target: `${baseUrl}/blog?q={search_term_string}`,
           'query-input': 'required name=search_term_string'
-        }
-      })
-    },
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        name: 'Viewora',
-        url: baseUrl,
-        logo: `${baseUrl}/images/logo.png`,
-        sameAs: [],
-        contactPoint: {
-          '@type': 'ContactPoint',
-          telephone: '+254-117-537-025',
-          contactType: 'customer service',
-          areaServed: 'KE',
-          availableLanguage: 'English'
         }
       })
     },
