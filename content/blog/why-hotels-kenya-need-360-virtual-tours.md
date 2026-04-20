@@ -3,7 +3,7 @@ title: Why Hotels in Kenya Need 360° Virtual Tours in 2026
 description: The definitive guide for Kenyan hotel operators on why immersive virtual tours drive direct bookings and build guest trust.
 category: Hospitality
 author: The Viewora Team
-date: '2026-03-20'
+date: '2026-04-07'
 image: https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80
 ---
 
@@ -16,7 +16,6 @@ A [360° virtual hotel tour in Kenya](https://viewora.software/hotel-virtual-tou
 ### Closing the Trust Gap
 Every experienced traveler in Kenya has been disappointed by misleading hotel photography. A 360° virtual tour eliminates this gap. What guests see is exactly what they get.
 
-> [!IMPORTANT]
 > "Our average review score on TripAdvisor went from 3.9 to 4.7 after we switched to Viewora virtual tours. Expectations perfectly matched reality." — General Manager, 4-Star Nairobi Hotel
 
 ## Drive Direct Bookings

@@ -99,21 +99,47 @@ useSeoMeta({
 })
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://www.viewora.software/virtual-tours-kenya' }],
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Viewora",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Web",
-        "offers": {
-          "@type": "Offer",
-          "price": "0.00",
-          "priceCurrency": "USD"
-        },
-        "description": "The leading 360 virtual tour software for the Kenyan real estate market."
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'Viewora',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web',
+        offers: [
+          { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'KES', description: 'Create and publish your first tours at no cost.' },
+          { '@type': 'Offer', name: 'Starter', price: '1500', priceCurrency: 'KES', description: 'Up to 5 spaces with basic analytics.' },
+          { '@type': 'Offer', name: 'Pro', price: '3500', priceCurrency: 'KES', description: 'Unlimited spaces, white-label, priority support.' },
+          { '@type': 'Offer', name: 'Agency', price: '7000', priceCurrency: 'KES', description: 'Multi-user, API access, custom domain.' },
+        ],
+        description: 'The leading 360° virtual tour software for the Kenyan real estate and hospitality market.',
+        url: 'https://www.viewora.software'
+      })
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(f => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a }
+        }))
+      })
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.viewora.software' },
+          { '@type': 'ListItem', position: 2, name: 'Virtual Tours Kenya', item: 'https://www.viewora.software/virtual-tours-kenya' }
+        ]
       })
     }
   ]

@@ -3,7 +3,7 @@ title: Why Your Airbnb is Not Getting Bookings (And How to Fix It)
 description: Troubleshooting the most common mistakes Kenyan hosts make and how to turn your listing into a high-occupancy success story.
 category: Airbnb
 author: The Viewora Team
-date: '2026-03-20'
+date: '2026-04-14'
 image: https://helios-i.mashable.com/imagery/articles/01ZHF8z5AUOw4IyIziaeGo6/hero-image.fill.size_1248x702.v1625518031.png
 ---
 
@@ -22,7 +22,6 @@ Standard photos can only capture so much. In a sea of similar listings, you need
 - **Poor Discovery:** Are you only on Airbnb? Use your 360° tour link to drive direct traffic from Google and social media.
 - **Lack of Transparency:** Guests value honesty. Show the whole space using the [professional virtual tour software in Kenya](https://viewora.software/virtual-tours-kenya) to build instant credibility.
 
-> [!WARNING]
 > "Our bookings were down 40% year-on-year. We added a 360° tour and fixed our response time, and we hit 90% occupancy within 30 days. The transparency changed everything." — Property Manager, Nairobi East
 
 ## 3. You're Missing the Safari and Coast High-Intent Buyers

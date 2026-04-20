@@ -3,7 +3,7 @@ title: How to Get More Airbnb Bookings in Kenya (2026 Guide)
 description: Discover the proven strategies used by top Kenyan hosts to maximize occupancy and build a highly profitable short-term rental business.
 category: Guides
 author: The Viewora Team
-date: '2026-03-20'
+date: '2026-02-24'
 image: https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80
 ---
 
@@ -22,7 +22,6 @@ Airbnb's search algorithm rewards listings that have high engagement. By embeddi
 - **Guest Reviews:** Focus on transparency to avoid "it didn't look like the photos" complaints.
 - **Instant Book:** Enable this to rank higher, but only if your calendar is perfectly synced.
 
-> [!NOTE]
 > "Adding a 360° tour changed my business. My guests from the US and UK told me they felt much more comfortable booking a place in a new city after 'walking through' it virtually on Viewora." — Nairobi Superhost
 
 ## 3. Target the Diaspora and International Business Travelers

@@ -3,7 +3,7 @@ title: The Evolution of Digital Marketing for Real Estate in Africa
 description: From simple portals to 360° virtual reality, discover how the African property market is leading the global shift in PropTech.
 category: African PropTech
 author: The Viewora Team
-date: '2026-03-20'
+date: '2026-01-13'
 image: https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=80
 ---
 
@@ -22,7 +22,6 @@ Digital marketing in Africa must be mobile-first. Most users access property lis
 - **WhatsApp as a Lead Engine:** The hidden social network. Sharing 360° tour links directly to high-net-worth WhatsApp groups is a primary lead generator.
 - **AI-Driven Property Valuation:** Combining immersive **360 property marketing** with automated valuation models for instant transparency.
 
-> [!NOTE]
 > "Africa isn't following the world in PropTech; we are building specifically for our infrastructure. Viewora understands that a virtual tour must be beautiful but also incredibly fast." — CEO, African Property Tech Fund
 
 ## 3. Beyond Photos: Selling the Experience

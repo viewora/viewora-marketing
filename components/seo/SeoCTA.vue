@@ -10,7 +10,7 @@
           Join the elite Airbnb hosts and real estate agencies in Africa using Viewora to close more deals with immersive 360° technology.
         </p>
         <div class="cta-actions">
-          <NuxtLink to="/register" class="btn btn-primary btn-lg">Start Your Free Tour</NuxtLink>
+          <a href="https://app.viewora.software/register" class="btn btn-primary btn-lg">Start Your Free Tour</a>
           <NuxtLink to="/contact" class="btn btn-outline-light btn-lg">Book a Demo</NuxtLink>
         </div>
         <p class="cta-footnote">Instant Results • No credit card required</p>
