@@ -10,13 +10,13 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/content',
     ['@nuxtjs/sitemap', {
-      hostname: 'https://www.viewora.software',
+      hostname: 'https://viewora.software',
       exclude: ['/login', '/register', '/reset-password', '/viewer/gallery'],
     }],
   ],
 
   site: {
-    url: 'https://www.viewora.software',
+    url: 'https://viewora.software',
     name: 'Viewora',
     description: 'Create interactive 360° virtual tours for your spaces. The subscription-based platform for real estate agents, Airbnb hosts, and space developers.',
     defaultLocale: 'en',
