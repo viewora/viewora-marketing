@@ -307,8 +307,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 useSeoMeta({
-  title: 'Viewora | Create & Share Interactive 360° Virtual Tours',
-  description: 'Create, host, and share interactive 360° virtual tours for real estate, hotels, car dealerships, and retail spaces in minutes.',
+  title: 'Viewora — 360° Virtual Tour Software for Real Estate, Hotels & Businesses',
+  description: 'Create immersive 360° virtual tours for real estate, hotels, Airbnb, dealerships, tourism, and retail businesses across Africa.',
   ogTitle: 'Viewora — The #1 Immersive 360° Space Showcase Platform',
   ogDescription: 'Upload panoramas, connect rooms and publish stunning virtual tours in minutes. Free to start. No credit card required.',
   ogUrl: 'https://viewora.software',
