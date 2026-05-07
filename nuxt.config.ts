@@ -39,6 +39,10 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/**': { prerender: true },
+    '/features': { redirect: { to: '/product', statusCode: 301 } },
+    '/real-estate-virtual-tours': { redirect: { to: '/real-estate-virtual-tours-kenya', statusCode: 301 } },
+    '/hotel-virtual-tours': { redirect: { to: '/hotel-virtual-tours-kenya', statusCode: 301 } },
+    '/airbnb-virtual-tours': { redirect: { to: '/airbnb-virtual-tours-kenya', statusCode: 301 } },
   },
 
   nitro: {

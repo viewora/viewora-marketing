@@ -71,7 +71,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: [{ rel: 'canonical', href: 'https://www.viewora.software/real-estate-virtual-tours-kenya' }],
+  link: [{ rel: 'canonical', href: 'https://viewora.software/real-estate-virtual-tours-kenya' }],
   script: [
     {
       type: 'application/ld+json',
@@ -88,7 +88,7 @@ useHead({
           { '@type': 'Offer', name: 'Agency', price: '7000', priceCurrency: 'KES', description: 'Multi-user, API access, custom domain.' },
         ],
         description: 'Professional 360° virtual tour software for real estate agents and developers in Kenya.',
-        url: 'https://www.viewora.software/real-estate-virtual-tours-kenya'
+        url: 'https://viewora.software/real-estate-virtual-tours-kenya'
       })
     },
     {
@@ -109,8 +109,8 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.viewora.software' },
-          { '@type': 'ListItem', position: 2, name: 'Real Estate Virtual Tours Kenya', item: 'https://www.viewora.software/real-estate-virtual-tours-kenya' }
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://viewora.software' },
+          { '@type': 'ListItem', position: 2, name: 'Real Estate Virtual Tours Kenya', item: 'https://viewora.software/real-estate-virtual-tours-kenya' }
         ]
       })
     }
