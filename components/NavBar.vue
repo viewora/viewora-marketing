@@ -1,7 +1,10 @@
 <template>
   <header class="nav">
     <div class="container">
-      <NuxtLink to="/" class="logo">Viewora</NuxtLink>
+      <NuxtLink to="/" class="logo">
+        <img src="/globe-icon.png" alt="Viewora" class="logo-icon" />
+        <span style="line-height: 1; align-self: center;">Viewora</span>
+      </NuxtLink>
       
       <!-- Desktop Navigation -->
       <nav class="nav-links">

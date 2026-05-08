@@ -269,6 +269,18 @@ header.nav {
   font-size: 1.25rem;
   color: var(--ink);
   letter-spacing: -0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.05rem;
+}
+
+.logo-icon {
+  width: 5.25rem;
+  height: 5.25rem;
+  object-fit: contain;
+  display: block;
+  margin-top: 0.35rem;
+  margin-left: -0.95rem;
 }
 
 .nav-links {
