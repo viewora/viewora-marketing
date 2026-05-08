@@ -4,6 +4,7 @@ node_modules/
 # Nuxt build output
 .nuxt/
 .output/
+dist
 dist/
 
 # Wrangler local state (local D1/R2 data — not for source control)
