@@ -79,11 +79,17 @@ export default defineNuxtConfig({
         { name: 'twitter:image', content: 'https://viewora.software/og-image.jpg' },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
-        { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/favicon-512.png' },
-        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        // Light mode: black 360° icon on transparent background
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon-light.ico', media: '(prefers-color-scheme: light)' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-light-32.png', media: '(prefers-color-scheme: light)' },
+        { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/favicon-light-512.png', media: '(prefers-color-scheme: light)' },
+        // Dark mode: white globe icon on transparent background
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon-dark.ico', media: '(prefers-color-scheme: dark)' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-dark-32.png', media: '(prefers-color-scheme: dark)' },
+        { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/favicon-dark-512.png', media: '(prefers-color-scheme: dark)' },
+        // Fallback (no preference)
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon-light.ico' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon-light-180.png' },
         { rel: 'manifest', href: '/site.webmanifest' },
         { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
