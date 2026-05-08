@@ -2,13 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
   "installCommand": "npm ci",
-  "framework": "nuxtjs",
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.viewora.software" }],
-      "destination": "https://viewora.software/:path*",
-      "permanent": true
-    }
-  ]
+  "framework": "nuxtjs"
 }
