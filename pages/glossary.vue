@@ -56,6 +56,8 @@ useSeoMeta({
   ogDescription: 'The complete reference for virtual tour terminology. 30+ key terms explained clearly for Kenya\'s property and business community.',
 })
 
+useBreadcrumb('Virtual Tour Glossary', '/glossary')
+
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/glossary' }],
   script: [

@@ -77,6 +77,8 @@ useSeoMeta({
   ogDescription: 'One virtual tour platform for all of East Africa. Real estate, tourism, hospitality, and education marketing across Kenya, Uganda, Tanzania, and Rwanda.',
 })
 
+useBreadcrumb('Virtual Tours East Africa', '/virtual-tours-east-africa')
+
 useHead({
   script: [
     {

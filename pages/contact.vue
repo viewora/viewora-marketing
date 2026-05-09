@@ -154,6 +154,8 @@ useSeoMeta({
   twitterDescription: 'Reach our sales or support team. We usually respond within 24 hours.',
 })
 
+useBreadcrumb('Contact', '/contact')
+
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/contact' }],
   script: [{

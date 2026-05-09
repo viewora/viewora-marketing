@@ -57,6 +57,8 @@ useSeoMeta({
   ogDescription: 'Experience the future of African property marketing. Immersive 360° tours for a global audience.',
 })
 
+useBreadcrumb('360° Virtual Tours Africa', '/360-virtual-tour-africa')
+
 useHead({
   script: [
     {

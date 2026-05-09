@@ -119,7 +119,11 @@ useSeoMeta({
   description: 'Complete FAQ for Viewora\'s 360° virtual tour platform in Kenya. Answers on pricing in KES, how it works, mobile support, industries, and getting started. Built for Kenya and Africa.',
   ogTitle: 'Virtual Tour FAQ | Everything You Need to Know | Viewora Kenya',
   ogDescription: 'Every question about virtual tours in Kenya answered. Pricing, features, industries, technical requirements, and more.',
+  ogImage: '/og-image.jpg',
+  twitterCard: 'summary_large_image',
 })
+
+useBreadcrumb('Virtual Tour FAQ', '/faq')
 
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/faq' }],

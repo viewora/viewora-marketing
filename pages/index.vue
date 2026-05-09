@@ -326,6 +326,23 @@ useHead({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Viewora',
+        url: 'https://viewora.software',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: 'https://viewora.software/?q={search_term_string}',
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      })
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
         '@type': 'Organization',
         name: 'Viewora',
         url: 'https://viewora.software',

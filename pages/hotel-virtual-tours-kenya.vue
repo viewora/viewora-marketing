@@ -70,6 +70,8 @@ useSeoMeta({
   ogDescription: 'Experience luxury hospitality in Kenya virtually. The best 360° tours for African hotels.',
 })
 
+useBreadcrumb('Hotel Virtual Tours Kenya', '/hotel-virtual-tours-kenya')
+
 useHead({
   script: [
     {

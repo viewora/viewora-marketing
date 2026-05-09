@@ -77,6 +77,8 @@ useSeoMeta({
   ogDescription: 'The #1 virtual tour platform for gyms and fitness studios in Kenya. Build trust, attract members, grow your business.',
 })
 
+useBreadcrumb('Gym Virtual Tours Kenya', '/gym-virtual-tours-kenya')
+
 useHead({
   script: [
     {

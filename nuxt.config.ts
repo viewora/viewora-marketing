@@ -11,7 +11,46 @@ export default defineNuxtConfig({
     '@nuxt/content',
     ['@nuxtjs/sitemap', {
       hostname: 'https://viewora.software',
+      trailingSlash: false,
       exclude: ['/login', '/register', '/reset-password', '/viewer/gallery'],
+      urls: [
+        {
+          loc: '/',
+          images: [{ loc: 'https://viewora.software/og-image.jpg', title: 'Viewora — 360° Virtual Tour Platform' }],
+        },
+        {
+          loc: '/product',
+          images: [
+            { loc: 'https://viewora.software/images/home/hardware-setup.png', title: 'Upload 360° Panoramas' },
+            { loc: 'https://viewora.software/images/home/white-label-editor.png', title: 'Virtual Tour Editor' },
+            { loc: 'https://viewora.software/images/home/tiny-planet-vr.png', title: 'Publish Virtual Tour' },
+          ],
+        },
+        {
+          loc: '/pricing',
+          images: [{ loc: 'https://viewora.software/og-image.jpg', title: 'Viewora Pricing Plans' }],
+        },
+        {
+          loc: '/virtual-tours-kenya',
+          images: [{ loc: 'https://viewora.software/og-image.jpg', title: 'Virtual Tours Kenya' }],
+        },
+        {
+          loc: '/hotel-virtual-tours-kenya',
+          images: [{ loc: 'https://viewora.software/og-image.jpg', title: 'Hotel Virtual Tours Kenya' }],
+        },
+        {
+          loc: '/real-estate-virtual-tours-kenya',
+          images: [{ loc: 'https://viewora.software/og-image.jpg', title: 'Real Estate Virtual Tours Kenya' }],
+        },
+        {
+          loc: '/airbnb-virtual-tours-kenya',
+          images: [{ loc: 'https://viewora.software/og-image.jpg', title: 'Airbnb Virtual Tours Kenya' }],
+        },
+        {
+          loc: '/virtual-tours-nairobi',
+          images: [{ loc: 'https://viewora.software/og-image.jpg', title: 'Virtual Tours Nairobi' }],
+        },
+      ],
     }],
   ],
 
@@ -48,6 +87,9 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       failOnError: false,
+    },
+    routeRules: {
+      '/**': { headers: { 'X-Robots-Tag': 'index, follow' } },
     },
   },
 

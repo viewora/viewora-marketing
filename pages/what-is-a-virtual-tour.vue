@@ -91,6 +91,8 @@ useSeoMeta({
   ogDescription: 'The definitive guide to 360° virtual tours — how they work, what they cost, and how to use them in Kenya.',
 })
 
+useBreadcrumb('What Is a Virtual Tour?', '/what-is-a-virtual-tour')
+
 useHead({
   script: [
     {

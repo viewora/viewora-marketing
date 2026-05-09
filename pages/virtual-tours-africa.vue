@@ -82,6 +82,8 @@ useSeoMeta({
   ogDescription: 'The leading virtual tour platform for African businesses. Real estate, tourism, hospitality across Kenya, Nigeria, South Africa, Ghana, Egypt and beyond.',
 })
 
+useBreadcrumb('Virtual Tours Africa', '/virtual-tours-africa')
+
 useHead({
   script: [
     {

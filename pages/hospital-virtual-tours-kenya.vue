@@ -77,6 +77,8 @@ useSeoMeta({
   ogDescription: 'The trusted virtual tour platform for hospitals and clinics in Kenya. Transparent, immersive, patient-focused.',
 })
 
+useBreadcrumb('Hospital Virtual Tours Kenya', '/hospital-virtual-tours-kenya')
+
 useHead({
   script: [
     {

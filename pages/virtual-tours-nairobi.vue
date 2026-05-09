@@ -58,6 +58,8 @@ useSeoMeta({
   ogDescription: 'Immersive property marketing for Nairobi agencies and hosts. Built for Kenya.',
 })
 
+useBreadcrumb('Virtual Tours Nairobi', '/virtual-tours-nairobi')
+
 useHead({
   script: [
     {

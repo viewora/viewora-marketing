@@ -133,6 +133,8 @@ useSeoMeta({
   ogDescription: 'Which converts more in Kenya — virtual tours or photos? Data-driven comparison showing why 360° immersive tours win every time.',
 })
 
+useBreadcrumb('Virtual Tours vs Photos', '/virtual-tours-vs-photos')
+
 useHead({
   script: [
     {

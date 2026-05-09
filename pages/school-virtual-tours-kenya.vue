@@ -77,6 +77,8 @@ useSeoMeta({
   ogDescription: 'Let parents explore your Kenyan school campus virtually. Increase admissions and build trust with 360° technology.',
 })
 
+useBreadcrumb('School Virtual Tours Kenya', '/school-virtual-tours-kenya')
+
 useHead({
   script: [
     {

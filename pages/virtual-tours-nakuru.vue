@@ -75,6 +75,8 @@ useSeoMeta({
   ogDescription: 'The premium virtual tour platform for Nakuru\'s growing market. Real estate, hotels, and attractions—all in stunning 360°.',
 })
 
+useBreadcrumb('Virtual Tours Nakuru', '/virtual-tours-nakuru')
+
 useHead({
   script: [
     {

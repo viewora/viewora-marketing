@@ -109,6 +109,8 @@ useSeoMeta({
   ogDescription: 'Proven benefits of 360° virtual tours for real estate, hotels, schools, and businesses in Kenya. More enquiries, faster sales, global reach.',
 })
 
+useBreadcrumb('Benefits of Virtual Tours', '/benefits-of-virtual-tours')
+
 useHead({
   script: [
     {

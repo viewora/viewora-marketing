@@ -77,6 +77,8 @@ useSeoMeta({
   ogDescription: 'The #1 virtual tour solution for car dealerships in Kenya. Immersive 360° tours that convert online browsers into serious buyers.',
 })
 
+useBreadcrumb('Car Dealership Virtual Tours Kenya', '/car-dealership-virtual-tours-kenya')
+
 useHead({
   script: [
     {

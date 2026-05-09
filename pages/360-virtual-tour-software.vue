@@ -58,6 +58,8 @@ useSeoMeta({
   ogDescription: 'Experience the power of immersive marketing. The most intuitive virtual tour software in Africa.',
 })
 
+useBreadcrumb('360° Virtual Tour Software', '/360-virtual-tour-software')
+
 useHead({
   script: [
     {

@@ -57,6 +57,8 @@ useSeoMeta({
   ogDescription: 'Immersive property viewing for the Kisumu market. Built for Western Kenya.',
 })
 
+useBreadcrumb('Virtual Tours Kisumu', '/virtual-tours-kisumu')
+
 useHead({
   script: [
     {

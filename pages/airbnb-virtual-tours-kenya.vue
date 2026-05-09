@@ -57,6 +57,8 @@ useSeoMeta({
   ogDescription: 'The ultimate marketing tool for Kenyan Airbnb hosts. Join the top 1% today.',
 })
 
+useBreadcrumb('Airbnb Virtual Tours Kenya', '/airbnb-virtual-tours-kenya')
+
 useHead({
   script: [
     {

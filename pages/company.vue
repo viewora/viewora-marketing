@@ -60,6 +60,8 @@ useSeoMeta({
   ogDescription: 'Experience the mission behind the #1 virtual tour software in Africa.',
 })
 
+useBreadcrumb('Company', '/company')
+
 useHead({
   script: [
     {

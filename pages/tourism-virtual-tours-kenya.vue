@@ -78,6 +78,8 @@ useSeoMeta({
   ogDescription: 'The leading virtual tour platform for Kenya\'s tourism industry. Safari lodges, beach resorts, and attractions—bring Kenya to the world.',
 })
 
+useBreadcrumb('Tourism Virtual Tours Kenya', '/tourism-virtual-tours-kenya')
+
 useHead({
   script: [
     {

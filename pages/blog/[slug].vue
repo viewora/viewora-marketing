@@ -61,7 +61,7 @@ if (doc.value) {
     description: doc.value.description,
     ogTitle: doc.value.title,
     ogDescription: doc.value.description,
-    ogImage: doc.value.image,
+    ogImage: doc.value.image || '/og-image.jpg',
     twitterCard: 'summary_large_image',
   })
 

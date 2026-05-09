@@ -58,6 +58,8 @@ useSeoMeta({
   ogDescription: 'Experience coastal properties in Mombasa like never before. The best 360° tours for Kenya.',
 })
 
+useBreadcrumb('Virtual Tours Mombasa', '/virtual-tours-mombasa')
+
 useHead({
   script: [
     {

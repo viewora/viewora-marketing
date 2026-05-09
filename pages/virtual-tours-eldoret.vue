@@ -76,6 +76,8 @@ useSeoMeta({
   ogDescription: 'The #1 virtual tour platform for Eldoret\'s real estate, education, healthcare, and hospitality sectors.',
 })
 
+useBreadcrumb('Virtual Tours Eldoret', '/virtual-tours-eldoret')
+
 useHead({
   script: [
     {
