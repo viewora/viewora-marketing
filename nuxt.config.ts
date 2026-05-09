@@ -3,6 +3,13 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2026-04-13',
   css: ['@/assets/css/main.css'],
+  
+  runtimeConfig: {
+    smtpHost: process.env.SMTP_HOST || 'smtp.gmail.com',
+    smtpPort: process.env.SMTP_PORT || '587',
+    smtpUser: process.env.SMTP_USER,
+    smtpPass: process.env.SMTP_PASS,
+  },
 
   modules: [
     '@nuxt/image',
