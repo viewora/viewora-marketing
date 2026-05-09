@@ -313,7 +313,10 @@ useSeoMeta({
   ogDescription: 'Upload panoramas, connect rooms and publish stunning virtual tours in minutes. Free to start. No credit card required.',
   ogUrl: 'https://viewora.software',
   ogImage: '/og-image.jpg',
+  ogImageAlt: 'Viewora — Immersive 360° Virtual Tour Experience',
   twitterCard: 'summary_large_image',
+  twitterImage: '/og-image.jpg',
+  twitterImageAlt: 'Viewora — Immersive 360° Virtual Tour Experience',
   twitterTitle: 'Viewora | 360° Virtual Tours Made Easy',
   twitterDescription: 'Upload, connect rooms and go live in 5 minutes. The fastest virtual tour platform for real estate & hospitality.',
 })

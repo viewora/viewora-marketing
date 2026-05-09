@@ -63,6 +63,7 @@ useSeoMeta({
 useBreadcrumb('Company', '/company')
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/company' }],
   script: [
     {
       type: 'application/ld+json',

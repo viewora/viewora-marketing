@@ -60,6 +60,7 @@ useSeoMeta({
 useBreadcrumb('360° Virtual Tours Africa', '/360-virtual-tour-africa')
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/360-virtual-tour-africa' }],
   script: [
     {
       type: 'application/ld+json',

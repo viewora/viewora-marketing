@@ -79,6 +79,7 @@ useSeoMeta({
 useBreadcrumb('Virtual Tours Eldoret', '/virtual-tours-eldoret')
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/virtual-tours-eldoret' }],
   script: [
     {
       type: 'application/ld+json',

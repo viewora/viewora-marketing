@@ -94,6 +94,7 @@ useSeoMeta({
 useBreadcrumb('What Is a Virtual Tour?', '/what-is-a-virtual-tour')
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/what-is-a-virtual-tour' }],
   script: [
     {
       type: 'application/ld+json',

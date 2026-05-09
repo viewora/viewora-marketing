@@ -61,6 +61,7 @@ useSeoMeta({
 useBreadcrumb('360° Virtual Tour Software', '/360-virtual-tour-software')
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/360-virtual-tour-software' }],
   script: [
     {
       type: 'application/ld+json',

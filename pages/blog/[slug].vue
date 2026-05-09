@@ -62,12 +62,16 @@ if (doc.value) {
     ogTitle: doc.value.title,
     ogDescription: doc.value.description,
     ogImage: doc.value.image || '/og-image.jpg',
+    ogImageAlt: doc.value.title,
     twitterCard: 'summary_large_image',
+    twitterImage: doc.value.image || '/og-image.jpg',
+    twitterImageAlt: doc.value.title,
   })
 
   const postUrl = `${baseUrl}/blog/${route.params.slug}`
 
   useHead({
+    link: [{ rel: 'canonical', href: postUrl }],
     script: [
       {
         type: 'application/ld+json',

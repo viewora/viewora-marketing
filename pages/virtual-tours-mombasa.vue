@@ -61,6 +61,7 @@ useSeoMeta({
 useBreadcrumb('Virtual Tours Mombasa', '/virtual-tours-mombasa')
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/virtual-tours-mombasa' }],
   script: [
     {
       type: 'application/ld+json',

@@ -80,6 +80,7 @@ useSeoMeta({
 useBreadcrumb('School Virtual Tours Kenya', '/school-virtual-tours-kenya')
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/school-virtual-tours-kenya' }],
   script: [
     {
       type: 'application/ld+json',

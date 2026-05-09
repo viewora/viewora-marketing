@@ -78,6 +78,7 @@ useSeoMeta({
 useBreadcrumb('Virtual Tours Nakuru', '/virtual-tours-nakuru')
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/virtual-tours-nakuru' }],
   script: [
     {
       type: 'application/ld+json',

@@ -85,6 +85,7 @@ useSeoMeta({
 useBreadcrumb('Virtual Tours Africa', '/virtual-tours-africa')
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/virtual-tours-africa' }],
   script: [
     {
       type: 'application/ld+json',

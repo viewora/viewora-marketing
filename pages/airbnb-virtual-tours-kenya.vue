@@ -60,6 +60,7 @@ useSeoMeta({
 useBreadcrumb('Airbnb Virtual Tours Kenya', '/airbnb-virtual-tours-kenya')
 
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/airbnb-virtual-tours-kenya' }],
   script: [
     {
       type: 'application/ld+json',
