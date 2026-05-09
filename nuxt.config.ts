@@ -89,7 +89,14 @@ export default defineNuxtConfig({
       failOnError: false,
     },
     routeRules: {
-      '/**': { headers: { 'X-Robots-Tag': 'index, follow' } },
+      '/**': { 
+        headers: { 
+          'X-Robots-Tag': 'index, follow',
+          'X-Frame-Options': 'DENY',
+          'X-Content-Type-Options': 'nosniff',
+          'Referrer-Policy': 'strict-origin-when-cross-origin'
+        } 
+      },
     },
   },
 
