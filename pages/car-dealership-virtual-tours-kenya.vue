@@ -75,6 +75,9 @@ useSeoMeta({
   description: 'Boost car sales at your Kenyan dealership with 360° virtual showroom tours. Let buyers inspect every vehicle online and arrive ready to buy.',
   ogTitle: 'Car Dealership Virtual Tours Kenya | 24/7 Online Showroom',
   ogDescription: 'The #1 virtual tour solution for car dealerships in Kenya. Immersive 360° tours that convert online browsers into serious buyers.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/car-dealership-virtual-tours-kenya',
+  twitterCard: 'summary_large_image',
 })
 
 useBreadcrumb('Car Dealership Virtual Tours Kenya', '/car-dealership-virtual-tours-kenya')

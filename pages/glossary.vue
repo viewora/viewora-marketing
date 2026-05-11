@@ -50,10 +50,13 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Virtual Tour Glossary | Key Terms & Definitions | Viewora Kenya',
-  description: 'Complete virtual tour glossary: 360° photography, panoramas, hotspots, VR, image formats, and 30+ key terms explained in plain English for Kenyan property and business professionals.',
+  title: 'Virtual Tour Glossary | Key Terms & Definitions',
+  description: '30+ virtual tour terms explained in plain English. Covers 360° photography, panoramas, hotspots, VR, and image formats for property professionals.',
   ogTitle: 'Virtual Tour Glossary | All Key Terms Defined',
   ogDescription: 'The complete reference for virtual tour terminology. 30+ key terms explained clearly for Kenya\'s property and business community.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/glossary',
+  twitterCard: 'summary_large_image',
 })
 
 useBreadcrumb('Virtual Tour Glossary', '/glossary')

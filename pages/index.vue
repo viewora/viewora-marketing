@@ -307,12 +307,12 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 useSeoMeta({
-  title: 'Viewora — 360° Virtual Tour Software for Real Estate, Hotels & Businesses',
+  title: '360° Virtual Tour Software — Free to Start | Viewora',
   description: 'Create immersive 360° virtual tours for real estate, hotels, Airbnb, dealerships, tourism, and retail businesses across Africa.',
   ogTitle: 'Viewora — The #1 Immersive 360° Space Showcase Platform',
   ogDescription: 'Upload panoramas, connect rooms and publish stunning virtual tours in minutes. Free to start. No credit card required.',
   ogUrl: 'https://viewora.software',
-  ogImage: '/og-image.jpg',
+  ogImage: 'https://viewora.software/og-image.jpg',
   ogImageAlt: 'Viewora — Immersive 360° Virtual Tour Experience',
   twitterCard: 'summary_large_image',
   twitterImage: '/og-image.jpg',
@@ -373,7 +373,8 @@ useHead({
           'https://twitter.com/viewora',
           'https://www.facebook.com/viewora',
           'https://www.linkedin.com/company/viewora',
-          'https://www.instagram.com/viewora'
+          'https://www.instagram.com/viewora',
+          'https://clutch.co/profile/viewora'
         ]
       })
     },
@@ -400,6 +401,20 @@ useHead({
           ratingCount: 247
         },
         description: 'Create and share professional 360° virtual tours for real estate, hotels, Airbnb, schools, gyms, car dealerships, and tourism in Kenya and Africa.'
+      })
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Viewora',
+        url: 'https://viewora.software',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://viewora.software/blog?q={search_term_string}',
+          'query-input': 'required name=search_term_string'
+        }
       })
     }
   ]

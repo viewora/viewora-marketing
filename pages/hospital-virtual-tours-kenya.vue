@@ -75,6 +75,9 @@ useSeoMeta({
   description: 'Give patients confidence with immersive 360° virtual tours of your Kenyan hospital or clinic. Build trust, reduce anxiety, and attract medical tourism.',
   ogTitle: 'Hospital Virtual Tours Kenya | Healthcare Marketing',
   ogDescription: 'The trusted virtual tour platform for hospitals and clinics in Kenya. Transparent, immersive, patient-focused.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/hospital-virtual-tours-kenya',
+  twitterCard: 'summary_large_image',
 })
 
 useBreadcrumb('Hospital Virtual Tours Kenya', '/hospital-virtual-tours-kenya')

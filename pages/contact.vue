@@ -149,7 +149,7 @@ useSeoMeta({
   ogTitle: 'Contact Viewora | Virtual Tour Support & Sales',
   ogDescription: 'Have questions about virtual tours? Talk to the Viewora team via phone, email or WhatsApp. Mon–Fri 9am–6pm EAT.',
   ogUrl: 'https://viewora.software/contact',
-  ogImage: '/og-image.jpg',
+  ogImage: 'https://viewora.software/og-image.jpg',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Contact Viewora',
   twitterDescription: 'Reach our sales or support team. We usually respond within 24 hours.',

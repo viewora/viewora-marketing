@@ -44,8 +44,9 @@ useSeoMeta({
   title: 'Viewora Blog — Virtual Tour Tips & Guides Kenya',
   description: 'Learn how to market spaces better with virtual tours, 360° panoramas, and SaaS tools for real estate and Airbnb. Expert insights for the Kenyan market.',
   ogTitle: 'Viewora Blog — Virtual Tour Tips & Guides',
-  ogDescription: 'Insights, guides, and space marketing strategies to help you close more deals with 360° virtual tours.',
-  ogImage: '/og-image.jpg',
+  ogDescription: 'Expert guides on 360° virtual tours, property marketing, and Airbnb optimization for the Kenyan and African market.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/blog',
   twitterCard: 'summary_large_image',
 })
 

@@ -56,19 +56,21 @@ const { data: doc } = await useAsyncData(`blog-${route.params.slug}`, () =>
 )
 
 if (doc.value) {
+  const postUrl = `${baseUrl}/blog/${route.params.slug}`
+
   useSeoMeta({
     title: `${doc.value.title} | Viewora Blog`,
     description: doc.value.description,
     ogTitle: doc.value.title,
     ogDescription: doc.value.description,
-    ogImage: doc.value.image || '/og-image.jpg',
+    ogImage: doc.value.image || 'https://viewora.software/og-image.jpg',
     ogImageAlt: doc.value.title,
+    ogUrl: postUrl,
+    ogType: 'article',
     twitterCard: 'summary_large_image',
     twitterImage: doc.value.image || '/og-image.jpg',
     twitterImageAlt: doc.value.title,
   })
-
-  const postUrl = `${baseUrl}/blog/${route.params.slug}`
 
   useHead({
     link: [{ rel: 'canonical', href: postUrl }],

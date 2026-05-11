@@ -70,10 +70,13 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Virtual Tours Eldoret | #1 360° Property & Business Marketing Kenya',
-  description: 'Grow your Eldoret business with Viewora. Immersive 360° virtual tours for real estate, schools, hospitals, and hotels in Eldoret, Kenya. Reach buyers across East Africa.',
+  title: 'Virtual Tours Eldoret | 360° Property Marketing',
+  description: 'Grow your Eldoret business with 360° virtual tours. Showcase real estate, schools, hospitals, and hotels to buyers across East Africa.',
   ogTitle: 'Virtual Tours Eldoret | 360° Property & Business Marketing',
   ogDescription: 'The #1 virtual tour platform for Eldoret\'s real estate, education, healthcare, and hospitality sectors.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/virtual-tours-eldoret',
+  twitterCard: 'summary_large_image',
 })
 
 useBreadcrumb('Virtual Tours Eldoret', '/virtual-tours-eldoret')

@@ -55,6 +55,9 @@ useSeoMeta({
   description: 'Scale your real estate business in Kisumu with Viewora. The leading 360° virtual tour software for Milimani, Riat Hills, and the Lake Victoria region.',
   ogTitle: 'Virtual Tours Kisumu | Lake Victoria Property Tech',
   ogDescription: 'Immersive property viewing for the Kisumu market. Built for Western Kenya.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/virtual-tours-kisumu',
+  twitterCard: 'summary_large_image',
 })
 
 useBreadcrumb('Virtual Tours Kisumu', '/virtual-tours-kisumu')

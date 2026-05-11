@@ -55,6 +55,9 @@ useSeoMeta({
   description: 'The leading virtual tour software across Africa. Showcase Kenyan, Nigerian, and South African properties with professional 360° tours on Viewora.',
   ogTitle: '360 Virtual Tour Software Africa | Leading ProTech',
   ogDescription: 'Experience the future of African property marketing. Immersive 360° tours for a global audience.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/360-virtual-tour-africa',
+  twitterCard: 'summary_large_image',
 })
 
 useBreadcrumb('360° Virtual Tours Africa', '/360-virtual-tour-africa')

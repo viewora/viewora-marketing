@@ -56,6 +56,9 @@ useSeoMeta({
   description: 'Showcase your Mombasa villas and hotels with Viewora. The #1 360° virtual tour software for Nyali, Diani, and coastal real estate marketing in Kenya.',
   ogTitle: 'Virtual Tours Mombasa | Coastal Property Marketing',
   ogDescription: 'Experience coastal properties in Mombasa like never before. The best 360° tours for Kenya.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/virtual-tours-mombasa',
+  twitterCard: 'summary_large_image',
 })
 
 useBreadcrumb('Virtual Tours Mombasa', '/virtual-tours-mombasa')

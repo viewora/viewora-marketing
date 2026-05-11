@@ -136,12 +136,12 @@ import { ref } from 'vue';
 const billingFreq = ref('monthly');
 
 useSeoMeta({
-  title: 'Pricing & Plans | Viewora Virtual Tour Software',
-  description: 'Transparent pricing for every space professional. Plans from KES 1,500/mo. No hidden fees. Cancel anytime.',
+  title: 'Viewora Pricing — Free & Pro Plans',
+  description: 'Start free or upgrade from KES 1,500/month. Transparent pricing for real estate agents, Airbnb hosts, and businesses in Kenya. Cancel anytime.',
   ogTitle: 'Viewora Pricing — From KES 1,500/mo',
   ogDescription: 'Start free, scale as you grow. Viewora plans for solo agents, active sellers, agencies and large developers. Cancel anytime.',
   ogUrl: 'https://viewora.software/pricing',
-  ogImage: '/og-image.jpg',
+  ogImage: 'https://viewora.software/og-image.jpg',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Viewora Pricing & Plans',
   twitterDescription: 'Plans from KES 1,500/mo. Free trial, no credit card required.',
@@ -167,6 +167,43 @@ useHead({
         { '@type': 'Offer', name: 'Elite', price: '18000', priceCurrency: 'KES', description: '120 active tours, custom domain, team accounts, 50 GB storage' },
       ]
     })
+  },
+  {
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify([
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'Viewora Basic Plan',
+        description: '2 active virtual tours, 2 GB storage, shareable link and QR code. Ideal for individual agents and small businesses getting started with virtual tours.',
+        brand: { '@type': 'Brand', name: 'Viewora' },
+        offers: { '@type': 'Offer', price: '1500', priceCurrency: 'KES', priceValidUntil: '2027-12-31', availability: 'https://schema.org/InStock', url: 'https://viewora.software/pricing' }
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'Viewora Plus Plan',
+        description: '15 active virtual tours, HD panoramas, lead capture forms, and hotspot navigation. Perfect for growing real estate agencies and hospitality teams.',
+        brand: { '@type': 'Brand', name: 'Viewora' },
+        offers: { '@type': 'Offer', price: '4000', priceCurrency: 'KES', priceValidUntil: '2027-12-31', availability: 'https://schema.org/InStock', url: 'https://viewora.software/pricing' }
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'Viewora Pro Plan',
+        description: '40 active virtual tours, white-label branding, and Google Street View publishing. Designed for professional agencies and property developers.',
+        brand: { '@type': 'Brand', name: 'Viewora' },
+        offers: { '@type': 'Offer', price: '8500', priceCurrency: 'KES', priceValidUntil: '2027-12-31', availability: 'https://schema.org/InStock', url: 'https://viewora.software/pricing' }
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: 'Viewora Elite Plan',
+        description: '120 active virtual tours, custom domain, team accounts, and 50 GB storage. Built for large enterprises, hotel groups, and multi-location businesses.',
+        brand: { '@type': 'Brand', name: 'Viewora' },
+        offers: { '@type': 'Offer', price: '18000', priceCurrency: 'KES', priceValidUntil: '2027-12-31', availability: 'https://schema.org/InStock', url: 'https://viewora.software/pricing' }
+      }
+    ])
   }]
 })
 </script>

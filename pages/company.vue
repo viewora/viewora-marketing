@@ -55,9 +55,12 @@ definePageMeta({
 
 useSeoMeta({
   title: 'Viewora Company | #1 African PropTech Leader',
-  description: 'Discover the company behind the leading 360° virtual tour software in Kenya. We are on a mission to bring world-class immersive marketing to the African property sector.',
+  description: 'Meet the team behind Viewora, Kenya\'s leading 360° virtual tour platform. Making world-class immersive marketing accessible across Africa.',
   ogTitle: 'Viewora Company | Shaping African Real Estate',
   ogDescription: 'Experience the mission behind the #1 virtual tour software in Africa.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/company',
+  twitterCard: 'summary_large_image',
 })
 
 useBreadcrumb('Company', '/company')

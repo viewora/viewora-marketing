@@ -37,7 +37,12 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Refund & Cancellation Policy',
-  description: 'Viewora\'s refund and cancellation policy. Subscriptions can be cancelled anytime. Learn how billing works and what to expect when you cancel or request a refund.'
+  title: 'Refund & Cancellation Policy | Viewora',
+  description: 'Viewora\'s refund and cancellation policy. Cancel anytime. Learn how billing works and what to expect when you cancel or request a refund.',
+  ogTitle: 'Refund & Cancellation Policy | Viewora',
+  ogDescription: 'Cancel your Viewora subscription at any time. Read our full refund and billing policy.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/legal/refund',
+  twitterCard: 'summary_large_image',
 })
 </script>

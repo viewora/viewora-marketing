@@ -64,10 +64,13 @@ const faqs = [
 ]
 
 useSeoMeta({
-  title: 'Real Estate Virtual Tours Kenya | #1 Property Marketing Tool',
+  title: 'Real Estate Virtual Tours Kenya | Viewora',
   description: 'Boost your real estate sales in Kenya with Viewora. Create immersive 360° virtual tours that attract international and local buyers and renters instantly.',
   ogTitle: 'Real Estate Virtual Tours Kenya | Sell Units Faster',
   ogDescription: 'The professional choice for Kenyan real estate agencies. Immersive tours that close deals.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/real-estate-virtual-tours-kenya',
+  twitterCard: 'summary_large_image',
 })
 
 useBreadcrumb('Real Estate Virtual Tours Kenya', '/real-estate-virtual-tours-kenya')
@@ -103,17 +106,6 @@ useHead({
           name: f.q,
           acceptedAnswer: { '@type': 'Answer', text: f.a }
         }))
-      })
-    },
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://viewora.software' },
-          { '@type': 'ListItem', position: 2, name: 'Real Estate Virtual Tours Kenya', item: 'https://viewora.software/real-estate-virtual-tours-kenya' }
-        ]
       })
     }
   ]
