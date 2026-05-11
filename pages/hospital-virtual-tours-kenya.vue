@@ -80,7 +80,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Hospital Virtual Tours Kenya', '/hospital-virtual-tours-kenya')
+
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/hospital-virtual-tours-kenya' }],
   script: [
     {
       type: 'application/ld+json',

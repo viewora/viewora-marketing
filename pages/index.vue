@@ -1,5 +1,6 @@
 <template>
   <div>
+    <GridWarp />
     <!-- Hero Section -->
     <section class="hero section-bg has-plus-markers">
       <div class="container grid-2" style="align-items: center;">
@@ -312,14 +313,35 @@ useSeoMeta({
   ogDescription: 'Upload panoramas, connect rooms and publish stunning virtual tours in minutes. Free to start. No credit card required.',
   ogUrl: 'https://viewora.software',
   ogImage: 'https://viewora.software/og-image.jpg',
+  ogImageAlt: 'Viewora — Immersive 360° Virtual Tour Experience',
   twitterCard: 'summary_large_image',
+  twitterImage: '/og-image.jpg',
+  twitterImageAlt: 'Viewora — Immersive 360° Virtual Tour Experience',
   twitterTitle: 'Viewora | 360° Virtual Tours Made Easy',
   twitterDescription: 'Upload, connect rooms and go live in 5 minutes. The fastest virtual tour platform for real estate & hospitality.',
 })
 
 useHead({
+  bodyAttrs: { class: 'no-css-grid' },
   link: [{ rel: 'canonical', href: 'https://viewora.software' }],
   script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Viewora',
+        url: 'https://viewora.software',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: 'https://viewora.software/?q={search_term_string}',
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      })
+    },
     {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({

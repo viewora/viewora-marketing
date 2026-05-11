@@ -124,6 +124,8 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Virtual Tour FAQ', '/faq')
+
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/faq' }],
   script: [

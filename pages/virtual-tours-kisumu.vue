@@ -60,7 +60,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Virtual Tours Kisumu', '/virtual-tours-kisumu')
+
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/virtual-tours-kisumu' }],
   script: [
     {
       type: 'application/ld+json',

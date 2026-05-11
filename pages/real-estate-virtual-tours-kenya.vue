@@ -73,6 +73,8 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Real Estate Virtual Tours Kenya', '/real-estate-virtual-tours-kenya')
+
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/real-estate-virtual-tours-kenya' }],
   script: [

@@ -33,7 +33,7 @@
               </div>
               <div>
                 <h4 class="font-bold mb-1">Email</h4>
-                <p class="text-muted"><a href="mailto:hello@viewora.software" style="color: inherit; text-decoration: none;">hello@viewora.software</a></p>
+                <p class="text-muted"><a href="mailto:vieworasoftware@gmail.com" style="color: inherit; text-decoration: none;">vieworasoftware@gmail.com</a></p>
                 <p class="text-sm text-muted mt-1">We usually respond within 24 hours.</p>
               </div>
             </div>
@@ -126,17 +126,18 @@ const submitForm = async () => {
   submitting.value = true
   formError.value = null
   try {
-    // TODO: Replace with POST /api/contact once the endpoint is implemented.
-    // For now, open a mailto: link as a reliable fallback that actually delivers messages.
-    const subject = encodeURIComponent(`[Viewora Contact] ${form.value.subject}`)
-    const body = encodeURIComponent(
-      `Name: ${form.value.name}\nEmail: ${form.value.email}\n\n${form.value.message}`
-    )
-    window.location.href = `mailto:hello@viewora.software?subject=${subject}&body=${body}`
-    submitted.value = true
-    form.value = { name: '', email: '', subject: '', message: '' }
+    // Send to background API
+    const response = await $fetch('/api/contact', {
+      method: 'POST',
+      body: form.value
+    })
+    
+    if (response) {
+      submitted.value = true
+      form.value = { name: '', email: '', subject: '', message: '' }
+    }
   } catch {
-    formError.value = 'Something went wrong. Please email us directly at hello@viewora.software'
+    formError.value = 'Something went wrong. Please email us directly at vieworasoftware@gmail.com'
   } finally {
     submitting.value = false
   }
@@ -154,6 +155,8 @@ useSeoMeta({
   twitterDescription: 'Reach our sales or support team. We usually respond within 24 hours.',
 })
 
+useBreadcrumb('Contact', '/contact')
+
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/contact' }],
   script: [{
@@ -167,7 +170,7 @@ useHead({
         '@type': 'Organization',
         name: 'Viewora',
         telephone: '+254117537025',
-        email: 'hello@viewora.software',
+        email: 'vieworasoftware@gmail.com',
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Juja',

@@ -80,7 +80,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Gym Virtual Tours Kenya', '/gym-virtual-tours-kenya')
+
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/gym-virtual-tours-kenya' }],
   script: [
     {
       type: 'application/ld+json',

@@ -63,13 +63,17 @@ if (doc.value) {
     description: doc.value.description,
     ogTitle: doc.value.title,
     ogDescription: doc.value.description,
-    ogImage: doc.value.image,
+    ogImage: doc.value.image || 'https://viewora.software/og-image.jpg',
+    ogImageAlt: doc.value.title,
     ogUrl: postUrl,
     ogType: 'article',
     twitterCard: 'summary_large_image',
+    twitterImage: doc.value.image || '/og-image.jpg',
+    twitterImageAlt: doc.value.title,
   })
 
   useHead({
+    link: [{ rel: 'canonical', href: postUrl }],
     script: [
       {
         type: 'application/ld+json',

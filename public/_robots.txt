@@ -1,11 +1,9 @@
 User-agent: *
 Allow: /
 
-# Block private app and API routes
+# Block private app routes
 Disallow: /app/
-Disallow: /api/
 Disallow: /confirm
-Disallow: /_nuxt/
 
 # Block auth pages from indexing (no SEO value)
 Disallow: /login

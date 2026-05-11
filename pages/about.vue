@@ -59,6 +59,8 @@ useSeoMeta({
   twitterDescription: 'The story behind the #1 immersive space showcase platform built in Kenya for the world.',
 })
 
+useBreadcrumb('About', '/about')
+
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/about' }],
   script: [{

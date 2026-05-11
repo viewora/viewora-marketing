@@ -73,7 +73,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Hotel Virtual Tours Kenya', '/hotel-virtual-tours-kenya')
+
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/hotel-virtual-tours-kenya' }],
   script: [
     {
       type: 'application/ld+json',

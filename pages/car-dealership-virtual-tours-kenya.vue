@@ -80,7 +80,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Car Dealership Virtual Tours Kenya', '/car-dealership-virtual-tours-kenya')
+
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/car-dealership-virtual-tours-kenya' }],
   script: [
     {
       type: 'application/ld+json',

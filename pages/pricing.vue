@@ -147,6 +147,8 @@ useSeoMeta({
   twitterDescription: 'Plans from KES 1,500/mo. Free trial, no credit card required.',
 })
 
+useBreadcrumb('Pricing & Plans', '/pricing')
+
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/pricing' }],
   script: [{

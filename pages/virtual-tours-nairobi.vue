@@ -61,7 +61,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Virtual Tours Nairobi', '/virtual-tours-nairobi')
+
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/virtual-tours-nairobi' }],
   script: [
     {
       type: 'application/ld+json',

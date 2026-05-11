@@ -3,15 +3,24 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2026-04-13',
   css: ['@/assets/css/main.css'],
+  
+  runtimeConfig: {
+    smtpHost: process.env.SMTP_HOST || 'smtp.gmail.com',
+    smtpPort: process.env.SMTP_PORT || '587',
+    smtpUser: process.env.SMTP_USER,
+    smtpPass: process.env.SMTP_PASS,
+  },
 
   modules: [
     '@nuxt/image',
     '@nuxtjs/google-fonts',
     '@nuxtjs/seo',
     '@nuxt/content',
+    '@nuxtjs/sitemap',
   ],
 
   sitemap: {
+    trailingSlash: false,
     exclude: ['/login', '/register', '/reset-password', '/viewer/gallery'],
     discoverImages: true,
     urls: [
@@ -160,11 +169,20 @@ export default defineNuxtConfig({
     prerender: {
       failOnError: false,
     },
+    routeRules: {
+      '/**': { 
+        headers: { 
+          'X-Robots-Tag': 'index, follow',
+          'X-Frame-Options': 'DENY',
+          'X-Content-Type-Options': 'nosniff',
+          'Referrer-Policy': 'strict-origin-when-cross-origin'
+        } 
+      },
+    },
   },
 
   experimental: {
-    payloadExtraction: true,
-    renderJsonPayloads: true,
+    payloadExtraction: false,
   },
 
   app: {

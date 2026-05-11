@@ -81,7 +81,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Tourism Virtual Tours Kenya', '/tourism-virtual-tours-kenya')
+
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/tourism-virtual-tours-kenya' }],
   script: [
     {
       type: 'application/ld+json',

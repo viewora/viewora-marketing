@@ -59,6 +59,8 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Virtual Tour Glossary', '/glossary')
+
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/glossary' }],
   script: [

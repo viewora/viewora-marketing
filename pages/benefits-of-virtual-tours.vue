@@ -112,7 +112,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Benefits of Virtual Tours', '/benefits-of-virtual-tours')
+
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/benefits-of-virtual-tours' }],
   script: [
     {
       type: 'application/ld+json',

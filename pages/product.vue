@@ -136,6 +136,8 @@ useSeoMeta({
   twitterDescription: 'Create interactive 360° virtual tours in 4 steps. Upload, connect, publish, share.',
 })
 
+useBreadcrumb('How Viewora Works', '/product')
+
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/product' }],
   script: [

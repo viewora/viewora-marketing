@@ -136,7 +136,10 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+useBreadcrumb('Virtual Tours vs Photos', '/virtual-tours-vs-photos')
+
 useHead({
+  link: [{ rel: 'canonical', href: 'https://viewora.software/virtual-tours-vs-photos' }],
   script: [
     {
       type: 'application/ld+json',
