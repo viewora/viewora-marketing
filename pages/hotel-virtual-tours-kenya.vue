@@ -64,10 +64,13 @@ const faqs = [
 ]
 
 useSeoMeta({
-  title: 'Hotel Virtual Tours Kenya | #1 360° Hospitality Marketing',
+  title: 'Hotel Virtual Tours Kenya | Viewora',
   description: 'Boost your hotel bookings in Kenya with Viewora. Immersive 360° virtual tours for hotels, resorts, and lodges to build guest trust and increase stays.',
   ogTitle: 'Hotel Virtual Tours Kenya | Build Guest Trust',
   ogDescription: 'Experience luxury hospitality in Kenya virtually. The best 360° tours for African hotels.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/hotel-virtual-tours-kenya',
+  twitterCard: 'summary_large_image',
 })
 
 useHead({

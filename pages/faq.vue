@@ -115,10 +115,13 @@ const industries = [
 ]
 
 useSeoMeta({
-  title: 'Virtual Tour FAQ Kenya | All Questions Answered | Viewora',
-  description: 'Complete FAQ for Viewora\'s 360° virtual tour platform in Kenya. Answers on pricing in KES, how it works, mobile support, industries, and getting started. Built for Kenya and Africa.',
+  title: 'Virtual Tour FAQ Kenya | Viewora',
+  description: 'Frequently asked questions about Viewora\'s 360° virtual tour platform. Answers on pricing in KES, how it works, mobile support, and more.',
   ogTitle: 'Virtual Tour FAQ | Everything You Need to Know | Viewora Kenya',
   ogDescription: 'Every question about virtual tours in Kenya answered. Pricing, features, industries, technical requirements, and more.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/faq',
+  twitterCard: 'summary_large_image',
 })
 
 useHead({

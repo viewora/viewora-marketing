@@ -125,12 +125,12 @@ onMounted(() => {
 })
 
 useSeoMeta({
-  title: 'How Viewora Works | Immersive 360° Space Showcase Software',
+  title: '360° Virtual Tour Features | Viewora',
   description: 'See how easy it is to upload panoramas, connect rooms, and publish stunning interactive 360° tours for any space without any coding skills.',
   ogTitle: 'How Viewora Works — 4 Simple Steps to a Virtual Tour',
   ogDescription: 'Upload your 360° photos, link rooms with hotspots, publish and share. No coding, no hardware, no experience needed.',
   ogUrl: 'https://viewora.software/product',
-  ogImage: '/og-image.jpg',
+  ogImage: 'https://viewora.software/og-image.jpg',
   twitterCard: 'summary_large_image',
   twitterTitle: 'How Viewora Works',
   twitterDescription: 'Create interactive 360° virtual tours in 4 steps. Upload, connect, publish, share.',
@@ -138,7 +138,24 @@ useSeoMeta({
 
 useHead({
   link: [{ rel: 'canonical', href: 'https://viewora.software/product' }],
-  script: [{
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'Viewora',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web Browser',
+        url: 'https://viewora.software',
+        offers: [
+          { '@type': 'Offer', price: '0', priceCurrency: 'KES', name: 'Free', description: 'Create and publish your first virtual tour at no cost.' },
+          { '@type': 'Offer', price: '8500', priceCurrency: 'KES', name: 'Pro', description: '40 active tours, white-label branding, Google Street View publishing.' }
+        ],
+        description: 'Viewora lets you create, host, and share interactive 360° virtual tours for real estate, hotels, Airbnb, dealerships, schools, and tourism in Kenya and Africa.'
+      })
+    },
+    {
     type: 'application/ld+json',
     innerHTML: JSON.stringify({
       '@context': 'https://schema.org',

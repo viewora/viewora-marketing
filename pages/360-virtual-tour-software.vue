@@ -52,10 +52,13 @@ definePageMeta({
   layout: 'default'
 })
 useSeoMeta({
-  title: '360 Virtual Tour Software Kenya | Create Professional Tours Fast',
+  title: '360° Virtual Tour Software Kenya | Viewora',
   description: 'The best 360° virtual tour software in Kenya. Create immersive property tours, add interactive hotspots, and capture more leads with Viewora.',
   ogTitle: '360 Virtual Tour Software Kenya | Pro Tours in Minutes',
   ogDescription: 'Experience the power of immersive marketing. The most intuitive virtual tour software in Africa.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/360-virtual-tour-software',
+  twitterCard: 'summary_large_image',
 })
 
 useHead({

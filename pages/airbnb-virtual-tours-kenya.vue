@@ -51,10 +51,13 @@ definePageMeta({
   layout: 'default'
 })
 useSeoMeta({
-  title: 'Airbnb Virtual Tours Kenya | #1 Marketing Strategy for Hosts',
-  description: 'Maxmize your Airbnb bookings in Kenya with Viewora. Immersive 360° virtual tours built to build guest trust and increase occupancy in Nairobi and Diani.',
+  title: 'Airbnb Virtual Tours Kenya | Viewora',
+  description: 'Maximize your Airbnb bookings in Kenya with Viewora. Immersive 360° virtual tours built to build guest trust and increase occupancy in Nairobi and Diani.',
   ogTitle: 'Airbnb Virtual Tours Kenya | Boost Your Bookings',
   ogDescription: 'The ultimate marketing tool for Kenyan Airbnb hosts. Join the top 1% today.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/airbnb-virtual-tours-kenya',
+  twitterCard: 'summary_large_image',
 })
 
 useHead({

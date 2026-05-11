@@ -107,6 +107,9 @@ useSeoMeta({
   description: 'Discover the proven benefits of 360° virtual tours for Kenyan businesses. Attract serious buyers, sell faster, reach the diaspora, and build trust online.',
   ogTitle: 'Benefits of Virtual Tours | The Complete Business Case 2026',
   ogDescription: 'Proven benefits of 360° virtual tours for real estate, hotels, schools, and businesses in Kenya. More enquiries, faster sales, global reach.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/benefits-of-virtual-tours',
+  twitterCard: 'summary_large_image',
 })
 
 useHead({

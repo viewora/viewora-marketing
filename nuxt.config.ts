@@ -9,11 +9,122 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@nuxtjs/seo',
     '@nuxt/content',
-    ['@nuxtjs/sitemap', {
-      hostname: 'https://viewora.software',
-      exclude: ['/login', '/register', '/reset-password', '/viewer/gallery'],
-    }],
   ],
+
+  sitemap: {
+    exclude: ['/login', '/register', '/reset-password', '/viewer/gallery'],
+    discoverImages: true,
+    urls: [
+      {
+        loc: '/',
+        images: [{ loc: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=80', title: 'Viewora — 360° Virtual Tour Software for Real Estate and Hospitality' }],
+      },
+      {
+        loc: '/product',
+        images: [{ loc: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80', title: 'How to Create a 360° Virtual Tour with Viewora' }],
+      },
+      {
+        loc: '/pricing',
+        images: [{ loc: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80', title: 'Viewora Pricing Plans — Free, Basic, Plus, Pro, Elite' }],
+      },
+      {
+        loc: '/virtual-tours-kenya',
+        images: [{ loc: 'https://images.unsplash.com/photo-1582408921715-18e7806365c1?w=1200&q=80', title: 'Virtual Tours Kenya — 360° Property and Business Marketing' }],
+      },
+      {
+        loc: '/real-estate-virtual-tours-kenya',
+        images: [{ loc: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80', title: 'Real Estate Virtual Tours Kenya — Property Marketing' }],
+      },
+      {
+        loc: '/hotel-virtual-tours-kenya',
+        images: [{ loc: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80', title: 'Hotel Virtual Tours Kenya — Hospitality Marketing' }],
+      },
+      {
+        loc: '/airbnb-virtual-tours-kenya',
+        images: [{ loc: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80', title: 'Airbnb Virtual Tours Kenya — Short-Term Rental Marketing' }],
+      },
+      {
+        loc: '/car-dealership-virtual-tours-kenya',
+        images: [{ loc: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&q=80', title: 'Car Dealership Virtual Tours Kenya — Automotive Marketing' }],
+      },
+      {
+        loc: '/school-virtual-tours-kenya',
+        images: [{ loc: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80', title: 'School Virtual Tours Kenya — Education Institution Marketing' }],
+      },
+      {
+        loc: '/gym-virtual-tours-kenya',
+        images: [{ loc: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80', title: 'Gym Virtual Tours Kenya — Fitness Centre Marketing' }],
+      },
+      {
+        loc: '/hospital-virtual-tours-kenya',
+        images: [{ loc: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80', title: 'Hospital Virtual Tours Kenya — Healthcare Facility Marketing' }],
+      },
+      {
+        loc: '/tourism-virtual-tours-kenya',
+        images: [{ loc: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80', title: 'Tourism Virtual Tours Kenya — Travel and Safari Marketing' }],
+      },
+      {
+        loc: '/virtual-tours-nairobi',
+        images: [{ loc: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80', title: 'Virtual Tours Nairobi — 360° Property Marketing in Nairobi' }],
+      },
+      {
+        loc: '/virtual-tours-mombasa',
+        images: [{ loc: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80', title: 'Virtual Tours Mombasa — 360° Property and Hospitality Marketing' }],
+      },
+      {
+        loc: '/virtual-tours-kisumu',
+        images: [{ loc: 'https://images.unsplash.com/photo-1582408921715-18e7806365c1?w=1200&q=80', title: 'Virtual Tours Kisumu — 360° Property Marketing in Western Kenya' }],
+      },
+      {
+        loc: '/virtual-tours-nakuru',
+        images: [{ loc: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80', title: 'Virtual Tours Nakuru — 360° Property and Tourism Marketing' }],
+      },
+      {
+        loc: '/virtual-tours-eldoret',
+        images: [{ loc: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=80', title: 'Virtual Tours Eldoret — 360° Property Marketing in North Rift' }],
+      },
+      {
+        loc: '/virtual-tours-africa',
+        images: [{ loc: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=80', title: 'Virtual Tours Africa — 360° Property Marketing Across Africa' }],
+      },
+      {
+        loc: '/virtual-tours-east-africa',
+        images: [{ loc: 'https://images.unsplash.com/photo-1582408921715-18e7806365c1?w=1200&q=80', title: 'Virtual Tours East Africa — 360° Property Marketing' }],
+      },
+      {
+        loc: '/360-virtual-tour-software',
+        images: [{ loc: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80', title: '360° Virtual Tour Software — Create and Share Immersive Tours' }],
+      },
+      {
+        loc: '/360-virtual-tour-africa',
+        images: [{ loc: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=80', title: '360° Virtual Tours Africa — Immersive Marketing Platform' }],
+      },
+      {
+        loc: '/about',
+        images: [{ loc: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80', title: 'About Viewora — Kenya\'s Leading Virtual Tour Platform' }],
+      },
+      {
+        loc: '/blog',
+        images: [{ loc: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80', title: 'Viewora Blog — Virtual Tour Tips and Guides' }],
+      },
+      {
+        loc: '/faq',
+        images: [{ loc: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80', title: 'Virtual Tour FAQ — Everything You Need to Know' }],
+      },
+      {
+        loc: '/what-is-a-virtual-tour',
+        images: [{ loc: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=80', title: 'What Is a Virtual Tour? Complete Guide' }],
+      },
+      {
+        loc: '/benefits-of-virtual-tours',
+        images: [{ loc: 'https://images.unsplash.com/photo-1582408921715-18e7806365c1?w=1200&q=80', title: 'Benefits of Virtual Tours for Your Business' }],
+      },
+      {
+        loc: '/virtual-tours-vs-photos',
+        images: [{ loc: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80', title: 'Virtual Tours vs Photos — Which Sells Faster?' }],
+      },
+    ],
+  },
 
   site: {
     url: 'https://viewora.software',

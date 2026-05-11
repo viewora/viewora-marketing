@@ -90,11 +90,12 @@ const faqs = [
 ]
 
 useSeoMeta({
-  title: 'Virtual Tours Kenya | #1 360° Property Marketing Software',
-  description: 'Boost your real estate sales and Airbnb bookings in Kenya with Viewora. Create professional 360° virtual tours for properties in Nairobi, Mombasa, and Kisumu.',
+  title: 'Virtual Tours Kenya — Create & Share | Viewora',
+  description: 'Create professional 360° virtual tours for properties in Nairobi, Mombasa, and Kisumu. Boost real estate sales and Airbnb bookings in Kenya.',
   ogTitle: 'Virtual Tours Kenya | #1 360° Property Marketing Software',
   ogDescription: 'Experience the power of immersive property marketing in Kenya. Viewora helps you sell and rent faster.',
-  ogImage: '/og-image.jpg',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/virtual-tours-kenya',
   twitterCard: 'summary_large_image',
 })
 
@@ -129,17 +130,6 @@ useHead({
           name: f.q,
           acceptedAnswer: { '@type': 'Answer', text: f.a }
         }))
-      })
-    },
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://viewora.software' },
-          { '@type': 'ListItem', position: 2, name: 'Virtual Tours Kenya', item: 'https://viewora.software/virtual-tours-kenya' }
-        ]
       })
     }
   ]

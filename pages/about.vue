@@ -53,7 +53,7 @@ useSeoMeta({
   ogTitle: 'About Viewora | Our Story & Mission',
   ogDescription: 'Founded in Kenya to democratize spatial marketing. Viewora empowers agents, hosts and developers to create immersive 360° virtual tours in minutes.',
   ogUrl: 'https://viewora.software/about',
-  ogImage: '/og-image.jpg',
+  ogImage: 'https://viewora.software/og-image.jpg',
   twitterCard: 'summary_large_image',
   twitterTitle: 'About Viewora',
   twitterDescription: 'The story behind the #1 immersive space showcase platform built in Kenya for the world.',

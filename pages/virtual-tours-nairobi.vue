@@ -52,10 +52,13 @@ definePageMeta({
   layout: 'default'
 })
 useSeoMeta({
-  title: 'Virtual Tours Nairobi | Real Estate 360° Photography Kenya',
+  title: '360° Virtual Tours Nairobi | Viewora',
   description: 'Dominate the Nairobi property market with Viewora. The #1 virtual tour provider for real estate and Airbnb in Westlands, Karen, and Kilimani, Kenya.',
   ogTitle: 'Virtual Tours Nairobi | Real Estate 360° Photography',
   ogDescription: 'Immersive property marketing for Nairobi agencies and hosts. Built for Kenya.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/virtual-tours-nairobi',
+  twitterCard: 'summary_large_image',
 })
 
 useHead({

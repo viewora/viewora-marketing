@@ -127,10 +127,13 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Virtual Tours vs Photos Kenya | Which Gets More Sales in 2026?',
-  description: 'Virtual tours vs professional photos for property marketing in Kenya: engagement, trust, and ROI compared. See why 360° virtual tours outperform static photography.',
+  title: 'Virtual Tours vs Photos Kenya | Viewora',
+  description: 'Virtual tours vs photos for property marketing in Kenya: engagement, trust, and ROI compared. See why 360° virtual tours outperform static photography.',
   ogTitle: 'Virtual Tours vs Photos | The Definitive Comparison 2026',
   ogDescription: 'Which converts more in Kenya — virtual tours or photos? Data-driven comparison showing why 360° immersive tours win every time.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/virtual-tours-vs-photos',
+  twitterCard: 'summary_large_image',
 })
 
 useHead({

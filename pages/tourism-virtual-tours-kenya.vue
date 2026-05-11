@@ -72,10 +72,13 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Tourism Virtual Tours Kenya | Attract More Visitors & Bookings',
-  description: 'Boost Kenya tourism bookings with immersive 360° virtual tours. Showcase safari lodges, beach resorts, and national parks to global travelers before they book.',
+  title: 'Tourism Virtual Tours Kenya | Viewora',
+  description: 'Boost Kenya tourism bookings with immersive 360° virtual tours. Showcase safari lodges, beach resorts, and national parks to global travelers.',
   ogTitle: 'Tourism Virtual Tours Kenya | Immersive Travel Marketing',
   ogDescription: 'The leading virtual tour platform for Kenya\'s tourism industry. Safari lodges, beach resorts, and attractions—bring Kenya to the world.',
+  ogImage: 'https://viewora.software/og-image.jpg',
+  ogUrl: 'https://viewora.software/tourism-virtual-tours-kenya',
+  twitterCard: 'summary_large_image',
 })
 
 useHead({

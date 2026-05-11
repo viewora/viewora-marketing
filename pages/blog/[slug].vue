@@ -56,16 +56,18 @@ const { data: doc } = await useAsyncData(`blog-${route.params.slug}`, () =>
 )
 
 if (doc.value) {
+  const postUrl = `${baseUrl}/blog/${route.params.slug}`
+
   useSeoMeta({
     title: `${doc.value.title} | Viewora Blog`,
     description: doc.value.description,
     ogTitle: doc.value.title,
     ogDescription: doc.value.description,
     ogImage: doc.value.image,
+    ogUrl: postUrl,
+    ogType: 'article',
     twitterCard: 'summary_large_image',
   })
-
-  const postUrl = `${baseUrl}/blog/${route.params.slug}`
 
   useHead({
     script: [
