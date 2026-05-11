@@ -5,7 +5,13 @@
   "framework": "nuxtjs",
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.viewora.software" }],
+      "destination": "https://viewora.software/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+",
       "has": [{ "type": "host", "value": "www.viewora.software" }],
       "destination": "https://viewora.software/:path*",
       "permanent": true
