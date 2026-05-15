@@ -159,3 +159,7 @@ Deployed to **Vercel** as a statically generated site. `vercel.json` handles rou
 - CTAs (Get Started, Start Free Trial) link to `app.viewora.software/register`.
 - Login links route to `app.viewora.software/login`.
 - Published space links (if used in blog/landing pages) would point to `app.viewora.software/p/[slug]`.
+
+---
+*Last metadata update: 2026-05-15*
+
