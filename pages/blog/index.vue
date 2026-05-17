@@ -39,7 +39,7 @@ import { sanityClient } from '~/composables/useSanityClient'
 
 const { data: posts } = await useAsyncData('blog-posts', () =>
   sanityClient.fetch(`
-    *[_type == "blogPost"] | order(date desc) {
+    *[_type == "blogPost"] | order(date asc) {
       title,
       "slug": slug.current,
       description,
