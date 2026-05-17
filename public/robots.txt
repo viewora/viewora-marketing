@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-Disallow: /login
-Disallow: /register
-Disallow: /reset-password
-
-Sitemap: https://viewora.software/sitemap.xml
