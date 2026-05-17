@@ -11,34 +11,45 @@
 
     <section class="section">
       <div class="container">
-        <ContentList path="/blog" v-slot="{ list = [] }">
-          <div class="grid-3" v-if="list?.length">
-            <div v-for="article in list" :key="article._path" class="card" style="display: flex; flex-direction: column; height: 100%;">
-              <div v-if="article.image" style="margin: -1.5rem -1.5rem 1.5rem -1.5rem; height: 200px; overflow: hidden; border-radius: 1rem 1rem 0 0;">
-                <img :src="article.image" :alt="article.title" style="width: 100%; height: 100%; object-fit: cover;">
-              </div>
-              <div style="flex: 1; display: flex; flex-direction: column;">
-                <NuxtLink :to="article._path" class="text-primary text-sm font-bold mb-2">{{ article.category || 'Guides' }}</NuxtLink>
-                <h3 class="mb-3" style="font-size: 1.25rem; line-height: 1.4;">
-                  <NuxtLink :to="article._path" style="color: inherit; text-decoration: none;">{{ article.title }}</NuxtLink>
-                </h3>
-                <p class="text-muted text-sm mb-4" style="flex: 1; line-height: 1.6;">{{ article.description }}</p>
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
-                  <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span class="text-xs text-muted">{{ new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) }}</span>
-                  </div>
-                  <NuxtLink :to="article._path" class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Read More &rarr;</NuxtLink>
-                </div>
+        <div class="grid-3" v-if="posts?.length">
+          <div v-for="article in posts" :key="article.slug" class="card" style="display: flex; flex-direction: column; height: 100%;">
+            <div v-if="article.image" style="margin: -1.5rem -1.5rem 1.5rem -1.5rem; height: 200px; overflow: hidden; border-radius: 1rem 1rem 0 0;">
+              <img :src="article.image" :alt="article.title" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column;">
+              <NuxtLink :to="`/blog/${article.slug}`" class="text-primary text-sm font-bold mb-2">{{ article.category || 'Guides' }}</NuxtLink>
+              <h3 class="mb-3" style="font-size: 1.25rem; line-height: 1.4;">
+                <NuxtLink :to="`/blog/${article.slug}`" style="color: inherit; text-decoration: none;">{{ article.title }}</NuxtLink>
+              </h3>
+              <p class="text-muted text-sm mb-4" style="flex: 1; line-height: 1.6;">{{ article.description }}</p>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                <span class="text-xs text-muted">{{ new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) }}</span>
+                <NuxtLink :to="`/blog/${article.slug}`" class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Read More &rarr;</NuxtLink>
               </div>
             </div>
           </div>
-        </ContentList>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import { sanityClient } from '~/composables/useSanityClient'
+
+const { data: posts } = await useAsyncData('blog-posts', () =>
+  sanityClient.fetch(`
+    *[_type == "blogPost"] | order(date desc) {
+      title,
+      "slug": slug.current,
+      description,
+      date,
+      author,
+      category,
+      "image": image.asset->url
+    }
+  `)
+)
 
 useSeoMeta({
   title: 'Viewora Blog — Virtual Tour Tips & Guides Kenya',
